@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>kaifeimall-common</artifactId>
+    <artifactId>kafeimall-gateway</artifactId>
     <packaging>jar</packaging>
 
-    <name>kaifeimall-common</name>
+    <name>kafeimall-gateway</name>
     <url>http://maven.apache.org</url>
 
     <properties>

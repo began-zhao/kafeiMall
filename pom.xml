@@ -9,7 +9,22 @@
     <modules>
         <module>kafeimall-common</module>
         <module>kafeimall-lottery</module>
+        <module>kafeimall-product</module>
+        <module>kafeimall-order</module>
+        <module>kafeimall-gateway</module>
+        <module>kafeimall-ware</module>
+        <module>kafeimall-member</module>
+        <module>kafeimall-auth-server</module>
+        <module>kafeimall-coupon</module>
+        <module>kafeimall-search</module>
+        <module>kafeimall-seckill</module>
     </modules>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.2</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
     <properties>
         <spring.boot.version>2.5.3</spring.boot.version>
         <spring-cloud.version>2020.0.3</spring-cloud.version>
