@@ -7,25 +7,13 @@
     <description>聚合服务</description>
     <packaging>pom</packaging>
     <modules>
-<!--        <module>gulimall-coupon</module>-->
-<!--        <module>gulimall-auth-server</module>-->
-<!--        <module>gulimall-seckill</module>-->
-<!--        <module>gulimall-cart</module>-->
-<!--        <module>gulimall-gateway</module>-->
-<!--        <module>gulimall-search</module>-->
-<!--        <module>gulimall-third-party</module>-->
-<!--        <module>gulimall-member</module>-->
-<!--        <module>gulimall-order</module>-->
-<!--        <module>gulimall-product</module>-->
-<!--        <module>gulimall-ware</module>-->
-<!--        <module>renren-fast</module>-->
-<!--        <module>renren-generator</module>-->
-<!--        <module>gulimall-common</module>-->
+        <module>kafeimall-common</module>
+        <module>kafeimall-lottery</module>
     </modules>
     <properties>
         <spring.boot.version>2.5.3</spring.boot.version>
         <spring-cloud.version>2020.0.3</spring-cloud.version>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencyManagement>
@@ -70,10 +58,10 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
+<!--                <configuration>-->
+<!--                    <source>1.8</source>-->
+<!--                    <target>1.8</target>-->
+<!--                </configuration>-->
             </plugin>
         </plugins>
     </build>
