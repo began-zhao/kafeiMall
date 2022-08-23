@@ -7,10 +7,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>kafeimall-search</artifactId>
+    <groupId>com.kafeimall.support</groupId>
+    <artifactId>kafeimall-support</artifactId>
     <packaging>jar</packaging>
 
-    <name>kafeimall-search</name>
+    <name>kafeimall-support</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -32,21 +33,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!--阿里OSS-->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alicloud-oss</artifactId>
+            <version>2.2.0.RELEASE</version>
         </dependency>
+        <!--sentinel流控-->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
