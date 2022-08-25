@@ -3,7 +3,6 @@ package com.kafeimall.product.service.converter;
 import com.kafeimall.product.domain.aggregate.ProductCategory;
 import com.kafeimall.product.service.dto.CategoryDTO;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
 /**
  * @author: zzg
@@ -11,7 +10,6 @@ import org.mapstruct.factory.Mappers;
  * @Description: 分类DO-DTO转换器
  */
 @Mapper(componentModel = "spring")
-public interface CategoryConverter {
-    CategoryConverter INSTANCE = Mappers.getMapper(CategoryConverter.class);
+public interface CategoryServiceConverter {
     CategoryDTO toCategoryDTO(ProductCategory productCategory);
 }
