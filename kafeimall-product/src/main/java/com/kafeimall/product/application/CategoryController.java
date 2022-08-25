@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @author: zzg
  * @date: 8/23/22
- * @Description: zzg
+ * @Description: 分类应用层
  */
 @RestController
 public class CategoryController {
