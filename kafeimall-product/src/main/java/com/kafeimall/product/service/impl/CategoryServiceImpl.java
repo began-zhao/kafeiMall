@@ -19,6 +19,8 @@ import java.util.stream.Collectors;
  */
 @Service
 public class CategoryServiceImpl implements CategoryService {
+
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private CategoryRepository categoryRepository;
 

@@ -11,5 +11,8 @@ spring:
     password: Begin123456.
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://1.12.65.107:3306/mall_pms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-  application:
-    name: mall-product
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 1.12.65.107:8848
+
