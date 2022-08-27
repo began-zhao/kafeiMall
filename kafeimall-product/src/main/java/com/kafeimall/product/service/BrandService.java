@@ -7,5 +7,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @date: 8/25/22
  * @Description: BrandService
  */
-public interface BrandService extends IService {
+public interface BrandService{// extends IService
 }

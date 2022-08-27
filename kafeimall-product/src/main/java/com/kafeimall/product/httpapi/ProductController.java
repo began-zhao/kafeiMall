@@ -1,4 +1,4 @@
-package com.kafeimall.product.web;
+package com.kafeimall.product.httpapi;
 
 /**
  * @author: zzg

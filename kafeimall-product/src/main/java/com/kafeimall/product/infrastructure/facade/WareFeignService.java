@@ -1,4 +1,4 @@
-package com.kafeimall.product.facade;
+package com.kafeimall.product.infrastructure.facade;
 
 /**
  * @author: zzg

@@ -1,7 +1,7 @@
-package com.kafeimall.product.repo.repository;
+package com.kafeimall.product.infrastructure.repo.repository;
 
 import com.kafeimall.common.repository.IRepository;
-import com.kafeimall.product.repo.dao.po.BrandPO;
+import com.kafeimall.product.infrastructure.repo.dao.po.BrandPO;
 
 /**
  * @author: zzg

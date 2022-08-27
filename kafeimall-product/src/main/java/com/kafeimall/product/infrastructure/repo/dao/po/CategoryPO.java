@@ -1,4 +1,4 @@
-package com.kafeimall.product.repo.dao.po;
+package com.kafeimall.product.infrastructure.repo.dao.po;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;

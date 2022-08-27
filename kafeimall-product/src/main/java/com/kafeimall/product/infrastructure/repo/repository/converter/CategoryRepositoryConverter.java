@@ -1,7 +1,7 @@
-package com.kafeimall.product.repo.repository.converter;
+package com.kafeimall.product.infrastructure.repo.repository.converter;
 
 import com.kafeimall.product.domain.aggregate.ProductCategory;
-import com.kafeimall.product.repo.dao.po.CategoryPO;
+import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPO;
 import org.mapstruct.Mapper;
 
 /**

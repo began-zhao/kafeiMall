@@ -28,8 +28,8 @@ public class CategoryController {
     }
 
     @PostMapping("/update/sort")
-    public void updateCategorySort(CategoryDTO){
-    categoryService
+    public void updateCategorySort(CategoryDTO categoryDTO){
+//    categoryService
 
     }
 }

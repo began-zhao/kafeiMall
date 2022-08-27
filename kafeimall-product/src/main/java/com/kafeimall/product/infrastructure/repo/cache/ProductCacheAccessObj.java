@@ -1,4 +1,4 @@
-package com.kafeimall.product.repo.cache;
+package com.kafeimall.product.infrastructure.repo.cache;
 
 /**
  * @author: zzg

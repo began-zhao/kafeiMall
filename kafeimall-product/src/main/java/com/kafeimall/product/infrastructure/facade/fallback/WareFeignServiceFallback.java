@@ -1,4 +1,4 @@
-package com.kafeimall.product.facade.fallback;
+package com.kafeimall.product.infrastructure.facade.fallback;
 
 /**
  * @author: zzg

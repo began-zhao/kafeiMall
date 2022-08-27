@@ -1,12 +1,13 @@
-package com.kafeimall.product.repo.repository.Impl;
+package com.kafeimall.product.infrastructure.repo.repository.Impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kafeimall.product.domain.aggregate.ProductCategory;
-import com.kafeimall.product.repo.dao.CategoryDao;
-import com.kafeimall.product.repo.dao.po.CategoryPO;
-import com.kafeimall.product.repo.repository.CategoryRepository;
-import com.kafeimall.product.repo.repository.converter.CategoryRepositoryConverter;
+import com.kafeimall.product.infrastructure.repo.dao.CategoryDao;
+import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPO;
+import com.kafeimall.product.infrastructure.repo.repository.CategoryRepository;
+import com.kafeimall.product.infrastructure.repo.repository.converter.CategoryRepositoryConverter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
  * @date: 8/26/22
  * @Description: zzg
  */
+@Service("CategoryRepository")
 public class CategoryRepositoryImpl  extends ServiceImpl<CategoryDao, CategoryPO> implements CategoryRepository {
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")

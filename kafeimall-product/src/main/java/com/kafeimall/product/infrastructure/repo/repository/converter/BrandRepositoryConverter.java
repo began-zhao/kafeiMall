@@ -1,4 +1,4 @@
-package com.kafeimall.product.repo.repository.converter;
+package com.kafeimall.product.infrastructure.repo.repository.converter;
 
 import org.mapstruct.Mapper;
 

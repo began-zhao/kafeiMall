@@ -1,7 +1,7 @@
 package com.kafeimall.product.service.impl;
 
 import com.kafeimall.product.domain.aggregate.ProductCategory;
-import com.kafeimall.product.repo.repository.CategoryRepository;
+import com.kafeimall.product.infrastructure.repo.repository.CategoryRepository;
 import com.kafeimall.product.service.CategoryService;
 import com.kafeimall.product.service.converter.CategoryServiceConverter;
 import com.kafeimall.product.service.dto.CategoryDTO;

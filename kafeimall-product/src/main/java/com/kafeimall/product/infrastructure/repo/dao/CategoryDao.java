@@ -1,7 +1,7 @@
-package com.kafeimall.product.repo.dao;
+package com.kafeimall.product.infrastructure.repo.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.kafeimall.product.repo.dao.po.CategoryPO;
+import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
