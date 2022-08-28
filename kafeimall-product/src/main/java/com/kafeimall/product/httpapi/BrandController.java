@@ -1,4 +1,4 @@
-package com.kafeimall.product.application;
+package com.kafeimall.product.httpapi;
 
 import org.springframework.web.bind.annotation.RestController;
 

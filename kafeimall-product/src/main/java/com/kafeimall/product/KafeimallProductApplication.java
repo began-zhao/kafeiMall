@@ -10,7 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *
  */
 @SpringBootApplication
-@MapperScan("com.kafeimall.product.repo.dao")
+@MapperScan("com.kafeimall.product.infrastructure.repo.dao")
 @EnableDiscoveryClient
 public class KafeimallProductApplication {
 

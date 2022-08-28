@@ -1,4 +1,4 @@
-package com.kafeimall.product.service.converter;
+package com.kafeimall.product.application.converter;
 
 import org.mapstruct.Mapper;
 

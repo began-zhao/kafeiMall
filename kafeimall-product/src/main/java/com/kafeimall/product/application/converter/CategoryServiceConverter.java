@@ -1,7 +1,7 @@
-package com.kafeimall.product.service.converter;
+package com.kafeimall.product.application.converter;
 
 import com.kafeimall.product.domain.aggregate.ProductCategory;
-import com.kafeimall.product.service.dto.CategoryDTO;
+import com.kafeimall.product.application.dto.CategoryDTO;
 import org.mapstruct.Mapper;
 
 /**

@@ -1,4 +1,4 @@
-package com.kafeimall.product.service.dto;
+package com.kafeimall.product.application.dto;
 
 /**
  * @author: zzg
