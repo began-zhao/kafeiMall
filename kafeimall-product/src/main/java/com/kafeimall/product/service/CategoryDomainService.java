@@ -12,4 +12,6 @@ import java.util.List;
  */
 public interface CategoryDomainService {
     List<CategoryDTO> getCategory();
+
+    void updateCategoryById(CategoryDTO categoryDTO);
 }

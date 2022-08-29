@@ -37,4 +37,10 @@ public class CategoryRepositoryImpl  extends ServiceImpl<CategoryDao, CategoryPO
         }).collect(Collectors.toList());
         return productCategories;
     }
+
+    @Override
+    public void updateCategoryById(ProductCategory categoryDO) {
+        CategoryPO categoryPO = categoryConverter.toProductCategoryPO(categoryDO);
+        int updateById = categoryDao.updateById(categoryPO);
+    }
 }

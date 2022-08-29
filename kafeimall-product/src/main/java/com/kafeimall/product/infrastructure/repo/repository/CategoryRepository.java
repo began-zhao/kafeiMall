@@ -14,4 +14,6 @@ import java.util.List;
 public interface CategoryRepository extends IRepository<CategoryPO> {
     //资源层访问数据库获取分类数据（仅对聚合根进行资源管理）
     List<ProductCategory> getProductCategory();
+
+    void updateCategoryById(ProductCategory categoryDO);
 }

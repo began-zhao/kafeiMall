@@ -1,5 +1,6 @@
 package com.kafeimall.product.domain.aggregate;
 
+import com.kafeimall.common.domain.AggregateRoot;
 import lombok.Data;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
  * @Description: 商品分类管理聚合
  */
 @Data
-public class ProductCategory {
+public class ProductCategory extends AggregateRoot {
     /**
      * 分类id
      */

@@ -12,4 +12,7 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface CategoryServiceConverter {
     CategoryDTO toCategoryDTO(ProductCategory productCategory);
+
+    ProductCategory toCategoryDO(CategoryDTO categoryDTO);
+
 }

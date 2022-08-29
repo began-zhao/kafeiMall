@@ -16,5 +16,9 @@ public class CategoryApplicationServiceImpl implements CategoryApplicationServic
 
     public List<CategoryDTO> getCategory(){
         return categoryDomainService.getCategory();
-    };
+    }
+    @Override
+    public void updateCategoryById(CategoryDTO categoryDTO) {
+        categoryDomainService.updateCategoryById(categoryDTO);
+    }
 }

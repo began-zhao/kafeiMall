@@ -28,6 +28,7 @@ public class CategoryDomainServiceImpl implements CategoryDomainService {
     private CategoryServiceConverter categoryConverter;
 
 
+    @Override
     public List<CategoryDTO> getCategory() {
         List<ProductCategory> productCategory = categoryRepository.getProductCategory();
         List<CategoryDTO> categoryDTOS = productCategory.stream().map(e -> {
@@ -38,9 +39,10 @@ public class CategoryDomainServiceImpl implements CategoryDomainService {
         return categoryDTOS;
     }
 
+
     //递归获取分类子节点
     public List<CategoryDTO> getChildren(ProductCategory root, List<ProductCategory> all) {
-        List<CategoryDTO> categoryPOS = all.stream().filter(t -> {
+        List<CategoryDTO> categoryDTOS = all.stream().filter(t -> {
                     return t.getParentCid().equals(root.getCatId());
                 })
                 .map(f -> {
@@ -51,6 +53,14 @@ public class CategoryDomainServiceImpl implements CategoryDomainService {
                 .sorted(Comparator.comparingInt(menu -> (menu.getSort() == null ? 0 : menu.getSort())))
                 .collect(Collectors.toList());
 
-        return categoryPOS;
+        return categoryDTOS;
     }
+
+
+    @Override
+    public void updateCategoryById(CategoryDTO categoryDTO) {
+        ProductCategory productCategory = categoryConverter.toCategoryDO(categoryDTO);
+        categoryRepository.updateCategoryById(productCategory);
+    }
+
 }
