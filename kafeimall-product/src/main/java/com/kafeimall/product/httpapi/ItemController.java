@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description: 品牌应用层
  */
 @RestController
-public class BrandController {
+public class ItemController {
 }
