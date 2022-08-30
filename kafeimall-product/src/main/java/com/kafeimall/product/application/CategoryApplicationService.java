@@ -1,6 +1,7 @@
 package com.kafeimall.product.application;
 
 import com.kafeimall.product.application.dto.CategoryDTO;
+import com.kafeimall.product.httpapi.module.vo.CatelogVo;
 
 import java.util.List;
 
@@ -9,4 +10,6 @@ public interface CategoryApplicationService {
     List<CategoryDTO> getCategory();
 
     void updateCategoryById(CategoryDTO categoryDTO);
+
+    List<CatelogVo> getCatalog();
 }
