@@ -4,7 +4,7 @@ import com.kafeimall.product.application.converter.CategoryServiceConverter;
 import com.kafeimall.product.application.dto.CategoryDTO;
 import com.kafeimall.product.domain.aggregate.CategoryAggregate;
 import com.kafeimall.product.infrastructure.repo.repository.CategoryRepository;
-import com.kafeimall.product.service.CategoryDomainService;
+import com.kafeimall.product.service.ProductDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
  * @Description: zzg
  */
 @Service
-public class CategoryDomainServiceImpl implements CategoryDomainService {
+public class ProductDomainServiceImpl implements ProductDomainService {
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired

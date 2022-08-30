@@ -1,7 +1,7 @@
 package com.kafeimall.product.infrastructure.repo.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPO;
+import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPo;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -10,5 +10,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @Description: zzg
  */
 @Mapper
-public interface CategoryDao extends BaseMapper<CategoryPO> {
+public interface CategoryDao extends BaseMapper<CategoryPo> {
 }

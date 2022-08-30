@@ -10,7 +10,7 @@ import java.util.List;
  * @date: 8/23/22
  * @Description: zzg
  */
-public interface CategoryDomainService {
+public interface ProductDomainService {
     List<CategoryDTO> getCategory();
 
     void updateCategoryById(CategoryDTO categoryDTO);

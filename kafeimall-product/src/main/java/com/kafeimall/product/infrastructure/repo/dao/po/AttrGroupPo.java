@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 @Data
 @TableName("pms_attr_group")
-public class AttrGroupPO implements Serializable {
+public class AttrGroupPo implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**

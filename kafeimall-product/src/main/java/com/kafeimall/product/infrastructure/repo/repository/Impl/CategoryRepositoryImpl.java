@@ -3,7 +3,8 @@ package com.kafeimall.product.infrastructure.repo.repository.Impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kafeimall.product.domain.aggregate.CategoryAggregate;
 import com.kafeimall.product.infrastructure.repo.dao.CategoryDao;
-import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPO;
+import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPo;
+import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPo;
 import com.kafeimall.product.infrastructure.repo.repository.CategoryRepository;
 import com.kafeimall.product.infrastructure.repo.repository.converter.CategoryRepositoryConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
  * @Description: zzg
  */
 @Service("CategoryRepository")
-public class CategoryRepositoryImpl  extends ServiceImpl<CategoryDao, CategoryPO> implements CategoryRepository {
+public class CategoryRepositoryImpl  extends ServiceImpl<CategoryDao, CategoryPo> implements CategoryRepository {
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
@@ -30,7 +31,7 @@ public class CategoryRepositoryImpl  extends ServiceImpl<CategoryDao, CategoryPO
     //资源层访问数据库获取分类数据（仅对聚合根进行资源管理）
     @Override
     public List<CategoryAggregate> getProductCategory() {
-        List<CategoryPO> categoryPOS = categoryDao.selectList(null);
+        List<CategoryPo> categoryPOS = categoryDao.selectList(null);
         List<CategoryAggregate> productCategories = categoryPOS.stream().map(e -> {
             CategoryAggregate productCategory =categoryConverter.toProductCategoryDO(e);
             return productCategory;
@@ -40,7 +41,7 @@ public class CategoryRepositoryImpl  extends ServiceImpl<CategoryDao, CategoryPO
 
     @Override
     public void updateCategoryById(CategoryAggregate categoryDO) {
-        CategoryPO categoryPO = categoryConverter.toProductCategoryPO(categoryDO);
+        CategoryPo categoryPO = categoryConverter.toProductCategoryPO(categoryDO);
         int updateById = categoryDao.updateById(categoryPO);
     }
 }

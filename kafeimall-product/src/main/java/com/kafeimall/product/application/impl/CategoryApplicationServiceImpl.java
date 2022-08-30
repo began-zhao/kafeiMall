@@ -3,7 +3,7 @@ package com.kafeimall.product.application.impl;
 import com.kafeimall.product.application.CategoryApplicationService;
 import com.kafeimall.product.application.dto.CategoryDTO;
 import com.kafeimall.product.httpapi.module.vo.CatelogVo;
-import com.kafeimall.product.service.CategoryDomainService;
+import com.kafeimall.product.service.ProductDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class CategoryApplicationServiceImpl implements CategoryApplicationService {
 
     @Autowired
-    CategoryDomainService categoryDomainService;
+    ProductDomainService categoryDomainService;
 
     public List<CategoryDTO> getCategory(){
         return categoryDomainService.getCategory();
