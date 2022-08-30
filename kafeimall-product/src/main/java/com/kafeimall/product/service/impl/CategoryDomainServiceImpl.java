@@ -1,10 +1,10 @@
 package com.kafeimall.product.service.impl;
 
-import com.kafeimall.product.domain.aggregate.ProductCategory;
-import com.kafeimall.product.infrastructure.repo.repository.CategoryRepository;
-import com.kafeimall.product.service.CategoryDomainService;
 import com.kafeimall.product.application.converter.CategoryServiceConverter;
 import com.kafeimall.product.application.dto.CategoryDTO;
+import com.kafeimall.product.domain.aggregate.CategoryAggregate;
+import com.kafeimall.product.infrastructure.repo.repository.CategoryRepository;
+import com.kafeimall.product.service.CategoryDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +30,7 @@ public class CategoryDomainServiceImpl implements CategoryDomainService {
 
     @Override
     public List<CategoryDTO> getCategory() {
-        List<ProductCategory> productCategory = categoryRepository.getProductCategory();
+        List<CategoryAggregate> productCategory = categoryRepository.getProductCategory();
         List<CategoryDTO> categoryDTOS = productCategory.stream().map(e -> {
             CategoryDTO categoryDTO = categoryConverter.toCategoryDTO(e);
             categoryDTO.setChildren(getChildren(e, productCategory));
@@ -41,7 +41,7 @@ public class CategoryDomainServiceImpl implements CategoryDomainService {
 
 
     //递归获取分类子节点
-    public List<CategoryDTO> getChildren(ProductCategory root, List<ProductCategory> all) {
+    public List<CategoryDTO> getChildren(CategoryAggregate root, List<CategoryAggregate> all) {
         List<CategoryDTO> categoryDTOS = all.stream().filter(t -> {
                     return t.getParentCid().equals(root.getCatId());
                 })
@@ -59,7 +59,7 @@ public class CategoryDomainServiceImpl implements CategoryDomainService {
 
     @Override
     public void updateCategoryById(CategoryDTO categoryDTO) {
-        ProductCategory productCategory = categoryConverter.toCategoryDO(categoryDTO);
+        CategoryAggregate productCategory = categoryConverter.toCategoryDO(categoryDTO);
         categoryRepository.updateCategoryById(productCategory);
     }
 
