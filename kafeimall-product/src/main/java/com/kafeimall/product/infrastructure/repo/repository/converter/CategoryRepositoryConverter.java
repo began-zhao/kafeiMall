@@ -1,6 +1,6 @@
 package com.kafeimall.product.infrastructure.repo.repository.converter;
 
-import com.kafeimall.product.domain.aggregate.ProductCategory;
+import com.kafeimall.product.domain.aggregate.CategoryAggregate;
 import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPO;
 import org.mapstruct.Mapper;
 
@@ -11,8 +11,8 @@ import org.mapstruct.Mapper;
  */
 @Mapper(componentModel = "spring")
 public interface CategoryRepositoryConverter {
-   ProductCategory toProductCategoryDO(CategoryPO categoryPO);
+   CategoryAggregate toProductCategoryDO(CategoryPO categoryPO);
 
-   CategoryPO toProductCategoryPO(ProductCategory categoryDO);
+   CategoryPO toProductCategoryPO(CategoryAggregate categoryDO);
 
 }

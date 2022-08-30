@@ -11,7 +11,7 @@ import java.util.List;
  * @Description: 商品分类管理聚合
  */
 @Data
-public class ProductCategory extends AggregateRoot {
+public class CategoryAggregate extends AggregateRoot {
     /**
      * 分类id
      */
@@ -52,7 +52,7 @@ public class ProductCategory extends AggregateRoot {
     /**
      * 分类
      */
-    private List<ProductCategory> children;
+    private List<CategoryAggregate> children;
 
 
 }

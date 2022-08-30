@@ -4,8 +4,9 @@ import com.kafeimall.common.domain.AggregateRoot;
 
 /**
  * @author: zzg
- * @date: 8/23/22
- * @Description: 品牌管理聚合
+ * @date: 8/30/22
+ * @Description: 商品回复聚合
  */
-public class ProductBrands extends AggregateRoot {
+public class ReplayAggregate extends AggregateRoot {
+
 }

@@ -1,7 +1,7 @@
 package com.kafeimall.product.infrastructure.repo.repository;
 
 import com.kafeimall.common.repository.IRepository;
-import com.kafeimall.product.domain.aggregate.ProductCategory;
+import com.kafeimall.product.domain.aggregate.CategoryAggregate;
 import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPO;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface CategoryRepository extends IRepository<CategoryPO> {
     //资源层访问数据库获取分类数据（仅对聚合根进行资源管理）
-    List<ProductCategory> getProductCategory();
+    List<CategoryAggregate> getProductCategory();
 
-    void updateCategoryById(ProductCategory categoryDO);
+    void updateCategoryById(CategoryAggregate categoryDO);
 }

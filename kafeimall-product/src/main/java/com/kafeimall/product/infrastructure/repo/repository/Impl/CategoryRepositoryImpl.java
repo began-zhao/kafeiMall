@@ -1,7 +1,7 @@
 package com.kafeimall.product.infrastructure.repo.repository.Impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.kafeimall.product.domain.aggregate.ProductCategory;
+import com.kafeimall.product.domain.aggregate.CategoryAggregate;
 import com.kafeimall.product.infrastructure.repo.dao.CategoryDao;
 import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPO;
 import com.kafeimall.product.infrastructure.repo.repository.CategoryRepository;
@@ -29,17 +29,17 @@ public class CategoryRepositoryImpl  extends ServiceImpl<CategoryDao, CategoryPO
 
     //资源层访问数据库获取分类数据（仅对聚合根进行资源管理）
     @Override
-    public List<ProductCategory> getProductCategory() {
+    public List<CategoryAggregate> getProductCategory() {
         List<CategoryPO> categoryPOS = categoryDao.selectList(null);
-        List<ProductCategory> productCategories = categoryPOS.stream().map(e -> {
-            ProductCategory productCategory =categoryConverter.toProductCategoryDO(e);
+        List<CategoryAggregate> productCategories = categoryPOS.stream().map(e -> {
+            CategoryAggregate productCategory =categoryConverter.toProductCategoryDO(e);
             return productCategory;
         }).collect(Collectors.toList());
         return productCategories;
     }
 
     @Override
-    public void updateCategoryById(ProductCategory categoryDO) {
+    public void updateCategoryById(CategoryAggregate categoryDO) {
         CategoryPO categoryPO = categoryConverter.toProductCategoryPO(categoryDO);
         int updateById = categoryDao.updateById(categoryPO);
     }
