@@ -1,9 +1,7 @@
 package com.kafeimall.product.infrastructure.repo.repository.Impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kafeimall.product.domain.aggregate.CategoryAggregate;
 import com.kafeimall.product.infrastructure.repo.dao.CategoryDao;
-import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPo;
 import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPo;
 import com.kafeimall.product.infrastructure.repo.repository.CategoryRepository;
 import com.kafeimall.product.infrastructure.repo.repository.converter.CategoryRepositoryConverter;
@@ -19,7 +17,7 @@ import java.util.stream.Collectors;
  * @Description: zzg
  */
 @Service("CategoryRepository")
-public class CategoryRepositoryImpl  extends ServiceImpl<CategoryDao, CategoryPo> implements CategoryRepository {
+public class CategoryRepositoryImpl implements CategoryRepository {
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired

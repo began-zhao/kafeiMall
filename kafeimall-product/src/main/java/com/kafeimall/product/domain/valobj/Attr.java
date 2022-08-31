@@ -1,20 +1,16 @@
-package com.kafeimall.product.domain.aggregate;
+package com.kafeimall.product.domain.valobj;
 
-import com.kafeimall.common.domain.AggregateRoot;
-import com.kafeimall.product.domain.entity.AttrGroup;
-import com.kafeimall.product.domain.valobj.Category;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 /**
  * @author: zzg
- * @date: 8/30/22
+ * @date: 8/31/22
+ * @Description: zzg
  */
 @Data
 @NoArgsConstructor
-public class AttrAggregate extends AggregateRoot {
+public class Attr {
     /**
      * 属性id
      */
@@ -51,14 +47,4 @@ public class AttrAggregate extends AggregateRoot {
      * 快速展示【是否展示在介绍上；0-否 1-是】，在sku中仍然可以调整
      */
     private Integer showDesc;
-
-    /**
-     * 所属分类
-     * */
-    private Category category;
-    /**
-     *所属 属性分组
-    */
-    private List<AttrGroup> attrGroupList;
-
 }

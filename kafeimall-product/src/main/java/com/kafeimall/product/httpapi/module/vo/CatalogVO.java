@@ -13,10 +13,10 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CatelogVo {
+public class CatalogVO {
     private String id;
     private String name;
-    private List<Catalog2Vo> catalog2List;//二级子分类
+    private List<Catalog2VO> catalog2List;//二级子分类
 
     /**
      * 二级分类vo
@@ -24,9 +24,9 @@ public class CatelogVo {
     @NoArgsConstructor
     @AllArgsConstructor
     @Data
-    public static class Catalog2Vo{
+    public static class Catalog2VO{
         private String catalog1Id;//1级父分类id
-        private List<Catalog3Vo> catalog3List;//三级子分类
+        private List<Catalog3VO> catalog3List;//三级子分类
         private String id;
         private  String name;
     }
@@ -36,7 +36,7 @@ public class CatelogVo {
     @NoArgsConstructor
     @AllArgsConstructor
     @Data
-    public static class  Catalog3Vo{
+    public static class  Catalog3VO{
         private String catalog2Id;//父分类，2级分类ID
         private String id;
         private String name;

@@ -1,0 +1,17 @@
+package com.kafeimall.product.infrastructure.repo.repository.converter;
+
+import com.kafeimall.product.domain.aggregate.SkuAggregate;
+import com.kafeimall.product.infrastructure.repo.dao.po.SkuInfoPo;
+import org.mapstruct.Mapper;
+
+/**
+ * @author: zzg
+ * @date: 8/31/22
+ * @Description: zzg
+ */
+@Mapper(componentModel = "spring")
+public interface SkuInfoRepositoryConverter {
+    SkuAggregate toSkuInfoDO(SkuInfoPo categoryPO);
+
+    SkuInfoPo toSkuInfoPO(SkuAggregate categoryDO);
+}

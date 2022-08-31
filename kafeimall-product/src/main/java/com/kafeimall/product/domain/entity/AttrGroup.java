@@ -1,10 +1,15 @@
 package com.kafeimall.product.domain.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * @author: zzg
  * @date: 8/23/22
  * @Description: 属性分组实体
  */
+@Data
+@NoArgsConstructor
 public class AttrGroup {
     /**
      * 分组id
