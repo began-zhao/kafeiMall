@@ -7,15 +7,15 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * sku图片
+ * spu图片
  * 
  * @author zzg
  * @email 834561898@gmail.com
- * @date 2021-08-16 16:12:39
+ * @date 2021-08-07 14:44:46
  */
 @Data
-@TableName("pms_sku_images")
-public class SkuImagesPo implements Serializable {
+@TableName("pms_spu_images")
+public class SpuImagesPO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -24,19 +24,23 @@ public class SkuImagesPo implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * sku_id
+	 * spu_id
 	 */
-	private Long skuId;
+	private Long spuId;
+	/**
+	 * 图片名
+	 */
+	private String imgName;
 	/**
 	 * 图片地址
 	 */
 	private String imgUrl;
 	/**
-	 * 排序
+	 * 顺序
 	 */
 	private Integer imgSort;
 	/**
-	 * 默认图[0 - 不是默认图，1 - 是默认图]
+	 * 是否默认图
 	 */
 	private Integer defaultImg;
 

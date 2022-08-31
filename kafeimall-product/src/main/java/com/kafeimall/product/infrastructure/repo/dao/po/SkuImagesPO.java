@@ -7,15 +7,15 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 商品评价回复关系
+ * sku图片
  * 
  * @author zzg
  * @email 834561898@gmail.com
  * @date 2021-08-16 16:12:39
  */
 @Data
-@TableName("pms_comment_replay")
-public class CommentReplayPo implements Serializable {
+@TableName("pms_sku_images")
+public class SkuImagesPO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -24,12 +24,20 @@ public class CommentReplayPo implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * 评论id
+	 * sku_id
 	 */
-	private Long commentId;
+	private Long skuId;
 	/**
-	 * 回复id
+	 * 图片地址
 	 */
-	private Long replyId;
+	private String imgUrl;
+	/**
+	 * 排序
+	 */
+	private Integer imgSort;
+	/**
+	 * 默认图[0 - 不是默认图，1 - 是默认图]
+	 */
+	private Integer defaultImg;
 
 }

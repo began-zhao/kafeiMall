@@ -11,7 +11,7 @@ import lombok.Data;
  */
 @Data
 @TableName("pms_brand")
-public class BrandPo {
+public class BrandPO {
     private static final long serialVersionUID = 1L;
 
     /**

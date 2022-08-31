@@ -16,7 +16,7 @@ import java.math.BigDecimal;
  */
 @Data
 @TableName("pms_sku_info")
-public class SkuInfoPo implements Serializable {
+public class SkuInfoPO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**

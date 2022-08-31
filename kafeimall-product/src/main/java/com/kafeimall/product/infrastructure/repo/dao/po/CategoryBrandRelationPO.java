@@ -7,41 +7,37 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * spu图片
+ * 品牌分类关联
  * 
  * @author zzg
  * @email 834561898@gmail.com
- * @date 2021-08-07 14:44:46
+ * @date 2021-08-07 14:44:47
  */
 @Data
-@TableName("pms_spu_images")
-public class SpuImagesPo implements Serializable {
+@TableName("pms_category_brand_relation")
+public class CategoryBrandRelationPO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * id
+	 * 
 	 */
 	@TableId
 	private Long id;
 	/**
-	 * spu_id
+	 * 品牌id
 	 */
-	private Long spuId;
+	private Long brandId;
 	/**
-	 * 图片名
+	 * 分类id
 	 */
-	private String imgName;
+	private Long catelogId;
 	/**
-	 * 图片地址
+	 * 
 	 */
-	private String imgUrl;
+	private String brandName;
 	/**
-	 * 顺序
+	 * 
 	 */
-	private Integer imgSort;
-	/**
-	 * 是否默认图
-	 */
-	private Integer defaultImg;
+	private String catelogName;
 
 }

@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 @Data
 @TableName("pms_attr")
-public class AttrPo implements Serializable {
+public class AttrPO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**

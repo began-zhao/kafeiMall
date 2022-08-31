@@ -7,37 +7,29 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 品牌分类关联
+ * 商品评价回复关系
  * 
  * @author zzg
  * @email 834561898@gmail.com
- * @date 2021-08-07 14:44:47
+ * @date 2021-08-16 16:12:39
  */
 @Data
-@TableName("pms_category_brand_relation")
-public class CategoryBrandRelationPo implements Serializable {
+@TableName("pms_comment_replay")
+public class CommentReplayPO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 
+	 * id
 	 */
 	@TableId
 	private Long id;
 	/**
-	 * 品牌id
+	 * 评论id
 	 */
-	private Long brandId;
+	private Long commentId;
 	/**
-	 * 分类id
+	 * 回复id
 	 */
-	private Long catelogId;
-	/**
-	 * 
-	 */
-	private String brandName;
-	/**
-	 * 
-	 */
-	private String catelogName;
+	private Long replyId;
 
 }

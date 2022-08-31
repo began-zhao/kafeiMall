@@ -16,7 +16,7 @@ import java.util.Date;
  */
 @Data
 @TableName("pms_spu_comment")
-public class SpuCommentPo implements Serializable {
+public class SpuCommentPO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
