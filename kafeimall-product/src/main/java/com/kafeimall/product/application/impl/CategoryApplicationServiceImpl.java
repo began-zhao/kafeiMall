@@ -1,8 +1,10 @@
 package com.kafeimall.product.application.impl;
 
+import com.kafeimall.common.repository.IRepository;
 import com.kafeimall.product.application.CategoryApplicationService;
 import com.kafeimall.product.application.dto.CategoryDTO;
 import com.kafeimall.product.httpapi.module.vo.CatelogVo;
+import com.kafeimall.product.infrastructure.repo.dao.po.CategoryPo;
 import com.kafeimall.product.service.ProductDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -16,6 +18,9 @@ public class CategoryApplicationServiceImpl implements CategoryApplicationServic
 
     @Autowired
     ProductDomainService categoryDomainService;
+
+    @Autowired
+    IRepository<CategoryPo> categoryPoIRepository;
 
     public List<CategoryDTO> getCategory(){
         return categoryDomainService.getCategory();

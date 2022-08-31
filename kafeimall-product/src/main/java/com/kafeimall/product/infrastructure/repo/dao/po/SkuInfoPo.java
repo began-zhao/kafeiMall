@@ -1,12 +1,11 @@
-package com.begin.gulimall.product.entity;
+package com.kafeimall.product.infrastructure.repo.dao.po;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * sku信息
