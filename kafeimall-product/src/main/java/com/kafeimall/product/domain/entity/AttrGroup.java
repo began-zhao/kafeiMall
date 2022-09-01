@@ -1,5 +1,6 @@
 package com.kafeimall.product.domain.entity;
 
+import com.kafeimall.common.domain.Entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,7 +11,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class AttrGroup {
+public class AttrGroup extends Entity {
     /**
      * 分组id
      */

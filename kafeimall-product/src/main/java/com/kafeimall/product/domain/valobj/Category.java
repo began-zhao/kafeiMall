@@ -1,5 +1,6 @@
 package com.kafeimall.product.domain.valobj;
 
+import com.kafeimall.common.domain.ValueObject;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,7 +11,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class Category {
+public class Category extends ValueObject {
     /**
      * 分类id
      */

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author: zzg
  * @date: 8/30/22
- * @Description: zzg
+ * @Description: sku管理聚合根
  */
 @Data
 @NoArgsConstructor
