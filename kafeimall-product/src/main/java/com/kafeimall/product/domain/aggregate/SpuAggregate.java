@@ -1,10 +1,7 @@
 package com.kafeimall.product.domain.aggregate;
 
 import com.kafeimall.common.domain.AggregateRoot;
-import com.kafeimall.product.domain.valobj.Attr;
-import com.kafeimall.product.domain.valobj.SpuComment;
-import com.kafeimall.product.domain.valobj.SpuImage;
-import com.kafeimall.product.domain.valobj.SpuInfoDesc;
+import com.kafeimall.product.domain.valobj.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -75,5 +72,14 @@ public class SpuAggregate extends AggregateRoot {
      * Spu 属性
      * */
     private Attr spuAttr;
+    /**
+     * 销售属性组合信息
+     * */
+    private List<SkuItemSaleAttr> skuItemSaleAttrs;
+
+    /**
+     * 规格参数信息
+     * */
+    private List<SpuItemAttrGroup> spuItemAttrGroups;
 
 }
