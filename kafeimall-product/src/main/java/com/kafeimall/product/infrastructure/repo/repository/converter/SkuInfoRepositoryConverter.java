@@ -1,11 +1,14 @@
 package com.kafeimall.product.infrastructure.repo.repository.converter;
 
 import com.kafeimall.product.domain.aggregate.SkuAggregate;
-import com.kafeimall.product.domain.valobj.SkuImage;
+import com.kafeimall.product.domain.valobj.SeckillInfo;
 import com.kafeimall.product.domain.valobj.SkuInfo;
 import com.kafeimall.product.infrastructure.repo.dao.po.SkuImagesPO;
 import com.kafeimall.product.infrastructure.repo.dao.po.SkuInfoPO;
 import org.mapstruct.Mapper;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @author: zzg
@@ -16,7 +19,6 @@ import org.mapstruct.Mapper;
 public interface SkuInfoRepositoryConverter {
     SkuInfo toSkuInfoDO(SkuInfoPO categoryPO);
 
-    SkuInfoPO toSkuInfoPO(SkuAggregate categoryDO);
-
-    SkuImage toSkuImageDO(SkuImagesPO skuImagesPO);
+    //TODO:添加默认转换处理
+    SkuAggregate toSkuInfoDO(CompletableFuture<SkuInfoPO> infoFuture, CompletableFuture<List<SkuImagesPO>> imageFuture, CompletableFuture<SeckillInfo> secKillFuture);
 }

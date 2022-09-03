@@ -7,6 +7,7 @@ import com.kafeimall.product.domain.valobj.SpuInfoDesc;
 import com.kafeimall.product.domain.valobj.SpuItemAttrGroup;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * @author: zzg
@@ -16,23 +17,8 @@ import java.util.List;
 public interface SpuInfoRepository extends IRepository<SpuAggregate> {
 
     /**
-     * 查出当前spu对应的spu销售属性组合
+     *
      */
-    SpuAggregate getBySpuId(Long spuId);
-
-    /**
-     * 查出当前spu对应的spu销售属性组合
-     */
-    List<SkuItemSaleAttr> getSaleAttrsBySpuId(Long spuId);
-
-    /**
-     * 获取Spu介绍
-     */
-    SpuInfoDesc getSpuDescById(Long spuId);
-
-    /**
-     * 查出当前spu对应的所有属性的分组信息以及当前分组下所有属性对应的值
-     */
-    List<SpuItemAttrGroup>  getAttrGroupWithAttrsBySpuId(Long spuId, Long cataLogId);
+    SpuAggregate getBySpuId(Long spuId) throws ExecutionException, InterruptedException;
 
 }
