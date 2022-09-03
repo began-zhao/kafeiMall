@@ -2,6 +2,7 @@ package com.kafeimall.product.service;
 
 
 import com.kafeimall.product.domain.aggregate.CategoryAggregate;
+import com.kafeimall.product.domain.aggregate.SkuAggregate;
 import com.kafeimall.product.domain.aggregate.SpuAggregate;
 
 import java.util.List;
@@ -18,4 +19,6 @@ public interface ProductDomainQueryService {
     void updateCategoryById(CategoryAggregate categoryAggregate);
 
     SpuAggregate getSpuInfo(Long spuId) throws ExecutionException, InterruptedException;
+
+    SkuAggregate getSkuInfo(Long skuId) throws ExecutionException, InterruptedException;
 }

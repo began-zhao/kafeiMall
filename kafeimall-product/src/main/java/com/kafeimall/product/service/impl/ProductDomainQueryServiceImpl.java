@@ -1,12 +1,17 @@
 package com.kafeimall.product.service.impl;
 
+import com.kafeimall.common.result.Result;
 import com.kafeimall.product.application.converter.CategoryServiceConverter;
 import com.kafeimall.product.domain.aggregate.CategoryAggregate;
+import com.kafeimall.product.domain.aggregate.SkuAggregate;
 import com.kafeimall.product.domain.aggregate.SpuAggregate;
+import com.kafeimall.product.domain.valobj.SeckillInfo;
 import com.kafeimall.product.domain.valobj.SkuItemSaleAttr;
 import com.kafeimall.product.domain.valobj.SpuInfoDesc;
 import com.kafeimall.product.domain.valobj.SpuItemAttrGroup;
+import com.kafeimall.product.infrastructure.facade.SeckillAdaptor;
 import com.kafeimall.product.infrastructure.repo.repository.CategoryRepository;
+import com.kafeimall.product.infrastructure.repo.repository.SkuInfoRepository;
 import com.kafeimall.product.infrastructure.repo.repository.SpuInfoRepository;
 import com.kafeimall.product.service.ProductDomainQueryService;
 import org.springframework.beans.BeanUtils;
@@ -32,6 +37,10 @@ public class ProductDomainQueryServiceImpl implements ProductDomainQueryService 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private SpuInfoRepository spuInfoRepository;
+    @Autowired
+    private SkuInfoRepository skuInfoRepository;
+    @Autowired
+    private SeckillAdaptor seckillAdaptor;
 
     @Autowired
     private CategoryServiceConverter categoryConverter;
@@ -77,6 +86,12 @@ public class ProductDomainQueryServiceImpl implements ProductDomainQueryService 
         //等待所有任务都完成
         CompletableFuture.allOf(saleAttrFuture, spuInfoDesc, baseAttrFuture, spuInfoFuture).get();
         return spuAggregate;
+    }
+
+    @Override
+    public SkuAggregate getSkuInfo(Long skuId) throws ExecutionException, InterruptedException {
+
+        return null;
     }
 
 }

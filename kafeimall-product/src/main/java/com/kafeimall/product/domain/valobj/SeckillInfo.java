@@ -1,13 +1,14 @@
-package com.kafeimall.product.application.dto;
+package com.kafeimall.product.domain.valobj;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-/**
- * @author: zzg
- * @date: 9/1/22
- * @Description: 商品秒杀优惠信息
- */
-public class SeckillInfoDTO {
+@Data
+@NoArgsConstructor
+public class SeckillInfo {
+
     private Long id;
     /**
      * 活动id

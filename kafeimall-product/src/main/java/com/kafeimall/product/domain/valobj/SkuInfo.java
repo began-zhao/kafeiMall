@@ -1,23 +1,19 @@
-package com.kafeimall.product.domain.aggregate;
+package com.kafeimall.product.domain.valobj;
 
-import com.kafeimall.common.domain.AggregateRoot;
-import com.kafeimall.product.domain.valobj.Attr;
-import com.kafeimall.product.domain.valobj.SeckillInfo;
-import com.kafeimall.product.domain.valobj.SkuImage;
+import com.kafeimall.common.domain.ValueObject;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 /**
  * @author: zzg
- * @date: 8/30/22
- * @Description: sku管理聚合根
+ * @date: 2022/9/3
+ * @Description: zzg
  */
 @Data
 @NoArgsConstructor
-public class SkuAggregate extends AggregateRoot {
+public class SkuInfo extends ValueObject {
     /**
      * skuId
      */
@@ -62,15 +58,6 @@ public class SkuAggregate extends AggregateRoot {
      * 销量
      */
     private Long saleCount;
-
-    /**
-     * SKU属性
-     * */
-    private Attr attr;
-    /**
-     * SKU图片
-     * */
-    private List<SkuImage> skuImages;
 
     /**
      * sku秒杀信息

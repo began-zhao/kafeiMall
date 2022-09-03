@@ -3,6 +3,7 @@ package com.kafeimall.product.infrastructure.repo.repository;
 import com.kafeimall.common.repository.IRepository;
 import com.kafeimall.product.domain.aggregate.SkuAggregate;
 import com.kafeimall.product.domain.valobj.SkuImage;
+import com.kafeimall.product.domain.valobj.SkuInfo;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  */
 public interface SkuInfoRepository extends IRepository<SkuAggregate> {
 
-    SkuAggregate getById(Long Id);
+    SkuInfo getById(Long Id);
 
     List<SkuImage> getImagesBySkuId(Long skuId);
 }

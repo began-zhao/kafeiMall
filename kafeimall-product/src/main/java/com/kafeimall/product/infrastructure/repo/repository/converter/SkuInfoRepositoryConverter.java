@@ -2,6 +2,7 @@ package com.kafeimall.product.infrastructure.repo.repository.converter;
 
 import com.kafeimall.product.domain.aggregate.SkuAggregate;
 import com.kafeimall.product.domain.valobj.SkuImage;
+import com.kafeimall.product.domain.valobj.SkuInfo;
 import com.kafeimall.product.infrastructure.repo.dao.po.SkuImagesPO;
 import com.kafeimall.product.infrastructure.repo.dao.po.SkuInfoPO;
 import org.mapstruct.Mapper;
@@ -13,7 +14,7 @@ import org.mapstruct.Mapper;
  */
 @Mapper(componentModel = "spring")
 public interface SkuInfoRepositoryConverter {
-    SkuAggregate toSkuInfoDO(SkuInfoPO categoryPO);
+    SkuInfo toSkuInfoDO(SkuInfoPO categoryPO);
 
     SkuInfoPO toSkuInfoPO(SkuAggregate categoryDO);
 

@@ -15,6 +15,6 @@ import org.mapstruct.Mapper;
 public interface SpuInfoRepositoryConverter {
     SpuInfoDesc toSpuDescInfoDO(SpuInfoDescPO spuInfoDescPO);
 
-        SpuAggregate toSpuAggregateDO(SpuInfoPO spuInfoPO);
+    SpuAggregate toSpuAggregateDO(SpuInfoPO spuInfoPO);
 
 }

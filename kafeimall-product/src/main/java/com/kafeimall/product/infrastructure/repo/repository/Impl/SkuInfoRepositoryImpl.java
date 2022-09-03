@@ -1,8 +1,12 @@
 package com.kafeimall.product.infrastructure.repo.repository.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.kafeimall.common.result.Result;
 import com.kafeimall.product.domain.aggregate.SkuAggregate;
+import com.kafeimall.product.domain.valobj.SeckillInfo;
 import com.kafeimall.product.domain.valobj.SkuImage;
+import com.kafeimall.product.domain.valobj.SkuInfo;
+import com.kafeimall.product.infrastructure.facade.SeckillAdaptor;
 import com.kafeimall.product.infrastructure.repo.dao.SkuImagesDao;
 import com.kafeimall.product.infrastructure.repo.dao.SkuInfoDao;
 import com.kafeimall.product.infrastructure.repo.dao.po.SkuImagesPO;
@@ -29,11 +33,16 @@ public class SkuInfoRepositoryImpl implements SkuInfoRepository {
     @Autowired
     SkuImagesDao skuImagesDao;
 
+    @Autowired
+    private SeckillAdaptor seckillAdaptor;
+
     @Override
-    public SkuAggregate getById(Long Id) {
+    public SkuInfo getById(Long Id) {
         SkuInfoPO skuInfoPo = skuInfoDao.selectById(Id);
-        SkuAggregate skuAggregate = skuInfoRepositoryConverter.toSkuInfoDO(skuInfoPo);
-        return skuAggregate;
+        SkuInfo skuInfo = skuInfoRepositoryConverter.toSkuInfoDO(skuInfoPo);
+        Result<SeckillInfo> skuSeckillInfo = seckillAdaptor.getSkuSeckillInfo(Id);
+        skuInfo.setSeckillInfo(skuSeckillInfo.getData());
+        return skuInfo;
     }
 
     @Override

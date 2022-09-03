@@ -1,6 +1,7 @@
 package com.kafeimall.product.infrastructure.facade;
 
 import com.kafeimall.common.result.Result;
+import com.kafeimall.product.domain.valobj.SeckillInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,5 +14,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(value = "kafeimall-seckill")
 public interface SeckillAdaptor {
     @GetMapping("/sku/seckill/{skuId}")
-    Result getSkuSeckillInfo(@PathVariable("skuId") Long skuId);
+    Result<SeckillInfo> getSkuSeckillInfo(@PathVariable("skuId") Long skuId);
 }
