@@ -1,5 +1,8 @@
 package com.kafeimall.product.application.dto;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 /**
@@ -7,6 +10,8 @@ import java.util.List;
  * @date: 9/1/22
  * @Description: SKU详情
  */
+@Data
+@NoArgsConstructor
 public class SkuItemDTO {
     //1、sku基本信息获取 pms_sku_info
     SkuInfoDTO skuInfo;

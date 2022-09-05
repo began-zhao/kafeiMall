@@ -2,7 +2,6 @@ package com.kafeimall.product.infrastructure.repo.repository.Impl;
 
 import com.kafeimall.product.domain.aggregate.SpuAggregate;
 import com.kafeimall.product.domain.valobj.SkuItemSaleAttr;
-import com.kafeimall.product.domain.valobj.SpuInfoDesc;
 import com.kafeimall.product.domain.valobj.SpuItemAttrGroup;
 import com.kafeimall.product.infrastructure.repo.dao.AttrGroupDao;
 import com.kafeimall.product.infrastructure.repo.dao.SkuSaleAttrValueDao;
@@ -12,7 +11,6 @@ import com.kafeimall.product.infrastructure.repo.dao.po.SpuInfoDescPO;
 import com.kafeimall.product.infrastructure.repo.dao.po.SpuInfoPO;
 import com.kafeimall.product.infrastructure.repo.repository.SpuInfoRepository;
 import com.kafeimall.product.infrastructure.repo.repository.converter.SpuInfoRepositoryConverter;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -23,7 +21,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * @author: zzg
  * @date: 9/2/22
- * @Description: zzg
+ * @Description: Spu资源层
  */
 public class SpuInfoRepositoryImpl implements SpuInfoRepository {
     @Autowired
@@ -67,7 +65,7 @@ public class SpuInfoRepositoryImpl implements SpuInfoRepository {
         //等待所有任务都完成
         CompletableFuture.allOf(saleAttrFuture, spuInfoDesc, baseAttrFuture, spuInfoFuture).get();
 
-        SpuAggregate spuAggregate = converter.toSpuAggregateDO(spuInfoFuture, saleAttrFuture, spuInfoDesc, baseAttrFuture);
+        SpuAggregate spuAggregate = converter.toSpuAggregateDO(spuInfoFuture.get(), saleAttrFuture.get(), spuInfoDesc.get(), baseAttrFuture.get());
 
         return spuAggregate;
     }

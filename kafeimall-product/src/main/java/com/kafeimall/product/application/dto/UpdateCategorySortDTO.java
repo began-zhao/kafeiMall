@@ -1,10 +1,15 @@
 package com.kafeimall.product.application.dto;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * @author: zzg
  * @date: 8/26/22
  * @Description: zzg
  */
+@Data
+@NoArgsConstructor
 public class UpdateCategorySortDTO {
     /**
      * 分类id

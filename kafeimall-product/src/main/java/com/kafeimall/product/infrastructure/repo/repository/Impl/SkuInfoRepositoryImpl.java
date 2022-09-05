@@ -21,7 +21,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * @author: zzg
  * @date: 8/31/22
- * @Description: zzg
+ * @Description: Sku资源层
  */
 public class SkuInfoRepositoryImpl implements SkuInfoRepository {
 
@@ -62,7 +62,7 @@ public class SkuInfoRepositoryImpl implements SkuInfoRepository {
         //等待所有任务都完成
         CompletableFuture.allOf(infoFuture, imageFuture, secKillFuture).get();
 
-        SkuAggregate skuAggregate = skuInfoRepositoryConverter.toSkuInfoDO(infoFuture, imageFuture, secKillFuture);
+        SkuAggregate skuAggregate = skuInfoRepositoryConverter.toSkuInfoDO(infoFuture.get(), imageFuture.get(), secKillFuture.get());
 
         return skuAggregate;
     }

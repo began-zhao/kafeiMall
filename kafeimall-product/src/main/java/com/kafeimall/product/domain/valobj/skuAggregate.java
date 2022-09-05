@@ -13,7 +13,7 @@ import java.math.BigDecimal;
  */
 @Data
 @NoArgsConstructor
-public class SkuInfo extends ValueObject {
+public class skuAggregate extends ValueObject {
     /**
      * skuId
      */
