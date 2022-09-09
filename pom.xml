@@ -19,6 +19,7 @@
         <module>kafeimall-search</module>
         <module>kafeimall-seckill</module>
         <module>kafeimall-support</module>
+        <module>renren-fast</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
