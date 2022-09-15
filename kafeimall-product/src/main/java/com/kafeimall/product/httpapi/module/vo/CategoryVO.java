@@ -1,6 +1,8 @@
 package com.kafeimall.product.httpapi.module.vo;
 
 import com.kafeimall.product.application.dto.CategoryDTO;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -9,6 +11,8 @@ import java.util.List;
  * @date: 8/23/22
  * @Description: 商品VO
  */
+@Data
+@NoArgsConstructor
 public class CategoryVO {
     /**
      * 分类id

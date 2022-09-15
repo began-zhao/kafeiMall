@@ -12,6 +12,7 @@ import com.kafeimall.product.infrastructure.repo.dao.po.SkuInfoPO;
 import com.kafeimall.product.infrastructure.repo.repository.SkuInfoRepository;
 import com.kafeimall.product.infrastructure.repo.repository.converter.SkuInfoRepositoryConverter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -23,6 +24,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @date: 8/31/22
  * @Description: Sku资源层
  */
+@Service("SkuInfoRepository")
 public class SkuInfoRepositoryImpl implements SkuInfoRepository {
 
     @Autowired

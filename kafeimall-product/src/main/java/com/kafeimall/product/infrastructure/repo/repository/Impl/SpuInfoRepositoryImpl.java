@@ -12,6 +12,7 @@ import com.kafeimall.product.infrastructure.repo.dao.po.SpuInfoPO;
 import com.kafeimall.product.infrastructure.repo.repository.SpuInfoRepository;
 import com.kafeimall.product.infrastructure.repo.repository.converter.SpuInfoRepositoryConverter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -23,6 +24,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @date: 9/2/22
  * @Description: Spu资源层
  */
+@Service("SpuInfoRepository")
 public class SpuInfoRepositoryImpl implements SpuInfoRepository {
     @Autowired
     private SkuSaleAttrValueDao skuSaleAttrValueDao;

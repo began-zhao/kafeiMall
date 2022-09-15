@@ -46,7 +46,7 @@
         </dependency>
         <dependency>
             <groupId>com.kafei.mall</groupId>
-            <artifactId>kaifeimall-common</artifactId>
+            <artifactId>kafeimall-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
