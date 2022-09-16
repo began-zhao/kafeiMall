@@ -19,7 +19,8 @@
         <module>kafeimall-search</module>
         <module>kafeimall-seckill</module>
         <module>kafeimall-support</module>
-        <module>renren-fast</module>
+<!--        暂时注释renren-fast原因：gateway远程开发执行maven会出问题-->
+<!--        <module>renren-fast</module>-->
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
