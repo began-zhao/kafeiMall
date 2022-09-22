@@ -36,6 +36,7 @@
         <spring-cloud.version>2020.0.3</spring-cloud.version>
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-cloud-starter-oauth2.version>2.2.5.RELEASE</spring-cloud-starter-oauth2.version>
     </properties>
     <dependencyManagement>
         <dependencies>
