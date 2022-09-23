@@ -1,5 +1,6 @@
 package com.kafeimall.auth.config;
 
+import com.kafeimall.auth.application.impl.UserServiceImpl;
 import com.kafeimall.auth.component.JwtTokenEnhancer;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
