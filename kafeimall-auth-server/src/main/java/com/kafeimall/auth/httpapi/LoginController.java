@@ -7,6 +7,7 @@ import com.kafeimall.auth.infrastructure.facade.model.vo.UserLoginVo;
 import com.kafeimall.auth.infrastructure.facade.model.vo.UserRegistVo;
 import com.kafeimall.common.auth.AuthConstant;
 import com.kafeimall.common.result.Result;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
