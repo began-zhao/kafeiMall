@@ -1,26 +1,22 @@
-package com.kafeimall.member.infrastructure.repo.dao.po;
+package com.kafeimall.common.auth;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author: zzg
- * @date: 9/26/22
- * @Description: 会员
+ * @date: 9/27/22
+ * @Description: zzg
  */
 @Data
-@TableName("ums_member")
-public class MemberPo implements Serializable {
-    private static final long serialVersionUID = 1L;
-
+@ToString
+public class MemberRespVo implements Serializable {
     /**
      * id
      */
-    @TableId
     private Long id;
     /**
      * 会员等级id

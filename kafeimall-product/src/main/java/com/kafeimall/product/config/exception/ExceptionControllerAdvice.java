@@ -16,7 +16,7 @@ import java.util.HashMap;
  * @Description: 集中处理所有异常
  */
 @Slf4j
-@RestControllerAdvice(basePackages = "com.begin.gulimall.product.aplication")
+@RestControllerAdvice(basePackages = "com.kafeimall.product.application")
 public class ExceptionControllerAdvice {
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     public Result handleValidException(MethodArgumentNotValidException e){
