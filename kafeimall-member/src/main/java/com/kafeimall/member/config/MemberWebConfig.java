@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * @author: zzg
  * @date: 9/27/22
- * @Description: zzg
+ * @Description: web拦截器
  */
 @Configuration
 public class MemberWebConfig implements WebMvcConfigurer {

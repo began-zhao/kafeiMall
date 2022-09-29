@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * @author: zzg
  * @date: 9/27/22
- * @Description: zzg
+ * @Description: 会员管理聚合
  */
 public class MemberAggregate extends AggregateRoot {
     /**
