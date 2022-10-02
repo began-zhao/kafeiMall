@@ -1,5 +1,6 @@
 package com.kafeimall.common.result;
 
+import com.kafeimall.common.constant.ResultCode;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -25,6 +26,19 @@ public class Result<T> extends BaseResult {
     public Result(Integer code, String errorCode, String message, T data) {
         super(code, errorCode, message);
         this.data = data;
+    }
+    /**
+     * 未登录返回结果
+     */
+    public static <T> Result<T> unauthorized(T data) {
+        return new Result<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
+    }
+
+    /**
+     * 未授权返回结果
+     */
+    public static <T> Result<T> forbidden(T data) {
+        return new Result<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
     }
 
     public boolean success() {

@@ -1,53 +1,37 @@
 package com.kafeimall.auth.httpapi;
 
-import com.kafeimall.auth.infrastructure.facade.MemberAdaptor;
-import com.kafeimall.auth.infrastructure.facade.ThirdPartAdaptor;
 import com.kafeimall.auth.infrastructure.facade.model.vo.Oauth2TokenVo;
-import com.kafeimall.auth.infrastructure.facade.model.vo.UserLoginVo;
-import com.kafeimall.auth.infrastructure.facade.model.vo.UserRegistVo;
 import com.kafeimall.common.auth.AuthConstant;
 import com.kafeimall.common.result.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
-import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * @author: zzg
  * @date: 9/22/22
  * @Description: 处理登录请求
  */
-@Controller
+@RestController
+@Api(tags = "AuthController", description = "认证中心登录认证")
+@RequestMapping("auth/oauth")
 public class LoginController {
-    @Resource
-    ThirdPartAdaptor thirdPartFeignService;
-
-    @Autowired
-    StringRedisTemplate redisTemplate;
-
-    @Resource
-    MemberAdaptor memberFeignService;
-
-
     @Autowired
     private TokenEndpoint tokenEndpoint;
 
-//    @ApiOperation("Oauth2获取token")
+    @ApiOperation("Oauth2获取token")
     @RequestMapping(value = "/token", method = RequestMethod.POST)
     public Result<Oauth2TokenVo> postAccessToken(HttpServletRequest request,
                                                        @ApiParam("授权模式") @RequestParam String grant_type,

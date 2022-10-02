@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @date: 9/22/22
  * @Description: 远程注册方法
  */
-@FeignClient("kafeimall-member")
+@FeignClient("mall-member")
 public interface MemberAdaptor {
     /**
      * 远程注册方法
