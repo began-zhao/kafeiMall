@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -26,7 +23,7 @@ import java.util.Map;
  */
 @RestController
 @Api(tags = "AuthController", description = "认证中心登录认证")
-@RequestMapping("auth/oauth")
+@RequestMapping("oauth")
 public class LoginController {
     @Autowired
     private TokenEndpoint tokenEndpoint;
@@ -57,4 +54,8 @@ public class LoginController {
         return Result.success(oauth2TokenDto);
     }
 
+    @GetMapping(value = "/tt")
+    public String postAccessToken(){
+        return "cccc";
+    }
 }

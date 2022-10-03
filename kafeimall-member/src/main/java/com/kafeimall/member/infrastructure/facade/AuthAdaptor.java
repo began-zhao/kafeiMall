@@ -3,7 +3,7 @@ package com.kafeimall.member.infrastructure.facade;
 import com.kafeimall.common.result.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 
@@ -15,6 +15,6 @@ import java.util.Map;
 @FeignClient("mall-auth")
 public interface AuthAdaptor {
 
-    @PostMapping(value = "auth/oauth/token")
-    Result getAccessToken(@RequestBody Map<String, String> params);
+    @PostMapping(value = "/oauth/token")
+    Result getAccessToken(@RequestParam Map<String, String> params);
 }

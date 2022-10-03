@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date: 9/23/22
  * @Description: zzg
  */
-@FeignClient("kafeimall-member")
+@FeignClient("mall-member")
 public interface UmsMemberAdaptor {
-    @GetMapping("/user/loadByUsername")
+    @GetMapping("/sso/loadByUsername")
     UserDto loadUserByUsername(@RequestParam String username);
 }

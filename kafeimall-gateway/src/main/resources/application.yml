@@ -1,4 +1,7 @@
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   cloud:
     nacos:
       discovery:
@@ -16,16 +19,16 @@ spring:
         - id: auth_route
           uri: lb://mall-auth
           predicates:
-            - Path=/api/auth/**
+            - Path=/mall-auth/**
           filters:
-            - RewritePath=/api/?(?<segment>.*), /$\{segment}
+            - StripPrefix=1
         #会员服务路由
         - id: member_route
           uri: lb://mall-member
           predicates:
-            - Path=/api/member/**
+            - Path=/mall-member/**
           filters:
-            - RewritePath=/api/?(?<segment>.*), /$\{segment}
+            - StripPrefix=1
         #后台管理
         - id: admin_route
           uri: lb://renren-fast
@@ -61,10 +64,11 @@ secure:
       - "/webjars/**"
       - "/actuator/**"
       - "/mall-auth/oauth/token"
+      - "/oauth/token"
       - "/mall-auth/rsa/publicKey"
       - "/mall-search/**"
-      - "/api/member/sso/login"
-      - "/mall-portal/sso/register"
+      - "/mall-member/sso/login"
+      - "/mall-member/sso/register"
       - "/mall-portal/sso/getAuthCode"
       - "/mall-portal/home/**"
       - "/mall-portal/product/**"

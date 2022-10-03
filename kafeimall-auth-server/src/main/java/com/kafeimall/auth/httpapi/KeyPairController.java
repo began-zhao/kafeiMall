@@ -2,6 +2,7 @@ package com.kafeimall.auth.httpapi;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +18,8 @@ import java.util.Map;
  * @Description: 获取RSA公钥接口
  */
 @RestController
-//@Api(tags = "KeyPairController", description = "获取RSA公钥接口")
-@RequestMapping("/rsa")
+@Api(tags = "KeyPairController", description = "获取RSA公钥接口")
+@RequestMapping("auth/rsa")
 public class KeyPairController {
     @Autowired
     private KeyPair keyPair;

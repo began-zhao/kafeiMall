@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date: 9/22/22
  * @Description: zzg
  */
-@FeignClient("kafeimall-third-party")
+@FeignClient("mall-third-party")
 public interface ThirdPartAdaptor {
     @GetMapping("/sms/sendCode")
     public Result sendCode(@RequestParam("phone")String phone, @RequestParam("code") String  code);
