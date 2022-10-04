@@ -64,7 +64,6 @@ secure:
       - "/webjars/**"
       - "/actuator/**"
       - "/mall-auth/oauth/token"
-      - "/oauth/token"
       - "/mall-auth/rsa/publicKey"
       - "/mall-search/**"
       - "/mall-member/sso/login"
