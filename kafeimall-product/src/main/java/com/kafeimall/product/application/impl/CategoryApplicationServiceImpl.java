@@ -5,7 +5,7 @@ import com.kafeimall.product.application.converter.CategoryServiceConverter;
 import com.kafeimall.product.application.dto.CatalogDTO;
 import com.kafeimall.product.application.dto.CategoryDTO;
 import com.kafeimall.product.domain.aggregate.CategoryAggregate;
-import com.kafeimall.product.service.ProductDomainQueryService;
+import com.kafeimall.product.service.ProductDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class CategoryApplicationServiceImpl implements CategoryApplicationService {
 
     @Autowired
-    ProductDomainQueryService categoryDomainQueryService;
+    ProductDomainService categoryDomainQueryService;
     @Autowired
     CategoryServiceConverter categoryServiceConverter;
 

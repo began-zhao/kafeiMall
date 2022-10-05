@@ -6,7 +6,7 @@ import com.kafeimall.product.domain.aggregate.SpuAggregate;
 import com.kafeimall.product.infrastructure.repo.repository.CategoryRepository;
 import com.kafeimall.product.infrastructure.repo.repository.SkuInfoRepository;
 import com.kafeimall.product.infrastructure.repo.repository.SpuInfoRepository;
-import com.kafeimall.product.service.ProductDomainQueryService;
+import com.kafeimall.product.service.ProductDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,7 @@ import java.util.concurrent.ExecutionException;
  * @Description: zzg
  */
 @Service
-public class ProductDomainQueryServiceImpl implements ProductDomainQueryService {
+public class ProductDomainServiceImpl implements ProductDomainService {
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired

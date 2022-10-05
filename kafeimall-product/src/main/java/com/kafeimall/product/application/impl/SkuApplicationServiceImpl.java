@@ -6,7 +6,7 @@ import com.kafeimall.product.application.dto.SkuInfoDTO;
 import com.kafeimall.product.application.dto.SkuItemDTO;
 import com.kafeimall.product.domain.aggregate.SkuAggregate;
 import com.kafeimall.product.domain.aggregate.SpuAggregate;
-import com.kafeimall.product.service.impl.ProductDomainQueryServiceImpl;
+import com.kafeimall.product.service.impl.ProductDomainServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ public class SkuApplicationServiceImpl implements SkuApplicationService {
 
 
     @Autowired
-    private ProductDomainQueryServiceImpl productDomainQueryService;
+    private ProductDomainServiceImpl productDomainQueryService;
 
     @Autowired
     private SkuServiceConverter skuServiceConverter;

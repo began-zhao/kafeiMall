@@ -8,6 +8,8 @@ import com.kafeimall.common.exception.ServiceException;
 import com.kafeimall.common.result.Result;
 import com.kafeimall.member.application.MemberApplicationService;
 import com.kafeimall.member.infrastructure.facade.AuthAdaptor;
+import com.kafeimall.member.infrastructure.repo.repository.MemberRepository;
+import com.kafeimall.member.service.MemberDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,12 @@ public class MemberApplicationServiceImpl implements MemberApplicationService {
 
     @Autowired
     private AuthAdaptor authService;
+
+    @Autowired
+    private MemberRepository memberRepository;
+
+    @Autowired
+    private MemberDomainService memberDomainService;
 
     @Override
     public Result login(String username, String password) {

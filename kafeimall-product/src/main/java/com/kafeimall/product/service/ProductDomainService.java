@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutionException;
  * @date: 8/23/22
  * @Description: zzg
  */
-public interface ProductDomainQueryService {
+public interface ProductDomainService {
     List<CategoryAggregate> getCategory();
 
     void updateCategoryById(CategoryAggregate categoryAggregate);
