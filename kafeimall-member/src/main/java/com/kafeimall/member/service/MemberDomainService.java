@@ -5,7 +5,7 @@ import com.kafeimall.member.domain.aggregate.MemberAggregate;
 /**
  * @author: zzg
  * @date: 2022/10/5
- * @Description: zzg
+ * @Description: 会员领域服务
  */
 public interface MemberDomainService {
     void registerUser(MemberAggregate memberAggregate);

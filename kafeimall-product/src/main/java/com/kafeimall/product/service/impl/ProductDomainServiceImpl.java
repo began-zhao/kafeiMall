@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * @author: zzg
  * @date: 8/23/22
- * @Description: zzg
+ * @Description: 订单领域服务实现
  */
 @Service
 public class ProductDomainServiceImpl implements ProductDomainService {

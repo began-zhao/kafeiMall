@@ -8,8 +8,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-
 /**
  * @author: zzg
  * @date: 9/27/22
@@ -22,6 +20,7 @@ public class MemberController {
 
     @Autowired
     MemberApplicationService memberService;
+
 
     @ApiOperation("会员登录")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -44,13 +43,15 @@ public class MemberController {
 
     @GetMapping(value = "/loadByUsername")
     public UserDto loadByUsername(String username){
-        UserDto userDto = new UserDto();
-        userDto.setUsername("admin");
-        userDto.setClientId("portal-app");
-        userDto.setId(1L);
-        userDto.setStatus(1);
-        userDto.setRoles(new ArrayList<>(1));
-        userDto.setPassword("$2a$10$wk6OV7P/DITS2ZX9GjRdX..itNer3vq11CkPXduwYN37G28WqcEMO");
+//        UserDto userDto1 = memberService.loadUserByUsername(username);
+//        UserDto userDto = new UserDto();
+//        userDto.setUsername("admin");
+//        userDto.setClientId("portal-app");
+//        userDto.setId(1L);
+//        userDto.setStatus(1);
+//        userDto.setRoles(new ArrayList<>(1));
+//        userDto.setPassword("$2a$10$wk6OV7P/DITS2ZX9GjRdX..itNer3vq11CkPXduwYN37G28WqcEMO");
+        UserDto userDto = memberService.loadUserByUsername(username);
         return userDto;
     }
 }

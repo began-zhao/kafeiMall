@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * @author: zzg
  * @date: 8/23/22
- * @Description: zzg
+ * @Description: 订单领域服务
  */
 public interface ProductDomainService {
     List<CategoryAggregate> getCategory();

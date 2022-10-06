@@ -1,6 +1,7 @@
 package com.kafeimall.member.domain.aggregate;
 
 import com.kafeimall.common.domain.AggregateRoot;
+import lombok.Data;
 
 import java.util.Date;
 
@@ -9,6 +10,7 @@ import java.util.Date;
  * @date: 9/27/22
  * @Description: 会员管理聚合
  */
+@Data
 public class MemberAggregate extends AggregateRoot {
     /**
      * id

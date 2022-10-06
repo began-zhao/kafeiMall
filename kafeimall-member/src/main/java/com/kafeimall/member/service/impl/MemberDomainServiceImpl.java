@@ -17,6 +17,9 @@ public class MemberDomainServiceImpl implements MemberDomainService {
 
     @Override
     public void registerUser(MemberAggregate memberAggregate) {
-
+        //校验是否已有用户
+        memberRepository.checkUserUnique(memberAggregate.getMobile(),memberAggregate.getUsername());
+        //新增用户
+        memberRepository.registerUser(memberAggregate);
     }
 }
