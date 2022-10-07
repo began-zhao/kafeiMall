@@ -1,4 +1,4 @@
-package com.kafeimall.auth.httpapi;
+package com.kafeimall.auth.httpapi.controller;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;

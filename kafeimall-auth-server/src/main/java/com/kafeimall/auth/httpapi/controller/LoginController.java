@@ -1,4 +1,4 @@
-package com.kafeimall.auth.httpapi;
+package com.kafeimall.auth.httpapi.controller;
 
 import com.kafeimall.auth.infrastructure.facade.model.vo.Oauth2TokenVo;
 import com.kafeimall.common.auth.AuthConstant;

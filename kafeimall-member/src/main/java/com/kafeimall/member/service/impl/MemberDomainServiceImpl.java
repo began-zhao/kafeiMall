@@ -4,12 +4,14 @@ import com.kafeimall.member.domain.aggregate.MemberAggregate;
 import com.kafeimall.member.infrastructure.repo.repository.MemberRepository;
 import com.kafeimall.member.service.MemberDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @author: zzg
  * @date: 2022/10/5
  * @Description: zzg
  */
+@Service
 public class MemberDomainServiceImpl implements MemberDomainService {
 
     @Autowired

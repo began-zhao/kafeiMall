@@ -1,4 +1,4 @@
-package com.kafeimall.product.httpapi;
+package com.kafeimall.product.httpapi.controller;
 
 import com.kafeimall.product.application.SkuApplicationService;
 import com.kafeimall.product.application.dto.SkuItemDTO;

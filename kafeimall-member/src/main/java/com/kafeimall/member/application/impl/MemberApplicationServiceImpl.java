@@ -15,6 +15,7 @@ import com.kafeimall.member.service.MemberDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,10 +33,10 @@ public class MemberApplicationServiceImpl implements MemberApplicationService {
     @Autowired
     private MemberRepository memberRepository;
 
-    @Autowired
+    @Resource
     private MemberDomainService memberDomainService;
 
-    @Autowired
+    @Resource
     private MemberApplicationConverter memberApplicationConverter;
 
     @Override
@@ -54,7 +55,7 @@ public class MemberApplicationServiceImpl implements MemberApplicationService {
 
     @Override
     public void register(String username, String password, String telephone, String authCode) {
-        //1、验证验证码
+        //TODO：1、验证验证码
 //        if(!verifyAuthCode(authCode,telephone)){
 //            throw new ServiceException("验证码错误");
 //        }

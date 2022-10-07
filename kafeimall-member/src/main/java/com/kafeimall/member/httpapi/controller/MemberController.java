@@ -1,4 +1,4 @@
-package com.kafeimall.member.httpapi;
+package com.kafeimall.member.httpapi.controller;
 
 import com.kafeimall.common.auth.UserDto;
 import com.kafeimall.common.result.Result;

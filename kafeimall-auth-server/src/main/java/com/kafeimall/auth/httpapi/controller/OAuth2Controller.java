@@ -1,4 +1,4 @@
-package com.kafeimall.auth.httpapi;
+package com.kafeimall.auth.httpapi.controller;
 
 /**
  * @author: zzg
