@@ -1,23 +1,22 @@
-package com.kafeimall.order.infrastructure.repo.dao.po;
+package com.kafeimall.order.domain.aggregate;
 
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
+import com.kafeimall.common.domain.AggregateRoot;
+import com.kafeimall.order.domain.entity.OrderItem;
+import com.kafeimall.order.domain.entity.OrderReturnApply;
+import com.kafeimall.order.domain.valobj.OrderOperateHistory;
+import com.kafeimall.order.domain.valobj.OrderReturnReason;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author: zzg
- * @date: 9/16/22
- * @Description: 订单
+ * @date: 10/13/22
+ * @Description: 订单聚合
  */
-@Data
-@TableName("oms_order")
-public class OrderPO implements Serializable {
-    private static final long serialVersionUID = 1L;
-
+public class OrderAggregate extends AggregateRoot {
     /**
      * id
      */
@@ -187,4 +186,21 @@ public class OrderPO implements Serializable {
      * 修改时间
      */
     private Date modifyTime;
+    /**
+     * 订单项实体集合
+     */
+    private List<OrderItem> itemEntities;
+
+    /**
+     * 订单操作历史记录
+     */
+    private List<OrderOperateHistory> orderOperateHistories;
+    /**
+     * 订单退款申请
+     */
+    private OrderReturnApply orderReturnApply;
+    /**
+     * 订单退款原因
+     */
+    private OrderReturnReason orderReturnReason;
 }
