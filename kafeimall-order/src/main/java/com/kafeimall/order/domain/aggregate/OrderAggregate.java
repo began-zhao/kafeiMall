@@ -1,6 +1,5 @@
 package com.kafeimall.order.domain.aggregate;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.kafeimall.common.domain.AggregateRoot;
 import com.kafeimall.order.domain.entity.OrderItem;
 import com.kafeimall.order.domain.entity.OrderReturnApply;
@@ -20,7 +19,6 @@ public class OrderAggregate extends AggregateRoot {
     /**
      * id
      */
-    @TableId
     private Long id;
     /**
      * member_id
