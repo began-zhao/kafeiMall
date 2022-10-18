@@ -2,9 +2,8 @@ package com.kafeimall.order.domain.aggregate;
 
 import com.kafeimall.common.domain.AggregateRoot;
 import com.kafeimall.order.domain.entity.OrderItem;
-import com.kafeimall.order.domain.entity.OrderReturnApply;
 import com.kafeimall.order.domain.valobj.OrderOperateHistory;
-import com.kafeimall.order.domain.valobj.OrderReturnReason;
+import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -15,6 +14,7 @@ import java.util.List;
  * @date: 10/13/22
  * @Description: 订单聚合
  */
+@Data
 public class OrderAggregate extends AggregateRoot {
     /**
      * id
@@ -193,12 +193,5 @@ public class OrderAggregate extends AggregateRoot {
      * 订单操作历史记录
      */
     private List<OrderOperateHistory> orderOperateHistories;
-    /**
-     * 订单退款申请
-     */
-    private OrderReturnApply orderReturnApply;
-    /**
-     * 订单退款原因
-     */
-    private OrderReturnReason orderReturnReason;
+
 }

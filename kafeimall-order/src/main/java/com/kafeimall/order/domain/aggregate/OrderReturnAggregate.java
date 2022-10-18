@@ -1,13 +1,16 @@
-package com.kafeimall.order.domain.entity;
+package com.kafeimall.order.domain.aggregate;
+
+import com.kafeimall.common.domain.AggregateRoot;
+import com.kafeimall.order.domain.valobj.OrderReturnReason;
 
 import java.util.Date;
 
 /**
  * @author: zzg
- * @date: 10/13/22
- * @Description: 订单退款申请
+ * @date: 10/18/22
+ * @Description: 退货管理聚合
  */
-public class OrderReturnApply {
+public class OrderReturnAggregate extends AggregateRoot {
     /**
      * id
      */
@@ -32,4 +35,9 @@ public class OrderReturnApply {
      * 备注
      */
     private String note;
+    /**
+     * 退货原因
+     */
+    private OrderReturnReason orderReturnReason;
+
 }

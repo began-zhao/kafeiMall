@@ -32,6 +32,7 @@ public class SkuInfoRepositoryImpl implements SkuInfoRepository {
 
     @Autowired
     SkuInfoRepositoryConverter skuInfoRepositoryConverter;
+
     @Autowired
     SkuImagesDao skuImagesDao;
 
