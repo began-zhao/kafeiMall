@@ -6,4 +6,5 @@ package com.kafeimall.order.application;
  * @Description: 订单应用程序接口
  */
 public interface OrderApplication {
+    //TDDO:
 }

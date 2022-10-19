@@ -25,6 +25,10 @@
         <result property="giftGrowth" column="gift_growth"/>
     </resultMap>
     <select id="selectByOrderId" resultMap="orderItemMap">
-        select * from oms_order where order_id=#{selectByOrderId};
+        select * from oms_order_item where order_id=#{selectByOrderId};
+    </select>
+    <select id="selectByOrderIdList" resultMap="orderItemMap">
+        select * from oms_order_item where  order_id in
+                 <foreach collection="orderIds" item="id" separator="," open="(" close=")">#{id}</foreach>
     </select>
 </mapper>

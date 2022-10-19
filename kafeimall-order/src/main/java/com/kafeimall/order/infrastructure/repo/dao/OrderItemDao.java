@@ -12,5 +12,6 @@ import java.util.List;
  */
 public interface OrderItemDao extends BaseMapper<OrderItemPO> {
 
-    List<OrderItemPO> selectByOrderId(String id);
+    List<OrderItemPO> selectByOrderId(Long id);
+    List<OrderItemPO> selectByOrderIdList(List<Long> orderIds);
 }

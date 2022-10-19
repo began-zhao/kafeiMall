@@ -2,7 +2,6 @@ package com.kafeimall.order.domain.aggregate;
 
 import com.kafeimall.common.domain.AggregateRoot;
 import com.kafeimall.order.domain.entity.OrderItem;
-import com.kafeimall.order.domain.valobj.OrderOperateHistory;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -188,10 +187,5 @@ public class OrderAggregate extends AggregateRoot {
      * 订单项实体集合
      */
     private List<OrderItem> itemEntities;
-
-    /**
-     * 订单操作历史记录
-     */
-    private List<OrderOperateHistory> orderOperateHistories;
 
 }

@@ -15,27 +15,27 @@ public interface OrderRepository extends IRepository<OrderAggregate> {
     /**
      * 获取ID对应订单
      */
-    OrderAggregate getOrderById(String Id);
+    OrderAggregate getOrderById(Long id);
 
     /**
      * 获取用户对应订单
      */
-    List<OrderAggregate> getOrderByUserId(String UId);
+    List<OrderAggregate> getOrderByUserId(Long uId);
 
     /**
      * 根据订单号获取订单
      */
-    OrderAggregate getByOrderNo(String OrderNo);
+    OrderAggregate getByOrderNo(String orderNo);
 
     /**
      * 新增订单
      */
-    void insertOrder(OrderAggregate Order);
+    void insertOrder(OrderAggregate orderAggregate);
 
     /**
      * 修改订单
      */
-    void updateOrder(OrderAggregate Order);
+    void updateOrder(OrderAggregate orderAggregate);
 
 
 
