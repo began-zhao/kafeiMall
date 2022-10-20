@@ -8,6 +8,15 @@ import com.kafeimall.order.domain.aggregate.OrderAggregate;
  * @Description: 订单领域服务
  */
 public interface OrderDomainService {
-    void CreateOrder(OrderAggregate orderAggregate);
-    void  UpdateOrder(OrderAggregate orderAggregate);
+    /**
+     * 新增订单
+     * @param orderAggregate 订单聚合
+     */
+    void createOrder(OrderAggregate orderAggregate);
+
+    /**
+     * 修改订单
+     * @param orderAggregate 订单聚合
+     */
+    void  updateOrder(OrderAggregate orderAggregate);
 }

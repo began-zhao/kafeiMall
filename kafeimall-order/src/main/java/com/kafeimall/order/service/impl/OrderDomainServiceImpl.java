@@ -19,12 +19,12 @@ public class OrderDomainServiceImpl implements OrderDomainService {
     OrderRepository orderRepository;
 
     @Override
-    public void CreateOrder(OrderAggregate orderAggregate) {
+    public void createOrder(OrderAggregate orderAggregate) {
         orderRepository.insertOrder(orderAggregate);
     }
 
     @Override
-    public void UpdateOrder(OrderAggregate orderAggregate) {
+    public void updateOrder(OrderAggregate orderAggregate) {
         orderRepository.updateOrder(orderAggregate);
     }
 }
