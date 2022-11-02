@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 /**
  * @author: zzg
  * @date: 9/2/22
- * @Description: zzg
+ * @Description: 远程调用秒杀服务获取秒杀信息
  */
 @FeignClient(value = "kafeimall-seckill")
 public interface SeckillAdaptor {

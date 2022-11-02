@@ -1,7 +1,6 @@
 package com.kafeimall.product.infrastructure.repo.repository.converter;
 
 import com.kafeimall.product.domain.aggregate.SkuAggregate;
-import com.kafeimall.product.domain.valobj.SeckillInfo;
 import com.kafeimall.product.domain.valobj.SkuImage;
 import com.kafeimall.product.domain.valobj.skuAggregate;
 import com.kafeimall.product.infrastructure.repo.dao.po.SkuImagesPO;
@@ -21,7 +20,7 @@ public interface SkuInfoRepositoryConverter {
     skuAggregate toSkuInfoDO(SkuInfoPO categoryPO);
 
     //默认转换处理
-    default SkuAggregate toSkuInfoDO(SkuInfoPO infoFuture, List<SkuImagesPO> imageFuture, SeckillInfo secKillFuture){
+    default SkuAggregate toSkuInfoDO(SkuInfoPO infoFuture, List<SkuImagesPO> imageFuture){
         SkuAggregate skuAggregate = new SkuAggregate();
         skuAggregate.setSkuId(infoFuture.getSkuId());
         skuAggregate.setSpuId(infoFuture.getSpuId());
@@ -46,18 +45,18 @@ public interface SkuInfoRepositoryConverter {
         }).collect(Collectors.toList());
         skuAggregate.setSkuImages(skuImages);
         //
-        SeckillInfo seckillInfo = new SeckillInfo();
-        seckillInfo.setId(secKillFuture.getId());
-        seckillInfo.setSkuId(secKillFuture.getSkuId());
-        seckillInfo.setSeckillCount(secKillFuture.getSeckillCount());
-        seckillInfo.setPromotionId(secKillFuture.getPromotionId());
-        seckillInfo.setPromotionSessionId(secKillFuture.getPromotionSessionId());
-        seckillInfo.setRandomCode(secKillFuture.getRandomCode());
-        seckillInfo.setSeckillPrice(secKillFuture.getSeckillPrice());
-        seckillInfo.setSeckillCount(secKillFuture.getSeckillCount());
-        seckillInfo.setSeckillLimit(secKillFuture.getSeckillLimit());
-        seckillInfo.setSeckillSort(secKillFuture.getSeckillSort());
-        skuAggregate.setSeckillInfo(seckillInfo);
+//        SeckillInfo seckillInfo = new SeckillInfo();
+//        seckillInfo.setId(secKillFuture.getId());
+//        seckillInfo.setSkuId(secKillFuture.getSkuId());
+//        seckillInfo.setSeckillCount(secKillFuture.getSeckillCount());
+//        seckillInfo.setPromotionId(secKillFuture.getPromotionId());
+//        seckillInfo.setPromotionSessionId(secKillFuture.getPromotionSessionId());
+//        seckillInfo.setRandomCode(secKillFuture.getRandomCode());
+//        seckillInfo.setSeckillPrice(secKillFuture.getSeckillPrice());
+//        seckillInfo.setSeckillCount(secKillFuture.getSeckillCount());
+//        seckillInfo.setSeckillLimit(secKillFuture.getSeckillLimit());
+//        seckillInfo.setSeckillSort(secKillFuture.getSeckillSort());
+//        skuAggregate.setSeckillInfo(seckillInfo);
         return skuAggregate;
     };
 }

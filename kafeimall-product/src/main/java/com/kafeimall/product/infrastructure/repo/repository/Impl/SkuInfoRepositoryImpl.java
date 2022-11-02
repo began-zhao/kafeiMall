@@ -1,10 +1,7 @@
 package com.kafeimall.product.infrastructure.repo.repository.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.kafeimall.common.result.Result;
 import com.kafeimall.product.domain.aggregate.SkuAggregate;
-import com.kafeimall.product.domain.valobj.SeckillInfo;
-import com.kafeimall.product.infrastructure.facade.SeckillAdaptor;
 import com.kafeimall.product.infrastructure.repo.dao.SkuImagesDao;
 import com.kafeimall.product.infrastructure.repo.dao.SkuInfoDao;
 import com.kafeimall.product.infrastructure.repo.dao.po.SkuImagesPO;
@@ -37,9 +34,6 @@ public class SkuInfoRepositoryImpl implements SkuInfoRepository {
     SkuImagesDao skuImagesDao;
 
     @Autowired
-    private SeckillAdaptor seckillAdaptor;
-
-    @Autowired
     ThreadPoolExecutor executor;
 
     @Override
@@ -56,16 +50,12 @@ public class SkuInfoRepositoryImpl implements SkuInfoRepository {
             List<SkuImagesPO> skuImagesPOS = skuImagesDao.selectList(new QueryWrapper<SkuImagesPO>().eq("sku_id", skuId));
            return skuImagesPOS;
         }, executor);
-        //查询当前sku是否参与秒杀优惠
-        CompletableFuture<SeckillInfo> secKillFuture = CompletableFuture.supplyAsync(() -> {
-            Result<SeckillInfo> skuSeckillInfo = seckillAdaptor.getSkuSeckillInfo(skuId);
-            return skuSeckillInfo.getData();
-        }, executor);
+        //查询当前sku是否参与秒杀优惠（需要调用到秒杀服务，转移到领域服务调用防腐层执行。）
 
         //等待所有任务都完成
-        CompletableFuture.allOf(infoFuture, imageFuture, secKillFuture).get();
+        CompletableFuture.allOf(infoFuture, imageFuture).get();
 
-        SkuAggregate skuAggregate = skuInfoRepositoryConverter.toSkuInfoDO(infoFuture.get(), imageFuture.get(), secKillFuture.get());
+        SkuAggregate skuAggregate = skuInfoRepositoryConverter.toSkuInfoDO(infoFuture.get(), imageFuture.get());
 
         return skuAggregate;
     }
