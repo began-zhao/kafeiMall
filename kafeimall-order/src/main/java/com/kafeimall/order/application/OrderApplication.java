@@ -17,7 +17,7 @@ public interface OrderApplication {
      * 给订单确认页返回需要的数据
      * @return
      */
-    OrderConfirmDto confirmOrder(List<Long> cartId) throws ExecutionException, InterruptedException;
+    OrderConfirmDto generateConfirmOrder(List<Long> cartId) throws ExecutionException, InterruptedException;
 
     /**
      * 下单方法

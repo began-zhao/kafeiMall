@@ -4,6 +4,7 @@ import com.kafeimall.order.domain.aggregate.OrderAggregate;
 import com.kafeimall.order.domain.aggregate.OrderConfirmAggregate;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * @author: zzg
@@ -17,7 +18,7 @@ public interface OrderDomainService {
      * @param cartIds 购物车ID选中的集合
      * @return OrderAggregate 订单聚合根
      */
-    OrderConfirmAggregate generateConfirmOrder(List<Long> cartIds);
+    OrderConfirmAggregate generateConfirmOrder(List<Long> cartIds) throws ExecutionException, InterruptedException;
 
     /**
      * 新增订单
