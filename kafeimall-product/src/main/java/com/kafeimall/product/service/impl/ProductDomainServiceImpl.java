@@ -4,7 +4,7 @@ import com.kafeimall.common.result.Result;
 import com.kafeimall.product.domain.aggregate.CategoryAggregate;
 import com.kafeimall.product.domain.aggregate.SkuAggregate;
 import com.kafeimall.product.domain.aggregate.SpuAggregate;
-import com.kafeimall.product.domain.valobj.SeckillInfo;
+import com.kafeimall.product.domain.entity.SeckillInfo;
 import com.kafeimall.product.infrastructure.facade.SeckillAdaptor;
 import com.kafeimall.product.infrastructure.repo.repository.CategoryRepository;
 import com.kafeimall.product.infrastructure.repo.repository.SkuInfoRepository;

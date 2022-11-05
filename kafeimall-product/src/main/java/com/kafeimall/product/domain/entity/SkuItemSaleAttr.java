@@ -1,6 +1,7 @@
-package com.kafeimall.product.domain.valobj;
+package com.kafeimall.product.domain.entity;
 
 import com.kafeimall.common.domain.ValueObject;
+import com.kafeimall.product.domain.valobj.AttrValueWithSkuId;
 import lombok.Data;
 
 import java.util.List;

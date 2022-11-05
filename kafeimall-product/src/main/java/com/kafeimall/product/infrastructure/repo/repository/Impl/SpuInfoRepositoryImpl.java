@@ -1,8 +1,8 @@
 package com.kafeimall.product.infrastructure.repo.repository.Impl;
 
 import com.kafeimall.product.domain.aggregate.SpuAggregate;
-import com.kafeimall.product.domain.valobj.SkuItemSaleAttr;
-import com.kafeimall.product.domain.valobj.SpuItemAttrGroup;
+import com.kafeimall.product.domain.entity.SkuItemSaleAttr;
+import com.kafeimall.product.domain.entity.SpuItemAttrGroup;
 import com.kafeimall.product.infrastructure.repo.dao.AttrGroupDao;
 import com.kafeimall.product.infrastructure.repo.dao.SkuSaleAttrValueDao;
 import com.kafeimall.product.infrastructure.repo.dao.SpuInfoDao;

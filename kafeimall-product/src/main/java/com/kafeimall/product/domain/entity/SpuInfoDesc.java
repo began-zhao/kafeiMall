@@ -1,4 +1,4 @@
-package com.kafeimall.product.domain.valobj;
+package com.kafeimall.product.domain.entity;
 
 import com.kafeimall.common.domain.ValueObject;
 import lombok.Data;

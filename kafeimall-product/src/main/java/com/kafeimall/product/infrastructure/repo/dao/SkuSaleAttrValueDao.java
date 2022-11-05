@@ -1,7 +1,7 @@
 package com.kafeimall.product.infrastructure.repo.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.kafeimall.product.domain.valobj.SkuItemSaleAttr;
+import com.kafeimall.product.domain.entity.SkuItemSaleAttr;
 import com.kafeimall.product.infrastructure.repo.dao.po.SkuSaleAttrValuePO;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,7 @@
 package com.kafeimall.product.infrastructure.repo.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.kafeimall.product.domain.valobj.SpuItemAttrGroup;
+import com.kafeimall.product.domain.entity.SpuItemAttrGroup;
 import com.kafeimall.product.infrastructure.repo.dao.po.AttrGroupPO;
 
 import java.util.List;

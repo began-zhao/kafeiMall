@@ -12,9 +12,9 @@
         <result property="icon" column="icon"/>
         <result property="catelogId" column="catelog_id"/>
     </resultMap>
-    <resultMap id="saleAttrGroupMap" type="com.kafeimall.product.domain.valobj.SpuItemAttrGroup">
+    <resultMap id="saleAttrGroupMap" type="com.kafeimall.product.domain.entity.SpuItemAttrGroup">
         <result property="groupName" column="attr_group_name"/>
-        <collection property="attrs" ofType="com.kafeimall.product.domain.valobj.Attr">
+        <collection property="attrs" ofType="com.kafeimall.product.domain.entity.Attr">
             <result column="attr_name" property="attrName"></result>
             <result column="attr_id" property="attrId"></result>
             <result column="attr_value" property="attrValue"></result>
@@ -22,7 +22,7 @@
     </resultMap>
     <select id="getAttrGroupWithAttrsBySpuId"
             resultMap="saleAttrGroupMap"
-            resultType="com.kafeimall.product.domain.valobj.SpuItemAttrGroup">
+            resultType="com.kafeimall.product.domain.entity.SpuItemAttrGroup">
         SELECT
             pav.spu_id,
             ag.attr_group_id,

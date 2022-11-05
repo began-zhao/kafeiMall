@@ -26,6 +26,13 @@ public class OrderApplicationImpl implements OrderApplication {
     @Autowired
     OrderConfirmConverter orderConfirmConverter;
 
+    /**
+     * 生成订单确认页信息
+     * @param cartIds 购物陈Ids
+     * @return 订单确认页信息
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
     @Override
     public OrderConfirmDto generateConfirmOrder(List<Long> cartIds) throws ExecutionException, InterruptedException {
         OrderConfirmAggregate orderConfirmAggregate = orderDomainService.generateConfirmOrder(cartIds);
@@ -33,6 +40,11 @@ public class OrderApplicationImpl implements OrderApplication {
         return orderConfirmDto;
     }
 
+    /**
+     * 提交订单
+     * @param vo 订单提交信息
+     * @return
+     */
     @Override
     public Map<String, Object> submitOrder(OrderSubmitDto vo) {
         return null;

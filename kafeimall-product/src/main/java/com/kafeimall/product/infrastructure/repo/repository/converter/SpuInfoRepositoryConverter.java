@@ -1,9 +1,9 @@
 package com.kafeimall.product.infrastructure.repo.repository.converter;
 
 import com.kafeimall.product.domain.aggregate.SpuAggregate;
-import com.kafeimall.product.domain.valobj.SkuItemSaleAttr;
-import com.kafeimall.product.domain.valobj.SpuInfoDesc;
-import com.kafeimall.product.domain.valobj.SpuItemAttrGroup;
+import com.kafeimall.product.domain.entity.SkuItemSaleAttr;
+import com.kafeimall.product.domain.entity.SpuInfoDesc;
+import com.kafeimall.product.domain.entity.SpuItemAttrGroup;
 import com.kafeimall.product.infrastructure.repo.dao.po.SpuInfoDescPO;
 import com.kafeimall.product.infrastructure.repo.dao.po.SpuInfoPO;
 import org.mapstruct.Mapper;

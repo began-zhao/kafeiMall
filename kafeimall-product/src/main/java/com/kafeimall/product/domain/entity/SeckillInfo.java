@@ -1,4 +1,4 @@
-package com.kafeimall.product.domain.valobj;
+package com.kafeimall.product.domain.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

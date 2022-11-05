@@ -1,4 +1,4 @@
-package com.kafeimall.product.domain.valobj;
+package com.kafeimall.product.domain.entity;
 
 import com.kafeimall.common.domain.ValueObject;
 import lombok.Data;
@@ -6,30 +6,34 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author: zzg
- * @date: 8/31/22
+ * @date: 9/1/22
  * @Description: zzg
  */
 @Data
 @NoArgsConstructor
-public class SkuImage extends ValueObject {
+public class SpuImage extends ValueObject {
     /**
      * id
      */
     private Long id;
     /**
-     * sku_id
+     * spu_id
      */
-    private Long skuId;
+    private Long spuId;
+    /**
+     * 图片名
+     */
+    private String imgName;
     /**
      * 图片地址
      */
     private String imgUrl;
     /**
-     * 排序
+     * 顺序
      */
     private Integer imgSort;
     /**
-     * 默认图[0 - 不是默认图，1 - 是默认图]
+     * 是否默认图
      */
     private Integer defaultImg;
 }

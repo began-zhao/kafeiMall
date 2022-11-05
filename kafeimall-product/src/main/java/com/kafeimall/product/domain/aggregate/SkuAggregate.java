@@ -1,9 +1,9 @@
 package com.kafeimall.product.domain.aggregate;
 
 import com.kafeimall.common.domain.AggregateRoot;
-import com.kafeimall.product.domain.valobj.Attr;
-import com.kafeimall.product.domain.valobj.SeckillInfo;
-import com.kafeimall.product.domain.valobj.SkuImage;
+import com.kafeimall.product.domain.entity.Attr;
+import com.kafeimall.product.domain.entity.SeckillInfo;
+import com.kafeimall.product.domain.entity.SkuImage;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

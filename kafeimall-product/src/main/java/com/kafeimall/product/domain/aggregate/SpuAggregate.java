@@ -1,7 +1,7 @@
 package com.kafeimall.product.domain.aggregate;
 
 import com.kafeimall.common.domain.AggregateRoot;
-import com.kafeimall.product.domain.valobj.*;
+import com.kafeimall.product.domain.entity.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

@@ -1,7 +1,7 @@
 package com.kafeimall.product.infrastructure.facade;
 
 import com.kafeimall.common.result.Result;
-import com.kafeimall.product.domain.valobj.SeckillInfo;
+import com.kafeimall.product.domain.entity.SeckillInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
