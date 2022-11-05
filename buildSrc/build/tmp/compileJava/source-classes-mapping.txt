@@ -1,2 +1,0 @@
-ComKafeiMallJavaConventionsPlugin.java
- ComKafeiMallJavaConventionsPlugin
