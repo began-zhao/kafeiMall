@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @author: zzg
  * @date: 11/2/22
- * @Description: zzg
+ * @Description: 购物车防腐层
  */
 @FeignClient("kafeimall-cart")
 public interface CartFeignAdaptor {
