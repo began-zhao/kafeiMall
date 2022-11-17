@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true" scanPeriod="10 seconds">
+
+    <contextName>kafeiProduct</contextName>
+
+    <!-- 设置日志输出路径  可以使“${}”来使用变量。TODO 后面是可以读配置的 -->
+    <property name="log.path" value="logs"/>
+
+    <!--
+           springProperty：是自定义属性，自定属性可以在xml文件任意地方使用${}
+           只不过，它可以去读取spring容器中上下文的信息，这样的话，可以做环境隔离了
+           定义日志文件的存储路径使用相对路径
+           scope="context"         spring容器的上下文的Environment
+           name="LOG_PATH"         日志文件中使用的名字
+           source=""  在application.yml文件中配置名字
+           defaultValue=""         如果myapp.logpath如果没有配置，就使用默认值
+       -->
+    <springProperty scope="context" name="grayLogIp" source="kafeimall.business.graylog.ip"/>
+
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <!-- 设置字符集 -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+
+    <!-- 时间滚动输出 level为 INFO 日志 -->
+    <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 正在记录的日志文件的路径及文件名 -->
+        <file>${log.path}/kafeiProduct-info.log</file>
+        <!--日志文件输出格式-->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <!-- 日志记录器的滚动策略，按日期，按大小记录 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 每天日志归档路径以及格式 -->
+            <fileNamePattern>${log.path}/logs/kafeiProduct-info-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1000MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!--日志文件保留天数-->
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+        <!-- 此日志文件只记录info级别的 -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>info</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- 时间滚动输出 level为 ERROR 日志 -->
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 正在记录的日志文件的路径及文件名 -->
+        <file>${log.path}/kafeiProduct-error.log</file>
+        <!--日志文件输出格式-->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+        </encoder>
+        <!-- 日志记录器的滚动策略，按日期，按大小记录 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/logs/kafeiProduct-error-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1000MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!--日志文件保留天数-->
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+        <!-- 此日志文件只记录ERROR级别的 -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <!--接入GrayLog后开启使用-->
+    <!--    <appender name="GELF" class="de.siegmar.logbackgelf.GelfUdpAppender">-->
+    <!--        &lt;!&ndash; Graylog服务的地址 &ndash;&gt;-->
+    <!--        <graylogHost>${grayLogIp}</graylogHost>-->
+    <!--        &lt;!&ndash; UDP Input端口 &ndash;&gt;-->
+    <!--        <graylogPort>12201</graylogPort>-->
+    <!--        &lt;!&ndash; 最大GELF数据块大小（单位：字节），508为建议最小值，最大值为65467 &ndash;&gt;-->
+    <!--        <maxChunkSize>508</maxChunkSize>-->
+    <!--        &lt;!&ndash; 是否使用压缩 &ndash;&gt;-->
+    <!--        <useCompression>true</useCompression>-->
+    <!--        <encoder class="de.siegmar.logbackgelf.GelfEncoder">-->
+    <!--            &lt;!&ndash; 是否发送原生的日志信息 &ndash;&gt;-->
+    <!--            <includeRawMessage>false</includeRawMessage>-->
+    <!--            <includeMarker>true</includeMarker>-->
+    <!--            <includeMdcData>true</includeMdcData>-->
+    <!--            <includeCallerData>false</includeCallerData>-->
+    <!--            <includeRootCauseData>false</includeRootCauseData>-->
+    <!--            &lt;!&ndash; 是否发送日志级别的名称，否则默认以数字代表日志级别 &ndash;&gt;-->
+    <!--            <includeLevelName>true</includeLevelName>-->
+    <!--            <shortPatternLayout class="ch.qos.logback.classic.PatternLayout">-->
+    <!--                <pattern>%m%nopex</pattern>-->
+    <!--            </shortPatternLayout>-->
+    <!--            <fullPatternLayout class="ch.qos.logback.classic.PatternLayout">-->
+    <!--                <pattern>%d - [%thread] %-5level %logger{35} - %msg%n</pattern>-->
+    <!--            </fullPatternLayout>-->
+
+    <!--            &lt;!&ndash; 配置应用名称（服务名称），通过staticField标签可以自定义一些固定的日志字段 &ndash;&gt;-->
+    <!--            <staticField>app_name:kafeiProduct</staticField>-->
+    <!--        </encoder>-->
+    <!--    </appender>-->
+
+    <!--开发坏境-->
+    <springProfile name="dev">
+        <root level="info">
+            <!-- TODO console打印后面可以只针对dev环境的 -->
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="INFO_FILE"/>
+            <appender-ref ref="ERROR_FILE"/>
+            <!--        <appender-ref ref="GELF"/>-->
+        </root>
+    </springProfile>
+
+    <!--开发坏境-->
+    <springProfile name="prod">
+        <root level="info">
+            <appender-ref ref="INFO_FILE"/>
+            <appender-ref ref="ERROR_FILE"/>
+            <!--            <appender-ref ref="GELF"/>-->
+        </root>
+    </springProfile>
+
+</configuration>
