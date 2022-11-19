@@ -3,7 +3,7 @@ package com.kafeimall.product.httpapi.controller;
 import com.kafeimall.product.application.SkuApplicationService;
 import com.kafeimall.product.application.dto.SkuItemDTO;
 import com.kafeimall.product.httpapi.converter.SkuAPIConverter;
-import com.kafeimall.product.httpapi.module.vo.SkuItemVO;
+import com.kafeimall.product.httpapi.module.response.SkuItemResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,11 +32,11 @@ public class ItemController {
      * @return
      */
     @GetMapping("/{skuId}")
-    public SkuItemVO skuItem(@PathVariable("skuId") Long skuId) throws ExecutionException, InterruptedException {
+    public SkuItemResponse skuItem(@PathVariable("skuId") Long skuId) throws ExecutionException, InterruptedException {
 
         SkuItemDTO item = skuApplicationService.getItem(skuId);
         System.out.println("准备查询"+skuId+"详情");
-        SkuItemVO skuItemVO = skuApIConverter.toSkuItemVO(item);
-        return skuItemVO;
+        SkuItemResponse skuItemResponse = skuApIConverter.toSkuItemVO(item);
+        return skuItemResponse;
     }
 }

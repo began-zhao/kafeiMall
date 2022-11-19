@@ -1,10 +1,10 @@
 package com.kafeimall.order.application;
 
 import com.kafeimall.order.application.dto.OrderConfirmDto;
-import com.kafeimall.order.application.dto.OrderSubmitDto;
+import com.kafeimall.order.application.dto.OrderSubmitRequestDto;
+import com.kafeimall.order.application.dto.SubmitOrderResponseDto;
 
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -21,10 +21,10 @@ public interface OrderApplication {
 
     /**
      * 下单方法
-     * @param vo
+     * @param orderSubmitRequestDto
      * @return
      */
-    Map<String, Object> submitOrder(OrderSubmitDto vo);
+   SubmitOrderResponseDto submitOrder(OrderSubmitRequestDto orderSubmitRequestDto);
 
     //TODO:
 

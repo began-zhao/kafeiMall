@@ -1,4 +1,4 @@
-package com.kafeimall.order.httpapi.model.vo;
+package com.kafeimall.order.httpapi.model.response;
 
 import lombok.Data;
 
@@ -8,7 +8,7 @@ import lombok.Data;
  * @Description: zzg
  */
 @Data
-public class MemberAddressVo {
+public class MemberAddressResponse {
     /**
      * id
      */

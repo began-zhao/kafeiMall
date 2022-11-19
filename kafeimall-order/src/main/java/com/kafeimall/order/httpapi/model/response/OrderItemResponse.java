@@ -1,4 +1,4 @@
-package com.kafeimall.order.application.dto;
+package com.kafeimall.order.httpapi.model.response;
 
 import lombok.Data;
 
@@ -8,10 +8,10 @@ import java.util.List;
 /**
  * @author: zzg
  * @date: 10/20/22
- * @Description: 下单的订单项
+ * @Description: zzg
  */
 @Data
-public class OrderItemDto {
+public class OrderItemResponse {
     private Long skuId;
     private Boolean check;
     private String title;

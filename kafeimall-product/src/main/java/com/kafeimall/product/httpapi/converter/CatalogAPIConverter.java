@@ -1,7 +1,7 @@
 package com.kafeimall.product.httpapi.converter;
 
 import com.kafeimall.product.application.dto.CatalogDTO;
-import com.kafeimall.product.httpapi.module.vo.CatalogVO;
+import com.kafeimall.product.httpapi.module.response.CatalogResponse;
 import org.mapstruct.Mapper;
 
 /**
@@ -11,5 +11,5 @@ import org.mapstruct.Mapper;
  */
 @Mapper(componentModel = "spring")
 public interface CatalogAPIConverter {
-    CatalogVO toCatalogVO(CatalogDTO catalogDTO);
+    CatalogResponse toCatalogVO(CatalogDTO catalogDTO);
 }

@@ -1,4 +1,4 @@
-package com.kafeimall.product.httpapi.module.vo;
+package com.kafeimall.product.httpapi.module.response;
 
 import com.kafeimall.product.application.dto.CategoryDTO;
 import lombok.Data;
@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Data
 @NoArgsConstructor
-public class CategoryVO {
+public class CategoryResponse {
     /**
      * 分类id
      */

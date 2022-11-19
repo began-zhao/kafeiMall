@@ -1,4 +1,4 @@
-package com.kafeimall.order.httpapi.model.vo;
+package com.kafeimall.order.domain.entity;
 
 import lombok.Data;
 
@@ -8,10 +8,10 @@ import java.util.List;
 /**
  * @author: zzg
  * @date: 10/20/22
- * @Description: zzg
+ * @Description: 下单的订单项
  */
 @Data
-public class OrderItemVo {
+public class SubmitOrderItem {
     private Long skuId;
     private Boolean check;
     private String title;

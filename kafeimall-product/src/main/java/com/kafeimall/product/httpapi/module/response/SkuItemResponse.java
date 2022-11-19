@@ -1,4 +1,4 @@
-package com.kafeimall.product.httpapi.module.vo;
+package com.kafeimall.product.httpapi.module.response;
 
 import com.kafeimall.product.application.dto.*;
 import lombok.Data;
@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Data
 @NoArgsConstructor
-public class SkuItemVO {
+public class SkuItemResponse {
     //1、sku基本信息获取 pms_sku_info
     SkuInfoDTO skuInfo;
 

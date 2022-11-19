@@ -1,7 +1,7 @@
 package com.kafeimall.product.httpapi.converter;
 
 import com.kafeimall.product.application.dto.SkuItemDTO;
-import com.kafeimall.product.httpapi.module.vo.SkuItemVO;
+import com.kafeimall.product.httpapi.module.response.SkuItemResponse;
 import org.mapstruct.Mapper;
 
 /**
@@ -11,5 +11,5 @@ import org.mapstruct.Mapper;
  */
 @Mapper(componentModel = "spring")
 public interface SkuAPIConverter {
-    SkuItemVO toSkuItemVO(SkuItemDTO skuItemDTO);
+    SkuItemResponse toSkuItemVO(SkuItemDTO skuItemDTO);
 }

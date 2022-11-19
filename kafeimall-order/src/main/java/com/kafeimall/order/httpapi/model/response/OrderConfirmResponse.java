@@ -1,4 +1,4 @@
-package com.kafeimall.order.httpapi.model.vo;
+package com.kafeimall.order.httpapi.model.response;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,16 +12,16 @@ import java.util.Map;
  * @date: 10/20/22
  * @Description: 订单确认页需要的数据
  */
-public class OrderConfirmVo {
+public class OrderConfirmResponse {
     //收货地址
     @Setter
     @Getter
-    List<MemberAddressVo> address;
+    List<MemberAddressResponse> address;
 
     //所有选中的购物车项
     @Setter
     @Getter
-    List<OrderItemVo> items;
+    List<OrderItemResponse> items;
 
     //发票信息。。
     //..
@@ -40,7 +40,7 @@ public class OrderConfirmVo {
     public Integer getCount() {
         Integer i = 0;
         if (items != null) {
-            for (OrderItemVo item : items
+            for (OrderItemResponse item : items
             ) {
                 i += item.getCount();
             }
@@ -59,7 +59,7 @@ public class OrderConfirmVo {
     public BigDecimal getTotal() {
         BigDecimal sum = new BigDecimal("0");
         if (items != null) {
-            for (OrderItemVo item : items
+            for (OrderItemResponse item : items
             ) {
                 //当前项的价格
                 BigDecimal multiply = item.getPrice().multiply(new BigDecimal((item.getCount().toString())));

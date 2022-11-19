@@ -1,5 +1,7 @@
 package com.kafeimall.order.domain.entity;
 
+import lombok.Data;
+
 import java.math.BigDecimal;
 
 /**
@@ -7,6 +9,7 @@ import java.math.BigDecimal;
  * @date: 10/13/22
  * @Description: 订单项实体
  */
+@Data
 public class OrderItem {
     /**
      * id

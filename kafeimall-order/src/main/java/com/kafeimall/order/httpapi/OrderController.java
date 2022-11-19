@@ -4,7 +4,9 @@ import com.kafeimall.common.result.Result;
 import com.kafeimall.order.application.OrderApplication;
 import com.kafeimall.order.application.dto.OrderConfirmDto;
 import com.kafeimall.order.httpapi.converter.OrderApiConverter;
-import com.kafeimall.order.httpapi.model.vo.OrderConfirmVo;
+import com.kafeimall.order.httpapi.model.req.OrderSubmitRequest;
+import com.kafeimall.order.httpapi.model.response.OrderConfirmResponse;
+import com.kafeimall.order.httpapi.model.response.SubmitOrderResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,14 +40,22 @@ public class OrderController {
      * @throws InterruptedException
      */
     @PostMapping("/generateConfirmOrder")
-    public Result<OrderConfirmVo> generateConfirmOrder(@RequestBody @Valid List<Long> cartIds) throws ExecutionException, InterruptedException {
+    public Result<OrderConfirmResponse> generateConfirmOrder(@RequestBody @Valid List<Long> cartIds) throws ExecutionException, InterruptedException {
         OrderConfirmDto orderConfirmDto = orderApplication.generateConfirmOrder(cartIds);
-        OrderConfirmVo orderConfirmVo = orderApiConverter.toOrderConfirmVo(orderConfirmDto);
-        return  Result.success(orderConfirmVo);
+        OrderConfirmResponse orderConfirmResponse = orderApiConverter.toOrderConfirmVo(orderConfirmDto);
+        return  Result.success(orderConfirmResponse);
     }
 
-    //TODO: 提交订单
+    /**
+     * 提交订单
+     * @param request
+     * @return
+     */
+    @PostMapping("/submitOrder")
+    public Result<SubmitOrderResponse> submitOrder(@RequestBody @Valid OrderSubmitRequest request){
 
+        return null;
+    };
 
 
 }

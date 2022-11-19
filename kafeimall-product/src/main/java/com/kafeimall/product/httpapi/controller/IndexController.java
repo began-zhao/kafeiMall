@@ -6,8 +6,8 @@ import com.kafeimall.product.application.dto.CategoryDTO;
 import com.kafeimall.product.httpapi.converter.CatalogAPIConverter;
 import com.kafeimall.product.httpapi.converter.CategoryAPIConverter;
 import com.kafeimall.product.httpapi.module.req.CategoryUpdateSortReq;
-import com.kafeimall.product.httpapi.module.vo.CatalogVO;
-import com.kafeimall.product.httpapi.module.vo.CategoryVO;
+import com.kafeimall.product.httpapi.module.response.CatalogResponse;
+import com.kafeimall.product.httpapi.module.response.CategoryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,9 +33,9 @@ public class IndexController {
     private CatalogAPIConverter catelogAPIConverter;
 
     @GetMapping("/list/tree")
-    public List<CategoryVO> getCategory(){
+    public List<CategoryResponse> getCategory(){
         List<CategoryDTO> category = categoryService.getCategory();
-        List<CategoryVO> collect = category.stream().map(e -> {
+        List<CategoryResponse> collect = category.stream().map(e -> {
             return categoryAPIConverter.toCategoryVO(e);
         }).collect(Collectors.toList());
         return collect;
@@ -47,9 +47,9 @@ public class IndexController {
         categoryService.updateCategoryById(categoryDTO);
     }
     @PostMapping("/category/getCatalog")
-    public List<CatalogVO> getCatalog() {
+    public List<CatalogResponse> getCatalog() {
         List<CatalogDTO> catalogDTOS = categoryService.getCatalog();
-        List<CatalogVO> collect = catalogDTOS.stream().map(e -> {
+        List<CatalogResponse> collect = catalogDTOS.stream().map(e -> {
             return catelogAPIConverter.toCatalogVO(e);
         }).collect(Collectors.toList());
         return collect;

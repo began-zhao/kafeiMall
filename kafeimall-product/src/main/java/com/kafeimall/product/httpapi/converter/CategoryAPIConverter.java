@@ -2,7 +2,7 @@ package com.kafeimall.product.httpapi.converter;
 
 import com.kafeimall.product.application.dto.CategoryDTO;
 import com.kafeimall.product.httpapi.module.req.CategoryUpdateSortReq;
-import com.kafeimall.product.httpapi.module.vo.CategoryVO;
+import com.kafeimall.product.httpapi.module.response.CategoryResponse;
 import org.mapstruct.Mapper;
 
 /**
@@ -12,7 +12,7 @@ import org.mapstruct.Mapper;
  */
 @Mapper(componentModel = "spring")
 public interface CategoryAPIConverter {
-    CategoryVO toCategoryVO(CategoryDTO categoryDTO);
+    CategoryResponse toCategoryVO(CategoryDTO categoryDTO);
 
     CategoryDTO toCategoryDTO(CategoryUpdateSortReq categoryUpdateSortReq);
 }

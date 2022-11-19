@@ -1,7 +1,7 @@
 package com.kafeimall.order.httpapi.converter;
 
 import com.kafeimall.order.application.dto.OrderConfirmDto;
-import com.kafeimall.order.httpapi.model.vo.OrderConfirmVo;
+import com.kafeimall.order.httpapi.model.response.OrderConfirmResponse;
 import org.mapstruct.Mapper;
 
 /**
@@ -12,5 +12,5 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface OrderApiConverter {
 
-    OrderConfirmVo toOrderConfirmVo (OrderConfirmDto orderConfirmDto);
+    OrderConfirmResponse toOrderConfirmVo (OrderConfirmDto orderConfirmDto);
 }

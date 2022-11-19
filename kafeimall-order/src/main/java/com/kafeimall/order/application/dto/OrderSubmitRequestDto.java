@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * @date: 10/20/22
  * @Description: 封装订单提交的数据
  */
-public class OrderSubmitDto {
+public class OrderSubmitRequestDto {
     private Long addrId;//收货地址Id
     private Integer payType;//支付方式
     //送货清单....

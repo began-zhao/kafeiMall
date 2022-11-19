@@ -1,4 +1,6 @@
-package com.kafeimall.order.httpapi.model.vo;
+package com.kafeimall.order.domain.aggregate;
+
+import lombok.Data;
 
 import java.math.BigDecimal;
 
@@ -7,7 +9,8 @@ import java.math.BigDecimal;
  * @date: 10/20/22
  * @Description: 封装订单提交的数据
  */
-public class OrderSubmitVo {
+@Data
+public class OrderSubmitRequestAggregate {
     private Long addrId;//收货地址Id
     private Integer payType;//支付方式
     //送货清单....

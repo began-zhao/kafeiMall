@@ -3,14 +3,14 @@ package com.kafeimall.order.application.impl;
 import com.kafeimall.order.application.OrderApplication;
 import com.kafeimall.order.application.converter.OrderConfirmConverter;
 import com.kafeimall.order.application.dto.OrderConfirmDto;
-import com.kafeimall.order.application.dto.OrderSubmitDto;
+import com.kafeimall.order.application.dto.OrderSubmitRequestDto;
+import com.kafeimall.order.application.dto.SubmitOrderResponseDto;
 import com.kafeimall.order.domain.aggregate.OrderConfirmAggregate;
 import com.kafeimall.order.service.OrderDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -46,7 +46,7 @@ public class OrderApplicationImpl implements OrderApplication {
      * @return
      */
     @Override
-    public Map<String, Object> submitOrder(OrderSubmitDto vo) {
+    public SubmitOrderResponseDto submitOrder(OrderSubmitRequestDto vo) {
         return null;
     }
 }

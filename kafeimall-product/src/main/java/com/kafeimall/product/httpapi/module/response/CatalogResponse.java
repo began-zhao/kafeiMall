@@ -1,4 +1,4 @@
-package com.kafeimall.product.httpapi.module.vo;
+package com.kafeimall.product.httpapi.module.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CatalogVO {
+public class CatalogResponse {
     private String id;
     private String name;
     private List<Catalog2VO> catalog2List;//二级子分类
