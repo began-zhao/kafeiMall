@@ -1,13 +1,9 @@
 package com.kafeimall.product.httpapi.controller;
 
+import com.kafeimall.common.result.Result;
 import com.kafeimall.product.application.CategoryApplicationService;
-import com.kafeimall.product.application.dto.CatalogDTO;
-import com.kafeimall.product.application.dto.CategoryDTO;
-import com.kafeimall.product.httpapi.converter.CatalogAPIConverter;
-import com.kafeimall.product.httpapi.converter.CategoryAPIConverter;
-import com.kafeimall.product.httpapi.module.req.CategoryUpdateSortReq;
-import com.kafeimall.product.httpapi.module.response.CatalogResponse;
-import com.kafeimall.product.httpapi.module.response.CategoryResponse;
+import com.kafeimall.product.application.dto.CatalogDto;
+import com.kafeimall.product.application.dto.CategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author: zzg
@@ -27,31 +22,33 @@ import java.util.stream.Collectors;
 public class IndexController {
     @Autowired
     private CategoryApplicationService categoryService;
-    @Autowired
-    private CategoryAPIConverter categoryAPIConverter;
-    @Autowired
-    private CatalogAPIConverter catelogAPIConverter;
 
+    /**
+     * 获取分类树
+     * @return 分类树信息
+     */
     @GetMapping("/list/tree")
-    public List<CategoryResponse> getCategory(){
-        List<CategoryDTO> category = categoryService.getCategory();
-        List<CategoryResponse> collect = category.stream().map(e -> {
-            return categoryAPIConverter.toCategoryVO(e);
-        }).collect(Collectors.toList());
-        return collect;
+    public Result<List<CategoryDto>> getCategory(){
+        return Result.success(categoryService.getCategory());
     }
 
+    /**
+     * 修改排序
+     * @param categoryDto 修改分类平排序入参
+     */
     @PostMapping("/update/sort")
-    public void updateCategorySort(CategoryUpdateSortReq categoryReq){
-        CategoryDTO categoryDTO = categoryAPIConverter.toCategoryDTO(categoryReq);
-        categoryService.updateCategoryById(categoryDTO);
+    public Result<Object> updateCategorySort(CategoryDto categoryDto){
+        categoryService.updateCategoryById(categoryDto);
+        return Result.ok();
     }
+
+    /**
+     * 获取分类列表
+     * @return 分类列表信息
+     */
     @PostMapping("/category/getCatalog")
-    public List<CatalogResponse> getCatalog() {
-        List<CatalogDTO> catalogDTOS = categoryService.getCatalog();
-        List<CatalogResponse> collect = catalogDTOS.stream().map(e -> {
-            return catelogAPIConverter.toCatalogVO(e);
-        }).collect(Collectors.toList());
-        return collect;
+    public Result<List<CatalogDto>> getCatalog() {
+        List<CatalogDto> catalogDtos = categoryService.getCatalog();
+        return Result.success(catalogDtos);
     }
 }

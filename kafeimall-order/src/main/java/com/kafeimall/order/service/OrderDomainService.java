@@ -43,4 +43,11 @@ public interface OrderDomainService {
      * @param orderAggregate 订单聚合
      */
     void  updateOrder(OrderAggregate orderAggregate);
+
+    /**
+     * 根据订单号获取订单信息
+     * @param orderSn
+     * @return
+     */
+    OrderAggregate getOrderBuOrderSn(String orderSn);
 }

@@ -1,7 +1,7 @@
 package com.kafeimall.product.application;
 
-import com.kafeimall.product.application.dto.CatalogDTO;
-import com.kafeimall.product.application.dto.CategoryDTO;
+import com.kafeimall.product.application.dto.CatalogDto;
+import com.kafeimall.product.application.dto.CategoryDto;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import java.util.List;
  */
 public interface CategoryApplicationService {
     /*获取商品分类树形图*/
-    List<CategoryDTO> getCategory();
+    List<CategoryDto> getCategory();
 
-    void updateCategoryById(CategoryDTO categoryDTO);
+    void updateCategoryById(CategoryDto categoryDTO);
 
-    List<CatalogDTO> getCatalog();
+    List<CatalogDto> getCatalog();
 
 }

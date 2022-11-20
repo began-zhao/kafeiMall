@@ -1,9 +1,10 @@
 package com.kafeimall.order.application.converter;
 
-import com.kafeimall.order.application.dto.MemberAddressDto;
-import com.kafeimall.order.application.dto.OrderConfirmDto;
-import com.kafeimall.order.application.dto.OrderItemDto;
+import com.kafeimall.order.application.dto.*;
+import com.kafeimall.order.domain.aggregate.OrderAggregate;
 import com.kafeimall.order.domain.aggregate.OrderConfirmAggregate;
+import com.kafeimall.order.domain.aggregate.OrderSubmitRequestAggregate;
+import com.kafeimall.order.domain.aggregate.SubmitOrderResponseAggregate;
 import org.mapstruct.Mapper;
 
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
  * @Description: 订单确认信息DO-DTO转换
  */
 @Mapper(componentModel = "spring")
-public interface OrderConfirmConverter {
+public interface OrderConverter {
 
     default OrderConfirmDto toOrderConfirmDto(OrderConfirmAggregate orderConfirmAggregate){
         OrderConfirmDto orderConfirmDto = new OrderConfirmDto();
@@ -55,4 +56,19 @@ public interface OrderConfirmConverter {
         orderConfirmDto.setIntegration(orderConfirmAggregate.getIntegration());
         return orderConfirmDto;
     }
+
+    /**
+     * 订单提交信息 DTO-DO
+     * @param orderSubmitRequestDto 订单提交信息DTO
+     * @return 订单提交信息聚合
+     */
+    OrderSubmitRequestAggregate toOrderSubmitRequestAggregate(OrderSubmitRequestDto orderSubmitRequestDto);
+
+    SubmitOrderResponseDto toSubmitOrderResponseDto(SubmitOrderResponseAggregate submitOrderResponseAggregate);
+
+    /**
+     * 订单信息 DTO-DO
+     */
+    OrderAggregate toOrderAggregate(OrderDto orderDto);
+    OrderDto toOrderDto(OrderAggregate orderAggregate);
 }

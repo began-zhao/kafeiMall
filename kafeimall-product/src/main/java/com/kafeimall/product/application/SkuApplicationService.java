@@ -1,7 +1,7 @@
 package com.kafeimall.product.application;
 
-import com.kafeimall.product.application.dto.SkuInfoDTO;
-import com.kafeimall.product.application.dto.SkuItemDTO;
+import com.kafeimall.product.application.dto.SkuInfoDto;
+import com.kafeimall.product.application.dto.SkuItemDto;
 
 import java.util.concurrent.ExecutionException;
 
@@ -14,10 +14,10 @@ public interface SkuApplicationService {
     /**
      * sku基本信息获取
      * */
-    SkuInfoDTO getById(Long Id);
+    SkuInfoDto getById(Long Id);
 
     /**
      * sku详情获取
      * */
-    SkuItemDTO getItem(Long skuId) throws ExecutionException, InterruptedException;
+    SkuItemDto getItem(Long skuId) throws ExecutionException, InterruptedException;
 }

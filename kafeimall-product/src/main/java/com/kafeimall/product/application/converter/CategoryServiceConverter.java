@@ -1,6 +1,6 @@
 package com.kafeimall.product.application.converter;
 
-import com.kafeimall.product.application.dto.CategoryDTO;
+import com.kafeimall.product.application.dto.CategoryDto;
 import com.kafeimall.product.domain.aggregate.CategoryAggregate;
 import org.mapstruct.Mapper;
 
@@ -11,8 +11,8 @@ import org.mapstruct.Mapper;
  */
 @Mapper(componentModel = "spring")
 public interface CategoryServiceConverter {
-    CategoryDTO toCategoryDTO(CategoryAggregate productCategory);
+    CategoryDto toCategoryDTO(CategoryAggregate productCategory);
 
-    CategoryAggregate toCategoryDO(CategoryDTO categoryDTO);
+    CategoryAggregate toCategoryDO(CategoryDto categoryDTO);
 
 }

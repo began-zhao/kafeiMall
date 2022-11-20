@@ -8,7 +8,7 @@ import lombok.Data;
  * @Description: zzg
  */
 @Data
-public class AttrDTO {
+public class AttrDto {
     /**
      * 属性id
      */

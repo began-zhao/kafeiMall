@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * @date: 9/1/22
  * @Description: 商品秒杀优惠信息
  */
-public class SeckillInfoDTO {
+public class SeckillInfoDto {
     private Long id;
     /**
      * 活动id

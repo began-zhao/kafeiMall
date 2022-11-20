@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class UpdateCategorySortDTO {
+public class UpdateCategorySortDto {
     /**
      * 分类id
      */

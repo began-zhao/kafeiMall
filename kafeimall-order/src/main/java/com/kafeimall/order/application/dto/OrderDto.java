@@ -1,7 +1,5 @@
 package com.kafeimall.order.application.dto;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -15,7 +13,6 @@ public class OrderDto {
     /**
      * id
      */
-    @TableId
     private Long id;
     /**
      * member_id

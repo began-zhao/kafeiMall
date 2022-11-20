@@ -12,25 +12,25 @@ import java.util.List;
  */
 @Data
 @NoArgsConstructor
-public class SkuItemDTO {
+public class SkuItemDto {
     //1、sku基本信息获取 pms_sku_info
-    SkuInfoDTO skuInfo;
+    SkuInfoDto skuInfo;
 
     //是否有货
     boolean hasStock = true;
 
     //2、sku的图片信息获取 pms_sku_images
-    List<SkuImageDTO> images;
+    List<SkuImageDto> images;
 
     //3、spu销售属性组合
-    List<SkuItemSaleAttrDTO> saleAttr;
+    List<SkuItemSaleAttrDto> saleAttr;
 
     //4、获取spu介绍
-    SpuInfoDescDTO desp;
+    SpuInfoDescDto desp;
 
     //5、获取spu规格参数信息
-    List<SpuItemAttrGroupDTO> groupAttrs;
+    List<SpuItemAttrGroupDto> groupAttrs;
 
     //6、当亲商品秒杀优惠信息
-    SeckillInfoDTO seckillInfo;
+    SeckillInfoDto seckillInfo;
 }

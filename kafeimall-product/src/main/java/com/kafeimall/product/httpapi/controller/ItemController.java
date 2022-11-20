@@ -1,9 +1,9 @@
 package com.kafeimall.product.httpapi.controller;
 
+import com.kafeimall.common.result.Result;
 import com.kafeimall.product.application.SkuApplicationService;
-import com.kafeimall.product.application.dto.SkuItemDTO;
-import com.kafeimall.product.httpapi.converter.SkuAPIConverter;
-import com.kafeimall.product.httpapi.module.response.SkuItemResponse;
+import com.kafeimall.product.application.dto.SkuItemDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,24 +19,23 @@ import java.util.concurrent.ExecutionException;
  */
 @RestController
 @RequestMapping("product/sku")
+@Slf4j
 public class ItemController {
 
     @Autowired
     SkuApplicationService skuApplicationService;
 
-    @Autowired
-    SkuAPIConverter skuApIConverter;
     /**
      * 展示当前sku的详情
+     *
      * @param skuId
-     * @return
+     * @return 当前展示的sku详情
      */
     @GetMapping("/{skuId}")
-    public SkuItemResponse skuItem(@PathVariable("skuId") Long skuId) throws ExecutionException, InterruptedException {
+    public Result<SkuItemDto> skuItem(@PathVariable("skuId") Long skuId) throws ExecutionException, InterruptedException {
 
-        SkuItemDTO item = skuApplicationService.getItem(skuId);
-        System.out.println("准备查询"+skuId+"详情");
-        SkuItemResponse skuItemResponse = skuApIConverter.toSkuItemVO(item);
-        return skuItemResponse;
+        SkuItemDto item = skuApplicationService.getItem(skuId);
+        log.info("准备查询" + skuId + "详情");
+        return Result.success(item);
     }
 }

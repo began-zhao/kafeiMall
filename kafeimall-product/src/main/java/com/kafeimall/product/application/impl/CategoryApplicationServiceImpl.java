@@ -2,8 +2,8 @@ package com.kafeimall.product.application.impl;
 
 import com.kafeimall.product.application.CategoryApplicationService;
 import com.kafeimall.product.application.converter.CategoryServiceConverter;
-import com.kafeimall.product.application.dto.CatalogDTO;
-import com.kafeimall.product.application.dto.CategoryDTO;
+import com.kafeimall.product.application.dto.CatalogDto;
+import com.kafeimall.product.application.dto.CategoryDto;
 import com.kafeimall.product.domain.aggregate.CategoryAggregate;
 import com.kafeimall.product.service.ProductDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,40 +23,40 @@ public class CategoryApplicationServiceImpl implements CategoryApplicationServic
     CategoryServiceConverter categoryServiceConverter;
 
 
-    public List<CategoryDTO> getCategory(){
+    public List<CategoryDto> getCategory(){
         List<CategoryAggregate> productCategory = categoryDomainQueryService.getCategory();
-            List<CategoryDTO> categoryDTOS = productCategory.stream().map(e -> {
-            CategoryDTO categoryDTO = categoryServiceConverter.toCategoryDTO(e);
+            List<CategoryDto> categoryDtos = productCategory.stream().map(e -> {
+            CategoryDto categoryDTO = categoryServiceConverter.toCategoryDTO(e);
             categoryDTO.setChildren(getChildren(e, productCategory));
             return categoryDTO;
         }).collect(Collectors.toList());
-        return categoryDTOS;
+        return categoryDtos;
     }
     @Override
-    public void updateCategoryById(CategoryDTO categoryDTO) {
+    public void updateCategoryById(CategoryDto categoryDTO) {
         CategoryAggregate categoryAggregate = categoryServiceConverter.toCategoryDO(categoryDTO);
         categoryDomainQueryService.updateCategoryById(categoryAggregate);
     }
 
     @Override
     @Cacheable(value = {"category"},key = "#root.methodName")
-    public List<CatalogDTO> getCatalog() {
+    public List<CatalogDto> getCatalog() {
         System.out.println("查询了数据库。。。。");
-        List<CategoryDTO> category = getCategory();
-        CatalogDTO catalogDTO=null;
-        List<CatalogDTO> collect = category.stream().map(v -> {
-            List<CategoryDTO> categoryEntities1 = v.getChildren();
+        List<CategoryDto> category = getCategory();
+        CatalogDto catalogDTO=null;
+        List<CatalogDto> collect = category.stream().map(v -> {
+            List<CategoryDto> categoryEntities1 = v.getChildren();
 
-            List<CatalogDTO.Catalog2DTO> catalog2DTOs = null;
+            List<CatalogDto.Catalog2DTO> catalog2DTOs = null;
             if (categoryEntities1 != null) {
                 catalog2DTOs = categoryEntities1.stream().map(l2 -> {
-                    CatalogDTO.Catalog2DTO catelog2 = new CatalogDTO.Catalog2DTO(v.getCatId().toString(), null, l2.getCatId().toString(), l2.getName());
+                    CatalogDto.Catalog2DTO catelog2 = new CatalogDto.Catalog2DTO(v.getCatId().toString(), null, l2.getCatId().toString(), l2.getName());
 
-                    List<CategoryDTO> level3Catalog = l2.getChildren();
+                    List<CategoryDto> level3Catalog = l2.getChildren();
 
                     if (level3Catalog != null) {
-                        List<CatalogDTO.Catalog3DTO> catalog3DTOs = level3Catalog.stream().map(l3 -> {
-                            CatalogDTO.Catalog3DTO catalog3DTO = new CatalogDTO.Catalog3DTO(l2.getCatId().toString(), l3.getCatId().toString(), l3.getName());
+                        List<CatalogDto.Catalog3DTO> catalog3DTOs = level3Catalog.stream().map(l3 -> {
+                            CatalogDto.Catalog3DTO catalog3DTO = new CatalogDto.Catalog3DTO(l2.getCatId().toString(), l3.getCatId().toString(), l3.getName());
                             return catalog3DTO;
                         }).collect(Collectors.toList());
                         catelog2.setCatalog3List(catalog3DTOs);
@@ -73,18 +73,18 @@ public class CategoryApplicationServiceImpl implements CategoryApplicationServic
     }
 
     //递归获取分类子节点
-    public List<CategoryDTO> getChildren(CategoryAggregate root, List<CategoryAggregate> all) {
-        List<CategoryDTO> categoryDTOS = all.stream().filter(t -> {
+    public List<CategoryDto> getChildren(CategoryAggregate root, List<CategoryAggregate> all) {
+        List<CategoryDto> categoryDtos = all.stream().filter(t -> {
                     return t.getParentCid().equals(root.getCatId());
                 })
                 .map(f -> {
-                    CategoryDTO categoryDTO = categoryServiceConverter.toCategoryDTO(f);
+                    CategoryDto categoryDTO = categoryServiceConverter.toCategoryDTO(f);
                     categoryDTO .setChildren(getChildren(f, all));
                     return categoryDTO;
                 })
                 .sorted(Comparator.comparingInt(menu -> (menu.getSort() == null ? 0 : menu.getSort())))
                 .collect(Collectors.toList());
 
-        return categoryDTOS;
+        return categoryDtos;
     }
 }

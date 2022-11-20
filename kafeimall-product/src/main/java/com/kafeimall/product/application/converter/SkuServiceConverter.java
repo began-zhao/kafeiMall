@@ -18,10 +18,10 @@ import java.util.stream.Collectors;
 public interface SkuServiceConverter {
 
     //TODO:添加默认转换处理
-    default SkuItemDTO toSkuItemDTO(SpuAggregate spuAggregate, SkuAggregate skuAggregate) {
-        SkuItemDTO skuItemDTO = new SkuItemDTO();
+    default SkuItemDto toSkuItemDTO(SpuAggregate spuAggregate, SkuAggregate skuAggregate) {
+        SkuItemDto skuItemDTO = new SkuItemDto();
         //
-        SkuInfoDTO skuInfoDTO = new SkuInfoDTO();
+        SkuInfoDto skuInfoDTO = new SkuInfoDto();
         skuInfoDTO.setSkuId(skuAggregate.getSkuId());
         skuInfoDTO.setSpuId(skuAggregate.getSpuId());
         skuInfoDTO.setSkuName(skuAggregate.getSkuName());
@@ -35,45 +35,45 @@ public interface SkuServiceConverter {
         skuInfoDTO.setSaleCount(skuAggregate.getSaleCount());
         skuItemDTO.setSkuInfo(skuInfoDTO);
         //
-        SpuInfoDescDTO spuInfoDescDTO = new SpuInfoDescDTO();
+        SpuInfoDescDto spuInfoDescDTO = new SpuInfoDescDto();
         spuInfoDescDTO.setSpuId(spuInfoDescDTO.getSpuId());
         spuInfoDescDTO.setDecript(spuInfoDescDTO.getDecript());
         skuItemDTO.setDesp(spuInfoDescDTO);
         //
-        List<SkuImageDTO> skuImageDTOS = new ArrayList<>();
+        List<SkuImageDto> skuImageDtos = new ArrayList<>();
         skuAggregate.getSkuImages().stream().forEach(e -> {
-            SkuImageDTO skuImageDTO = new SkuImageDTO();
+            SkuImageDto skuImageDTO = new SkuImageDto();
             skuImageDTO.setId(e.getId());
             skuImageDTO.setSkuId(e.getSkuId());
             skuImageDTO.setImgUrl(e.getImgUrl());
             skuImageDTO.setImgSort(e.getImgSort());
             skuImageDTO.setDefaultImg(e.getDefaultImg());
-            skuImageDTOS.add(skuImageDTO);
+            skuImageDtos.add(skuImageDTO);
         });
-        skuItemDTO.setImages(skuImageDTOS);
+        skuItemDTO.setImages(skuImageDtos);
         //
-        List<SkuItemSaleAttrDTO> skuItemSaleAttrDTOS = new ArrayList<>();
+        List<SkuItemSaleAttrDto> skuItemSaleAttrDtos = new ArrayList<>();
         spuAggregate.getSkuItemSaleAttrs().stream().forEach(e -> {
-            SkuItemSaleAttrDTO skuItemSaleAttrDTO = new SkuItemSaleAttrDTO();
+            SkuItemSaleAttrDto skuItemSaleAttrDTO = new SkuItemSaleAttrDto();
             skuItemSaleAttrDTO.setAttrId(e.getAttrId());
             skuItemSaleAttrDTO.setAttrName(e.getAttrName());
-            List<AttrValueWithSkuIdDTO> attrValueWithSkuIdDTOS = e.getAttrValues().stream().map(f -> {
-                AttrValueWithSkuIdDTO attrValueWithSkuIdDTO = new AttrValueWithSkuIdDTO();
+            List<AttrValueWithSkuIdDto> attrValueWithSkuIdDtos = e.getAttrValues().stream().map(f -> {
+                AttrValueWithSkuIdDto attrValueWithSkuIdDTO = new AttrValueWithSkuIdDto();
                 attrValueWithSkuIdDTO.setSkuIds(f.getSkuIds());
                 attrValueWithSkuIdDTO.setAttrValue(f.getAttrValue());
                 return attrValueWithSkuIdDTO;
             }).collect(Collectors.toList());
-            skuItemSaleAttrDTO.setAttrValues(attrValueWithSkuIdDTOS);
-            skuItemSaleAttrDTOS.add(skuItemSaleAttrDTO);
+            skuItemSaleAttrDTO.setAttrValues(attrValueWithSkuIdDtos);
+            skuItemSaleAttrDtos.add(skuItemSaleAttrDTO);
         });
-        skuItemDTO.setSaleAttr(skuItemSaleAttrDTOS);
+        skuItemDTO.setSaleAttr(skuItemSaleAttrDtos);
 
-        List<SpuItemAttrGroupDTO> spuItemAttrGroupDTOS = new ArrayList<>();
+        List<SpuItemAttrGroupDto> spuItemAttrGroupDtos = new ArrayList<>();
         spuAggregate.getSpuItemAttrGroups().stream().forEach(e -> {
-            SpuItemAttrGroupDTO spuItemAttrGroupDTO = new SpuItemAttrGroupDTO();
+            SpuItemAttrGroupDto spuItemAttrGroupDTO = new SpuItemAttrGroupDto();
             spuItemAttrGroupDTO.setGroupName(e.getGroupName());
-            List<AttrDTO> attrDTOS = e.getAttrs().stream().map(f -> {
-                AttrDTO attrDTO = new AttrDTO();
+            List<AttrDto> attrDtos = e.getAttrs().stream().map(f -> {
+                AttrDto attrDTO = new AttrDto();
                 attrDTO.setAttrId(f.getAttrId());
                 attrDTO.setAttrName(f.getAttrName());
                 attrDTO.setSearchType(f.getSearchType());
@@ -84,9 +84,9 @@ public interface SkuServiceConverter {
                 attrDTO.setCatelogId(f.getCatelogId());
                 return attrDTO;
             }).collect(Collectors.toList());
-            spuItemAttrGroupDTO.setAttrs(attrDTOS);
+            spuItemAttrGroupDTO.setAttrs(attrDtos);
         });
-        skuItemDTO.setGroupAttrs(spuItemAttrGroupDTOS);
+        skuItemDTO.setGroupAttrs(spuItemAttrGroupDtos);
         return skuItemDTO;
     };
 }

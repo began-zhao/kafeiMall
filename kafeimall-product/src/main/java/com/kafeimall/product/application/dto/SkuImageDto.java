@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class SkuImageDTO {
+public class SkuImageDto {
     /**
      * id
      */

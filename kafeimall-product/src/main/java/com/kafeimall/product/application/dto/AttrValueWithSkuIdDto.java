@@ -8,7 +8,7 @@ import lombok.Data;
  * @Description: zzg
  */
 @Data
-public class AttrValueWithSkuIdDTO {
+public class AttrValueWithSkuIdDto {
     private String attrValue;
     private String skuIds;
 }

@@ -209,4 +209,9 @@ public class OrderDomainServiceImpl implements OrderDomainService {
     public void updateOrder(OrderAggregate orderAggregate) {
         orderRepository.updateOrder(orderAggregate);
     }
+
+    @Override
+    public  OrderAggregate getOrderBuOrderSn(String orderSn){
+        return orderRepository.getByOrderNo(orderSn);
+    };
 }

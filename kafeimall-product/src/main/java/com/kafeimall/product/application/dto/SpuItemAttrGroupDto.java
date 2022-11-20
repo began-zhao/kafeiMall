@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Data
 @NoArgsConstructor
-public class SpuItemAttrGroupDTO {
+public class SpuItemAttrGroupDto {
     private String groupName;
-    private List<AttrDTO> attrs;
+    private List<AttrDto> attrs;
 }

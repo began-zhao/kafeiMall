@@ -12,8 +12,8 @@ import java.util.List;
  */
 @Data
 @NoArgsConstructor
-public class SkuItemSaleAttrDTO {
+public class SkuItemSaleAttrDto {
     private Long attrId;
     private String attrName;
-    private List<AttrValueWithSkuIdDTO> attrValues;
+    private List<AttrValueWithSkuIdDto> attrValues;
 }

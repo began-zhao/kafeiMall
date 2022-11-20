@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class SpuInfoDescDTO {
+public class SpuInfoDescDto {
     /**
      * 商品id
      */

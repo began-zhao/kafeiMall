@@ -16,7 +16,7 @@ import javax.validation.constraints.*;
  * @Description: 品牌DTO
  */
 @Data
-public class BrandDTO {
+public class BrandDto {
     /**
      * 品牌id
      */

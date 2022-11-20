@@ -1,6 +1,5 @@
 package com.kafeimall.product.application.dto;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,7 +12,7 @@ import java.math.BigDecimal;
  */
 @Data
 @NoArgsConstructor
-public class SkuInfoDTO {
+public class SkuInfoDto {
     /**
      * skuId
      */

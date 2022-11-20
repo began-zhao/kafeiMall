@@ -1,19 +1,16 @@
-package com.kafeimall.product.httpapi.module.response;
+package com.kafeimall.product.application.dto;
 
-import com.kafeimall.product.application.dto.CategoryDTO;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 /**
  * @author: zzg
- * @date: 8/23/22
- * @Description: 商品VO
+ * @date: 8/24/22
+ * @Description: 分类DTO
  */
 @Data
-@NoArgsConstructor
-public class CategoryResponse {
+public class CategoryDto {
     /**
      * 分类id
      */
@@ -54,5 +51,6 @@ public class CategoryResponse {
     /**
      * 分类
      */
-    private List<CategoryDTO> children;
+    private List<CategoryDto> children;
+
 }
