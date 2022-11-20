@@ -1,16 +1,22 @@
 package com.kafeimall.order.application.impl;
 
+import com.kafeimall.common.to.mq.OrderTo;
 import com.kafeimall.order.application.OrderApplication;
 import com.kafeimall.order.application.converter.OrderConverter;
 import com.kafeimall.order.application.dto.OrderConfirmDto;
 import com.kafeimall.order.application.dto.OrderDto;
 import com.kafeimall.order.application.dto.OrderSubmitRequestDto;
 import com.kafeimall.order.application.dto.SubmitOrderResponseDto;
+import com.kafeimall.order.common.enums.OrderStatusEnum;
 import com.kafeimall.order.domain.aggregate.OrderAggregate;
 import com.kafeimall.order.domain.aggregate.OrderConfirmAggregate;
 import com.kafeimall.order.domain.aggregate.OrderSubmitRequestAggregate;
 import com.kafeimall.order.domain.aggregate.SubmitOrderResponseAggregate;
+import com.kafeimall.order.infrastructure.repo.repository.OrderRepository;
 import com.kafeimall.order.service.OrderDomainService;
+import org.springframework.amqp.AmqpException;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +35,12 @@ public class OrderApplicationImpl implements OrderApplication {
 
     @Autowired
     OrderConverter orderConverter;
+
+    @Autowired
+    OrderRepository orderRepository;
+
+    @Autowired
+    RabbitTemplate rabbitTemplate;
 
     /**
      * 生成订单确认页信息
@@ -64,6 +76,34 @@ public class OrderApplicationImpl implements OrderApplication {
     public OrderDto getOrderBuOrderSn(String OrderSn){
         OrderAggregate orderBuOrderSn = orderDomainService.getOrderBuOrderSn(OrderSn);
         return orderConverter.toOrderDto(orderBuOrderSn);
+    }
+
+    /**
+     * 关闭过期订单
+     * @param OrderId 需要关闭的订单参数
+     */
+    @Override
+    public void closeOrder(Long OrderId){
+        //查询当前这个订单的最新状态
+        OrderAggregate orderEntity = orderRepository.getOrderById(OrderId);
+        //关单
+        if (orderEntity.getStatus() == OrderStatusEnum.CRETAE_NEW.getCode()) {
+            OrderAggregate entity1 = new OrderAggregate();
+            entity1.setStatus(OrderStatusEnum.CANCLED.getCode());
+            entity1.setId(OrderId);
+            orderRepository.updateOrder(entity1);
+            OrderTo orderTo = new OrderTo();
+            BeanUtils.copyProperties(orderEntity, orderTo);
+            //发给MQ一个，防止因为网络问题导致库存解锁失败
+            try {
+                //TODO 保证消息一定会发送出去，每一个消息都做好日志记录（给数据库保存每一个消息的详细信息）。
+                //TODO 定期扫描数据库，将失败的消息重新发送
+                rabbitTemplate.convertAndSend("order-event-exchange", "order.release.other", orderTo);
+            } catch (AmqpException e) {
+                //TODO 将没发送成功的消息进行重试发送
+
+            }
+        }
     }
 
 }

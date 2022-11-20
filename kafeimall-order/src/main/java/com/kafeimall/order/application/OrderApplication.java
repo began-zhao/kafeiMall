@@ -34,7 +34,33 @@ public interface OrderApplication {
      */
     OrderDto getOrderBuOrderSn(String OrderSn);
 
-    //TODO:
+    /**
+     * 关闭过期订单
+     * @param OrderId
+     */
+    void closeOrder(Long OrderId);
+
+//    /**
+//     * 获取当前订单支付信息
+//     * @param orderSn
+//     * @return
+//     */
+//    PayVo getOrderPay(String orderSn);
+//
+//    PageUtils queryPageWithItem(Map<String, Object> params);
+//
+//    /**
+//     * 处理支付宝支付返回数据
+//     * @param vo
+//     * @return
+//     */
+//    String handlePayResult(PayAsyncVo vo);
+//
+//    /**
+//     * 准备创建秒杀单的详细信息
+//     * @param entity
+//     */
+//    void createSeckillOrder(SeckillOrderTo entity);
 
 
 }

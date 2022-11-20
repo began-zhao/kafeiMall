@@ -59,5 +59,16 @@ public class OrderController {
         return Result.success(orderApplication.getOrderBuOrderSn(orderSn)) ;
     };
 
+    /**
+     *关闭过期订单
+     * @param orderId 订单Id
+     * @return 订单信息
+     */
+    @GetMapping("/closeOrder")
+    public Result<Object> closeOrder(@PathVariable("orderId") Long orderId){
+        orderApplication.closeOrder(orderId);
+        return Result.ok();
+    };
+
 
 }
