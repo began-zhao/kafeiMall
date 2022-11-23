@@ -9,7 +9,10 @@ import com.kafeimall.order.application.dto.SubmitOrderResponseDto;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -70,5 +73,19 @@ public class OrderController {
         return Result.ok();
     };
 
+    /**
+     * 支付成功回调
+     * @param
+     * @return
+     */
+    public void handlePayResult(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        String result="success";
+//        response.setContentType("text/html;charset=" + alipayConfig.getCharset());
+//        response.setCharacterEncoding(alipayConfig.getCharset());
+        response.getWriter().write(result);// 直接将完整的表单html输出到页面
+        response.getWriter().flush();
+        response.getWriter().close();
+    };
 
 }
