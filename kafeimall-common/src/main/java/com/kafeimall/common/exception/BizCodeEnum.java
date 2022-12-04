@@ -36,7 +36,7 @@ public enum BizCodeEnum {
         this.code=code;
         this.msg=msg;
     }
-    public int getCode(){
+        public int getCode(){
         return code;
     }
     public String getMessage(){
