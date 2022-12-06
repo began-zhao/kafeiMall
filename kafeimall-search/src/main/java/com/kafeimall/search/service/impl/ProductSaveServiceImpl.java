@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 /**
  * @author: zzg
  * @date: 2022/12/4
- * @Description: zzg
+ * @Description: 商品ES信息操作
  */
 @Service
 @Slf4j
