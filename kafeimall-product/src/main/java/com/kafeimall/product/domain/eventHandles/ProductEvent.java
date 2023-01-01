@@ -4,12 +4,11 @@ import org.springframework.context.ApplicationEvent;
 
 /**
  * @author: zzg
- * @date: 2022/11/26
- * @Description: 领域事件处理
+ * @date: 2023/1/1
+ * @Description: zzg
  */
-public class eventHandler extends ApplicationEvent {
-
-    public eventHandler(Object source) {
+public class ProductEvent extends ApplicationEvent {
+    public ProductEvent(Object source) {
         super(source);
     }
 }

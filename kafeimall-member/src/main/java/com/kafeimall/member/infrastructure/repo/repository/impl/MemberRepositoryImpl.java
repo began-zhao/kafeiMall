@@ -11,6 +11,8 @@ import com.kafeimall.member.infrastructure.repo.repository.converter.MemberRepos
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
  * @author: zzg
  * @date: 2022/10/5
@@ -42,8 +44,11 @@ public class MemberRepositoryImpl extends ServiceImpl<MemberDao,MemberPo> implem
 
     @Override
     public MemberAggregate selectUserByUsername(String username) {
-        MemberPo username1 = baseMapper.selectOne(new QueryWrapper<MemberPo>().eq("username", username));
-        MemberAggregate memberAggregate = memberRepositoryConverter.toMemberDO(username1);
+        MemberPo userMsg = baseMapper.selectOne(new QueryWrapper<MemberPo>().eq("username", username));
+        if(!Optional.ofNullable(userMsg).isPresent()){
+            throw new ServiceException("用户不存在");
+        }
+        MemberAggregate memberAggregate = memberRepositoryConverter.toMemberDO(userMsg);
         return memberAggregate;
     }
 

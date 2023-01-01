@@ -1,13 +1,14 @@
 package com.kafeimall.product.domain.eventHandles.model;
 
-import com.kafeimall.common.event.BaseDomainEvent;
+import lombok.Data;
 
 /**
  * @author: zzg
  * @date: 2022/11/26
  * @Description: zzg
  */
-public class ProductEventEto extends BaseDomainEvent<ProductEventEto> {
+@Data
+public class ProductEventEto {
     /**
      * skuId
      */

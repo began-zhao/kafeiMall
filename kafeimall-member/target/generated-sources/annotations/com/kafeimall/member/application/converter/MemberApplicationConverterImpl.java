@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-07T23:31:25+0800",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 17.0.3 (JetBrains s.r.o.)"
+    date = "2023-01-01T19:25:33+0800",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 17.0.5 (JetBrains s.r.o.)"
 )
 @Component
 public class MemberApplicationConverterImpl implements MemberApplicationConverter {
