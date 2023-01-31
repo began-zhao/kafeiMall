@@ -3,7 +3,7 @@ package com.kafeimall.support;
 import org.springframework.boot.SpringApplication;
 
 /**
- *
+ *支撑服务
  *
  */
 public class KafeimallSupportApplication
