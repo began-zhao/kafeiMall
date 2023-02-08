@@ -21,4 +21,4 @@ What things you need to install the software and how to install them.
 ```
 github尝试
 ```
-
+添加gradle版本。。
