@@ -1,0 +1,17 @@
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-security:2.5.3'
+    implementation 'org.springframework.cloud:spring-cloud-starter-oauth2:2.2.5.RELEASE'
+    implementation 'com.nimbusds:nimbus-jose-jwt:9.23'
+
+    //SecurityConfig在JDK11出错问题
+    implementation 'com.sun.xml.bind:jaxb-core:3.0.2'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'com.sun.xml.bind:jaxb-impl:3.0.2'
+    implementation 'javax.activation:activation:1.1.1'
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:3.0.1'
+    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.0-b170127.1453'
+
+}
+
+description = 'kafeimall-auth-server'

@@ -1,0 +1,143 @@
+description 'kafeimall微服务父工程'
+
+
+buildscript {
+    ext {
+        springBootVersion = '2.5.3'
+        springCloudVersion = '2020.0.3'
+        springCloudAlibabaVersion = '2021.1'
+    }
+
+    //设置仓库
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://repo.spring.io/milestone' }
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+//配置全局，包括root项目和子项目
+allprojects {
+    group 'com.kafei'
+    version '1.0.0'
+
+    //配置编码格式
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+
+    //设置仓库
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://repo.spring.io/milestone' }
+    }
+}
+
+apply from: "version.gradle"
+
+//配置所有子项目
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'io.spring.dependency-management'
+
+
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+
+    //公用的依赖
+    dependencies {
+        //让gradle自动配置兼容版本
+        testImplementation 'org.junit.jupiter:junit-jupiter-api'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    //dependencyManagement版本统一管理，类似父maven的dependencyManagement
+    dependencyManagement {
+        dependencies {
+            for (depJar in rootProject.ext.dependencies) {
+                dependency depJar.value
+            }
+        }
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
+        }
+    }
+}
+
+project(":kafeimall-common") {
+    description("公共模块:存放微服务常用的工具类")
+    //依赖
+    dependencies {
+        api 'com.alibaba:fastjson'
+        api 'com.google.guava:guava'
+        api 'cn.hutool:hutool-all'
+        api 'org.projectlombok:lombok'
+        api 'org.springframework.boot:spring-boot-starter-data-redis'
+        api 'org.redisson:redisson'
+        api 'com.github.xiaoymin:knife4j-spring-boot-starter'
+        api 'org.springframework.boot:spring-boot-starter-validation'
+        api 'org.springframework.cloud:spring-cloud-starter-openfeign'
+        api 'org.mapstruct:mapstruct'
+        api 'mysql:mysql-connector-java'
+        api 'com.baomidou:mybatis-plus-boot-starter'
+
+    }
+}
+
+project(":kafeimall-gateway") {
+    description("网关服务")
+
+    //依赖
+    dependencies {
+//        implementation 'org.springframework.boot:spring-boot-starter-web'
+
+        //只引入一个的做法在Gradle 5.0以上被命令禁止了
+        annotationProcessor 'org.projectlombok:lombok'
+
+        annotationProcessor ("org.mapstruct:mapstruct-processor")
+
+        annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+
+        annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+        api project(':kafeimall-common')
+    }
+}
+
+project(":kafeimall-service") {
+    description("服务模块，存放各个微服务模块")
+    apply plugin: 'org.springframework.boot'
+
+    subprojects {
+        apply plugin: 'java-library'
+        apply plugin: 'org.springframework.boot'
+
+        dependencies {
+            implementation 'org.springframework.boot:spring-boot-starter-web'
+
+            //Mapstruct和Lombok同时应用可能会有冲突，下列三个都不能少
+            //只引入一个的做法在Gradle 5.0以上被命令禁止了
+            annotationProcessor 'org.projectlombok:lombok'
+
+            annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+
+            annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+            api project(':kafeimall-common')
+        }
+    }
+}
+
+
+
+
+

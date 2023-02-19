@@ -1,0 +1,21 @@
+
+
+dependencies {
+//    implementation 'org.springframework.boot:spring-boot-starter:2.5.3'
+//    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.3'
+//    implementation 'org.projectlombok:lombok:1.18.20'
+//    implementation 'com.alibaba:fastjson:1.2.83'
+//    implementation 'cn.hutool:hutool-all:5.1.0'
+//    implementation 'com.google.guava:guava:30.0-jre'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.0.3'
+//    implementation project(':kafeimall-common')
+//    implementation 'org.springframework.boot:spring-boot-starter-data-redis:2.5.3'
+//    implementation 'org.redisson:redisson:3.16.1'
+    implementation 'org.springframework.boot:spring-boot-starter-amqp:2.5.3'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.3'
+    implementation 'com.alipay.sdk:alipay-sdk-java:4.16.21.ALL'
+    implementation 'org.springframework.boot:spring-boot-starter-cache:2.5.3'
+//    testImplementation 'junit:junit:3.8.1'
+}
+
+description = 'kafeimall-order'

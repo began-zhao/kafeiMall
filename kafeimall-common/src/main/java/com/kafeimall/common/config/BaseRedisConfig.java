@@ -4,10 +4,9 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
-import com.kafeimall.common.service.RedisService;
-import com.kafeimall.common.service.impl.RedisServiceImpl;
+import com.kafeimall.common.util.impl.RedisServiceImpl;
+import com.kafeimall.common.util.service.RedisService;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.cache.RedisCacheWriter;
@@ -25,7 +24,6 @@ import java.time.Duration;
  * @date: 2022/10/2
  * @Description: zzg
  */
-@Configuration
 public class BaseRedisConfig {
 
     @Bean

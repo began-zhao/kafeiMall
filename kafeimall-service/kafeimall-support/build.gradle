@@ -1,0 +1,9 @@
+
+
+dependencies {
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alicloud-oss:2.2.0.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.3'
+}
+
+group = 'com.kafeimall.support'
+description = 'kafeimall-support'
