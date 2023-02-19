@@ -1,0 +1,7 @@
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-amqp:2.5.3'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.3'
+}
+
+description = 'kafeimall-ware'

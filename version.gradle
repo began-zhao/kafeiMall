@@ -1,0 +1,70 @@
+//依赖版本管理
+ext {
+    version = [
+            "hutoolVersion"       : "5.1.0",
+            "guavaVersion"        : "30.0-jre",
+            "fastJsonVersion"     : "1.2.83",
+            "jjwtVersion"         : "0.9.1",
+            "nimbusJoseJwtVersion": "9.23",
+            "knife4jVersion"      : "3.0.3",
+            "mapstruct"           : "1.5.2.Final",
+            "lombok"              : "1.18.20",
+            "mybatisPlus"         : "3.5.2",
+            "mysql"               : "8.0.26",
+            "nacosDiscovery"      : "2021.1",
+            "openfeign"           : "3.0.3",
+            "loadbalancer"        : "3.0.3",
+            "nacosConfig"         : "2021.1",
+            "redis"               : "2.5.3",
+            "redisson"            : "3.16.1",
+            "validation"          : "2.5.3"
+
+    ]
+    dependencies = [
+            //fastjson工具包
+            "fastjson"     : "com.alibaba:fastjson:${version.fastJsonVersion}",
+
+            //hutool工具包-
+            "hutool"       : "cn.hutool:hutool-all:${version.hutoolVersion}",
+
+            //guava工具包
+            "guava"        : "com.google.guava:guava:${version.guavaVersion}",
+
+            //JWT(Json Web Token)登录支持
+            "jjwt"         : "io.jsonwebtoken:jjwt:${version.jjwtVersion}",
+
+            //JWT(Json Web Token)登录支持
+            "nimbusJoseJwt": "com.nimbusds:nimbus-jose-jwt:${version.nimbusJoseJwtVersion}",
+
+            //Knife4j API文档生产工具
+            "knife4j"      : "com.github.xiaoymin:knife4j-spring-boot-starter:${version.knife4jVersion}",
+
+            //redis
+            "redis"        : "org.springframework.boot:spring-boot-starter-data-redis:${version.redis}",
+
+            //redisson
+            "redisson"     : "org.redisson:redisson:${version.redisson}",
+
+            //lombok
+            "lombok"       : "org.projectlombok:lombok:${version.lombok}",
+
+            //validation
+            "validation"   : "org.springframework.boot:spring-boot-starter-validation:${version.validation}",
+
+            //openFeign
+            "openFeign"    : "org.springframework.cloud:spring-cloud-starter-openfeign:${version.openfeign}",
+
+            //mapstruct
+            "mapstruct"    : "org.mapstruct:mapstruct:${version.mapstruct}",
+
+            //mybatisPlus
+            "mybatisPlus"  : "com.baomidou:mybatis-plus-boot-starter:${version.mybatisPlus}",
+
+            //mysql
+            "mysql"        : "mysql:mysql-connector-java:${version.mysql}",
+
+
+    ]
+}
+
+

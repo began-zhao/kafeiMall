@@ -1,0 +1,8 @@
+
+
+dependencies {
+    implementation 'com.alibaba:druid-spring-boot-starter:1.2.8'
+    implementation 'org.springframework.boot:spring-boot-starter-cache:2.5.3'
+}
+
+description = 'kafeimall-product'
