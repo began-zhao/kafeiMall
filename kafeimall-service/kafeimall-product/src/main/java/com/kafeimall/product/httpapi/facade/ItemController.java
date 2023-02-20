@@ -1,4 +1,4 @@
-package com.kafeimall.product.httpapi.controller;
+package com.kafeimall.product.httpapi.facade;
 
 import com.kafeimall.common.result.Result;
 import com.kafeimall.product.application.SkuApplicationService;

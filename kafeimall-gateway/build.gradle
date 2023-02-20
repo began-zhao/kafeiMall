@@ -1,20 +1,10 @@
-
-
 dependencies {
-//    implementation 'org.projectlombok:lombok:1.18.20'
-//    implementation 'com.alibaba:fastjson:1.2.83'
-//    implementation 'cn.hutool:hutool-all:5.1.0'
-//    implementation 'com.google.guava:guava:30.0-jre'
-//    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.0.3'
-//    implementation project(':kafeimall-common')
-//    implementation 'com.github.xiaoymin:knife4j-spring-boot-starter:3.0.3'
     implementation 'org.springframework.cloud:spring-cloud-starter-gateway:3.0.3'
     implementation 'org.springframework.cloud:spring-cloud-loadbalancer:3.0.3'
     implementation 'org.springframework.security:spring-security-config:5.5.1'
     implementation 'org.springframework.security:spring-security-oauth2-resource-server:5.5.1'
     implementation 'org.springframework.security:spring-security-oauth2-client:5.5.1'
     implementation 'org.springframework.security:spring-security-oauth2-jose:5.5.1'
-//    testImplementation 'junit:junit:4.13.2'
 }
 
 description = 'kafeimall-gateway'

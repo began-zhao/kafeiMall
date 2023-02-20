@@ -1,4 +1,4 @@
-package com.kafeimall.product.infrastructure.facade;
+package com.kafeimall.product.api.feign;
 
 /**
  * @author: zzg

@@ -1,8 +1,8 @@
-package com.kafeimall.product.infrastructure.facade.fallback;
+package com.kafeimall.product.api.feign.fallback;
 
 import com.kafeimall.common.exception.BizCodeEnum;
 import com.kafeimall.common.result.Result;
-import com.kafeimall.product.infrastructure.facade.SeckillAdaptor;
+import com.kafeimall.product.api.feign.SeckillAdaptor;
 import lombok.extern.slf4j.Slf4j;
 
 /**

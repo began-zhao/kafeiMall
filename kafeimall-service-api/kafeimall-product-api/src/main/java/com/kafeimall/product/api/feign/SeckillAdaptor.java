@@ -1,8 +1,8 @@
-package com.kafeimall.product.infrastructure.facade;
+package com.kafeimall.product.api.feign;
 
 import com.kafeimall.common.result.Result;
-import com.kafeimall.product.domain.entity.SeckillInfo;
-import com.kafeimall.product.infrastructure.facade.fallback.SeckillAdaptorFallback;
+import com.kafeimall.product.api.contract.response.SeckillInfo;
+import com.kafeimall.product.api.feign.fallback.SeckillAdaptorFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
