@@ -3,6 +3,10 @@
 dependencies {
     implementation 'com.alibaba:druid-spring-boot-starter:1.2.8'
     implementation 'org.springframework.boot:spring-boot-starter-cache:2.5.3'
+
+    api project(':kafeimall-service-api:kafeimall-product-api')
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
 
 description = 'kafeimall-product'

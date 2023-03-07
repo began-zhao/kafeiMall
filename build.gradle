@@ -75,7 +75,7 @@ subprojects {
 
 project(":kafeimall-common") {
     description("公共模块:存放微服务常用的工具类")
-    apply plugin: 'org.springframework.boot'
+//    apply plugin: 'org.springframework.boot'
     //依赖
     dependencies {
         api 'com.alibaba:fastjson'
@@ -89,8 +89,6 @@ project(":kafeimall-common") {
         api 'org.springframework.cloud:spring-cloud-starter-openfeign'
         api 'org.mapstruct:mapstruct'
         api 'mysql:mysql-connector-java'
-        api 'com.baomidou:mybatis-plus-boot-starter'
-
     }
 }
 

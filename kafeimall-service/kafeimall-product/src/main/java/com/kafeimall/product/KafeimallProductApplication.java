@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @SpringBootApplication
 @MapperScan("com.kafeimall.product.infrastructure.repo.dao")
-@EnableFeignClients(basePackages = "com.kafeimall.product.infrastructure.facade")
+@EnableFeignClients(basePackages = "com.kafeimall.product.api.feign")
 @EnableDiscoveryClient
 public class KafeimallProductApplication {
 

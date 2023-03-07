@@ -57,6 +57,6 @@ include(':kafeimall-service:kafeimall-seckill')
 findProject(':kafeimall-service:kafeimall-seckill')?.name = 'kafeimall-seckill'
 
 //商品feign
-include 'kafeimall-service-api:kafeimall-product-api'
+include ':kafeimall-service-api:kafeimall-product-api'
 findProject(':kafeimall-service-api:kafeimall-product-api')?.name = 'kafeimall-product-api'
 

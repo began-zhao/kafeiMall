@@ -5,6 +5,11 @@ dependencies {
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:2021.1'
     implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:3.0.3'
     implementation 'org.springframework:spring-webmvc:5.3.9'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+
+    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
 }
 
 description = 'kafeimall-common'

@@ -9,7 +9,6 @@ ext {
             "knife4jVersion"      : "3.0.3",
             "mapstruct"           : "1.5.2.Final",
             "lombok"              : "1.18.20",
-            "mybatisPlus"         : "3.5.2",
             "mysql"               : "8.0.26",
             "nacosDiscovery"      : "2021.1",
             "openfeign"           : "3.0.3",
@@ -57,13 +56,8 @@ ext {
             //mapstruct
             "mapstruct"    : "org.mapstruct:mapstruct:${version.mapstruct}",
 
-            //mybatisPlus
-            "mybatisPlus"  : "com.baomidou:mybatis-plus-boot-starter:${version.mybatisPlus}",
-
             //mysql
             "mysql"        : "mysql:mysql-connector-java:${version.mysql}",
-
-
     ]
 }
 
