@@ -1,19 +1,25 @@
 package com.kafeimall.product.infrastructure.facade;
 
 import com.kafeimall.common.result.Result;
-import com.kafeimall.product.domain.entity.SeckillInfo;
-import com.kafeimall.product.infrastructure.facade.fallback.SeckillAdaptorFallback;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import com.kafeimall.product.api.contract.response.SeckillInfo;
+import com.kafeimall.product.api.feign.SeckillFeignService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * @author: zzg
  * @date: 9/2/22
- * @Description: 远程调用秒杀服务获取秒杀信息
+ * @Description: 调用远程接口的秒杀防腐层
  */
-@FeignClient(value = "kafeimall-seckill", fallback = SeckillAdaptorFallback.class)
-public interface SeckillAdaptor {
-    @GetMapping("/sku/seckill/{skuId}")
-    Result<SeckillInfo> getSkuSeckillInfo(@PathVariable("skuId") Long skuId);
+@Component
+public class SeckillAdaptor {
+
+    //仅作为样例，后期秒杀服务的feign接口内容应该放在秒杀服务对应api下
+    @Autowired
+    private SeckillFeignService seckillService;
+
+    public SeckillInfo getMtCityInfo(Long skuId) {
+        Result<SeckillInfo> skuSeckillInfo = seckillService.getSkuSeckillInfo(skuId);
+        return skuSeckillInfo.getData();
+    }
 }

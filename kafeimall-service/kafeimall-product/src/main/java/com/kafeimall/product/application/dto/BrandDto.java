@@ -1,6 +1,5 @@
 package com.kafeimall.product.application.dto;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.kafeimall.common.valid.AddGroup;
 import com.kafeimall.common.valid.ListValue;
 import com.kafeimall.common.valid.UpdateGroup;
@@ -22,7 +21,6 @@ public class BrandDto {
      */
     @NotNull(message = "修改必须指定品牌ID",groups = {UpdateGroup.class})
     @Null(message = "新增不能指定ID",groups = {AddGroup.class})
-    @TableId
     private Long brandId;
     /**
      * 品牌名

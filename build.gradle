@@ -75,6 +75,7 @@ subprojects {
 
 project(":kafeimall-common") {
     description("公共模块:存放微服务常用的工具类")
+//    apply plugin: 'org.springframework.boot'
     //依赖
     dependencies {
         api 'com.alibaba:fastjson'
@@ -88,17 +89,15 @@ project(":kafeimall-common") {
         api 'org.springframework.cloud:spring-cloud-starter-openfeign'
         api 'org.mapstruct:mapstruct'
         api 'mysql:mysql-connector-java'
-        api 'com.baomidou:mybatis-plus-boot-starter'
-
     }
 }
 
 project(":kafeimall-gateway") {
     description("网关服务")
+    apply plugin: 'org.springframework.boot'
 
     //依赖
     dependencies {
-//        implementation 'org.springframework.boot:spring-boot-starter-web'
 
         //只引入一个的做法在Gradle 5.0以上被命令禁止了
         annotationProcessor 'org.projectlombok:lombok'
@@ -115,6 +114,30 @@ project(":kafeimall-gateway") {
 
 project(":kafeimall-service") {
     description("服务模块，存放各个微服务模块")
+    apply plugin: 'org.springframework.boot'
+
+    subprojects {
+        apply plugin: 'java-library'
+        apply plugin: 'org.springframework.boot'
+
+        dependencies {
+            implementation 'org.springframework.boot:spring-boot-starter-web'
+
+            //Mapstruct和Lombok同时应用可能会有冲突，下列三个都不能少
+            //只引入一个的做法在Gradle 5.0以上被命令禁止了
+            annotationProcessor 'org.projectlombok:lombok'
+
+            annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+
+            annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+            api project(':kafeimall-common')
+        }
+    }
+}
+
+project(":kafeimall-service-api") {
+    description("服务api模块，feign接口调用模块")
     apply plugin: 'org.springframework.boot'
 
     subprojects {

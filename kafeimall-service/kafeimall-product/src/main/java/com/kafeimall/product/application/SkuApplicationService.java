@@ -1,9 +1,8 @@
 package com.kafeimall.product.application;
 
-import com.kafeimall.product.application.dto.SkuInfoDto;
-import com.kafeimall.product.application.dto.SkuItemDto;
+import com.kafeimall.product.domain.model.BrandDO;
 
-import java.util.concurrent.ExecutionException;
+import java.util.List;
 
 /**
  * @author: zzg
@@ -12,12 +11,8 @@ import java.util.concurrent.ExecutionException;
  */
 public interface SkuApplicationService {
     /**
-     * sku基本信息获取
+     * 品牌基本信息
      * */
-    SkuInfoDto getById(Long Id);
+    List<BrandDO> getBrands();
 
-    /**
-     * sku详情获取
-     * */
-    SkuItemDto getItem(Long skuId) throws ExecutionException, InterruptedException;
 }

@@ -1,0 +1,114 @@
+2023-03-01 00:01:08.978 [main] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\83456\nacos\config
+2023-03-01 00:01:09.747 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2023-03-01 00:01:09.805 [main] INFO  com.alibaba.nacos.client.config.utils.JvmUtil - isMultiInstance:false
+2023-03-01 00:01:09.869 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-mall-product-dev.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product.yml,DEFAULT_GROUP'}]
+2023-03-01 00:01:09.873 [main] INFO  com.kafeimall.product.KafeimallProductApplication - The following profiles are active: dev
+2023-03-01 00:22:23.414 [main] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\83456\nacos\config
+2023-03-01 00:22:23.441 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2023-03-01 00:22:23.524 [main] INFO  com.alibaba.nacos.client.config.utils.JvmUtil - isMultiInstance:false
+2023-03-01 00:22:23.579 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-mall-product-dev.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product.yml,DEFAULT_GROUP'}]
+2023-03-01 00:22:23.583 [main] INFO  com.kafeimall.product.KafeimallProductApplication - The following profiles are active: dev
+2023-03-01 00:23:25.640 [main] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\83456\nacos\config
+2023-03-01 00:23:25.671 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2023-03-01 00:23:25.720 [main] INFO  com.alibaba.nacos.client.config.utils.JvmUtil - isMultiInstance:false
+2023-03-01 00:23:25.772 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-mall-product-dev.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product.yml,DEFAULT_GROUP'}]
+2023-03-01 00:23:25.776 [main] INFO  com.kafeimall.product.KafeimallProductApplication - The following profiles are active: dev
+2023-03-01 00:23:26.625 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-03-01 00:23:26.626 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-01 00:23:26.718 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 1 JPA repository interfaces.
+2023-03-01 00:23:26.729 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-03-01 00:23:26.730 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-03-01 00:23:26.747 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kafeimall.product.domain.repository.BrandRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-03-01 00:23:26.747 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2023-03-01 00:23:26.988 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=85d410d9-e508-3bcb-9652-65a676d6c4e5
+2023-03-01 00:23:27.342 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8870 (http)
+2023-03-01 00:23:27.351 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8870"]
+2023-03-01 00:23:27.351 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-01 00:23:27.352 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+2023-03-01 00:23:27.353 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.28] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2023-03-01 00:23:27.353 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.28] using APR version [1.7.0].
+2023-03-01 00:23:27.353 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2023-03-01 00:23:27.353 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2023-03-01 00:23:27.357 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2023-03-01 00:23:27.492 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-03-01 00:23:27.492 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1700 ms
+2023-03-01 00:23:29.376 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2023-03-01 00:23:29.447 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-03-01 00:23:29.517 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-01 00:23:29.557 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2023-03-01 00:23:29.666 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-01 00:23:30.124 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-03-01 00:23:30.676 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-01 00:23:30.685 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-01 00:23:31.412 [main] INFO  org.redisson.Version - Redisson 3.16.1
+2023-03-01 00:23:42.272 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-01 00:23:42.273 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2023-03-01 00:23:42.277 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2023-03-01 00:23:42.287 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2023-03-01 00:23:42.300 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-01 22:47:31.031 [main] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\83456\nacos\config
+2023-03-01 22:47:31.065 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2023-03-01 22:47:31.133 [main] INFO  com.alibaba.nacos.client.config.utils.JvmUtil - isMultiInstance:false
+2023-03-01 22:47:31.190 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-mall-product-dev.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-mall-product.yml,DEFAULT_GROUP'}]
+2023-03-01 22:47:31.194 [main] INFO  com.kafeimall.product.KafeimallProductApplication - The following profiles are active: dev
+2023-03-01 22:47:32.124 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-03-01 22:47:32.124 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-01 22:47:32.216 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 1 JPA repository interfaces.
+2023-03-01 22:47:32.229 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-03-01 22:47:32.230 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-03-01 22:47:32.248 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.kafeimall.product.domain.repository.BrandRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-03-01 22:47:32.248 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2023-03-01 22:47:32.499 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=85d410d9-e508-3bcb-9652-65a676d6c4e5
+2023-03-01 22:47:32.889 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8870 (http)
+2023-03-01 22:47:32.898 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8870"]
+2023-03-01 22:47:32.899 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-01 22:47:32.899 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+2023-03-01 22:47:32.901 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.28] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2023-03-01 22:47:32.901 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.28] using APR version [1.7.0].
+2023-03-01 22:47:32.901 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2023-03-01 22:47:32.901 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2023-03-01 22:47:32.915 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2023-03-01 22:47:33.039 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-03-01 22:47:33.039 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1828 ms
+2023-03-01 22:47:34.742 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2023-03-01 22:47:34.829 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-03-01 22:47:34.902 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-01 22:47:34.961 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2023-03-01 22:47:35.103 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-01 22:47:35.695 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-03-01 22:47:36.292 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-01 22:47:36.301 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-01 22:47:37.044 [main] INFO  org.redisson.Version - Redisson 3.16.1
+2023-03-01 22:47:37.960 [redisson-netty-4-23] INFO  o.r.connection.pool.MasterPubSubConnectionPool - 1 connections initialized for 1.12.65.107/1.12.65.107:6379
+2023-03-01 22:47:38.040 [redisson-netty-4-19] INFO  org.redisson.connection.pool.MasterConnectionPool - 24 connections initialized for 1.12.65.107/1.12.65.107:6379
+2023-03-01 22:47:43.225 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2023-03-01 22:47:43.225 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Environment :null
+2023-03-01 22:47:43.226 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2023-03-01 22:47:43.342 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8870"]
+2023-03-01 22:47:43.353 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8870 (http) with context path ''
+2023-03-01 22:47:43.358 [main] INFO  com.alibaba.nacos.client.naming - [BEAT] adding beat: BeatInfo{port=8870, ip='192.168.180.1', weight=1.0, serviceName='DEFAULT_GROUP@@mall-product', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
+2023-03-01 22:47:43.359 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] public registering service DEFAULT_GROUP@@mall-product with instance: Instance{instanceId='null', ip='192.168.180.1', port=8870, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
+2023-03-01 22:47:43.375 [main] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP mall-product 192.168.180.1:8870 register finished
+2023-03-01 22:47:44.371 [com.alibaba.nacos.client.naming.updater] INFO  com.alibaba.nacos.client.naming - new ips(1) service: DEFAULT_GROUP@@mall-product@@DEFAULT -> [{"instanceId":"192.168.180.1#8870#DEFAULT#DEFAULT_GROUP@@mall-product","ip":"192.168.180.1","port":8870,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@mall-product","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+2023-03-01 22:47:44.376 [com.alibaba.nacos.client.naming.updater] INFO  com.alibaba.nacos.client.naming - current ips:(1) service: DEFAULT_GROUP@@mall-product@@DEFAULT -> [{"instanceId":"192.168.180.1#8870#DEFAULT#DEFAULT_GROUP@@mall-product","ip":"192.168.180.1","port":8870,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@mall-product","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+2023-03-01 22:47:44.560 [main] INFO  com.kafeimall.product.KafeimallProductApplication - Started KafeimallProductApplication in 16.448 seconds (JVM running for 18.552)
+2023-03-01 22:47:44.566 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-1.12.65.107_8848-ef990137-8954-43e6-8776-b1e96d80d784] [subscribe] mall-product.yml+DEFAULT_GROUP+ef990137-8954-43e6-8776-b1e96d80d784
+2023-03-01 22:47:44.567 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-1.12.65.107_8848-ef990137-8954-43e6-8776-b1e96d80d784] [add-listener] ok, tenant=ef990137-8954-43e6-8776-b1e96d80d784, dataId=mall-product.yml, group=DEFAULT_GROUP, cnt=1
+2023-03-01 22:47:44.568 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-1.12.65.107_8848-ef990137-8954-43e6-8776-b1e96d80d784] [subscribe] mall-product-dev.properties+DEFAULT_GROUP+ef990137-8954-43e6-8776-b1e96d80d784
+2023-03-01 22:47:44.568 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-1.12.65.107_8848-ef990137-8954-43e6-8776-b1e96d80d784] [add-listener] ok, tenant=ef990137-8954-43e6-8776-b1e96d80d784, dataId=mall-product-dev.properties, group=DEFAULT_GROUP, cnt=1
+2023-03-01 22:47:44.569 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-1.12.65.107_8848-ef990137-8954-43e6-8776-b1e96d80d784] [subscribe] mall-product+DEFAULT_GROUP+ef990137-8954-43e6-8776-b1e96d80d784
+2023-03-01 22:47:44.569 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-1.12.65.107_8848-ef990137-8954-43e6-8776-b1e96d80d784] [add-listener] ok, tenant=ef990137-8954-43e6-8776-b1e96d80d784, dataId=mall-product, group=DEFAULT_GROUP, cnt=1
+2023-03-01 22:47:44.569 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-1.12.65.107_8848-ef990137-8954-43e6-8776-b1e96d80d784] [subscribe] mall-product.properties+DEFAULT_GROUP+ef990137-8954-43e6-8776-b1e96d80d784
+2023-03-01 22:47:44.569 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-1.12.65.107_8848-ef990137-8954-43e6-8776-b1e96d80d784] [add-listener] ok, tenant=ef990137-8954-43e6-8776-b1e96d80d784, dataId=mall-product.properties, group=DEFAULT_GROUP, cnt=1
+2023-03-01 22:48:53.651 [http-nio-8870-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-01 22:48:53.651 [http-nio-8870-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-03-01 22:48:53.652 [http-nio-8870-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-03-01 23:57:24.480 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2023-03-01 23:57:24.480 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - [BEAT] removing beat: DEFAULT_GROUP@@mall-product:192.168.180.1:8870 from beat map.
+2023-03-01 23:57:24.480 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] public deregistering service DEFAULT_GROUP@@mall-product with instance: Instance{instanceId='null', ip='192.168.180.1', port=8870, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2023-03-01 23:57:24.489 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2023-03-01 23:57:24.489 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.beat.BeatReactor do shutdown begin
+2023-03-01 23:57:25.538 [com.alibaba.nacos.client.naming.updater] INFO  com.alibaba.nacos.client.naming - removed ips(1) service: DEFAULT_GROUP@@mall-product@@DEFAULT -> [{"instanceId":"192.168.180.1#8870#DEFAULT#DEFAULT_GROUP@@mall-product","ip":"192.168.180.1","port":8870,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@mall-product","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+2023-03-01 23:57:25.539 [com.alibaba.nacos.client.naming.updater] INFO  com.alibaba.nacos.client.naming - current ips:(0) service: DEFAULT_GROUP@@mall-product@@DEFAULT -> []
