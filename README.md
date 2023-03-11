@@ -1,4 +1,4 @@
-# kaifeiMall
+<img src="./docs/readmebanner.png">
 
 ## KFMall
 
