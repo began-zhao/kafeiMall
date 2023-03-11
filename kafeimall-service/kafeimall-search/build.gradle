@@ -1,8 +1,10 @@
 dependencies {
-    implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.12.1'
+//    implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.12.1'
+    implementation 'org.springframework.data:spring-data-elasticsearch:4.2.1'
     implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.3'
     implementation 'org.springframework.boot:spring-boot-devtools:2.5.3'
     implementation 'org.springframework.session:spring-session-data-redis:2.5.1'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
 
 description = 'kafeimall-search'
