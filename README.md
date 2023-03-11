@@ -1,6 +1,14 @@
-# kaifeiMall
+<p align="center">
+  <a href="https://github.com/began-zhao/kafeiMal" target="_blank"><img src="./docs/readmebanner.png"></a>
+</p>
+<p align="center">
+    <a href="https://github.com/began-zhao/studydraw#%E7%9B%AE%E5%BD%95"><img src="https://img.shields.io/badge/WeChat-%E7%A8%8B%E5%BA%8F%E7%8C%B4%E5%92%96%E9%A3%9E-blue"></a>
+    <a href="https://github.com/began-zhao/studydraw#%E7%9B%AE%E5%BD%95"><img src="https://img.shields.io/badge/csdn-CSDN-orange"></a>
+    <a href="https://github.com/began-zhao/studydraw#%E7%9B%AE%E5%BD%95"><img src="https://img.shields.io/badge/cnblogs-%E5%8D%9A%E5%AE%A2%E5%9B%AD-9cf"></a>
+    <a href="https://github.com/began-zhao/studydraw#%E7%9B%AE%E5%BD%95"><img src="https://img.shields.io/badge/oschina-%E5%BC%80%E6%BA%90%E4%B8%AD%E5%9B%BD-brightgreen"></a>
+</p>
 
-## KFMall
+##
 
 该项目是针对自己理解使用 DDD 落地构建微服务解决方案的参考项目。
 
