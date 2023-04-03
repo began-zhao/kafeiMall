@@ -1,4 +1,4 @@
-package com.kafeimall.search.domain;
+package com.kafeimall.search.domain.model;
 
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;

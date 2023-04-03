@@ -1,4 +1,4 @@
-package com.kafeimall.search.domain;
+package com.kafeimall.search.domain.model;
 
 import com.kafeimall.search.infrastructure.constants.ProductConstants;
 import lombok.Builder;
