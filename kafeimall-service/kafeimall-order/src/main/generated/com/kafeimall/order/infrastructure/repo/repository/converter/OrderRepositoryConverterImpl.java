@@ -1,6 +1,8 @@
 package com.kafeimall.order.infrastructure.repo.repository.converter;
 
 import javax.annotation.processing.Generated;
+
+import com.kafeimall.order.domain.repo.repository.converter.OrderRepositoryConverter;
 import org.springframework.stereotype.Component;
 
 @Generated(

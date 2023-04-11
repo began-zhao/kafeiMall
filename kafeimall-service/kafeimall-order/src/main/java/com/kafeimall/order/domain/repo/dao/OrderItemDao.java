@@ -1,0 +1,17 @@
+package com.kafeimall.order.domain.repo.dao;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.kafeimall.order.domain.repo.dao.po.OrderItemPO;
+
+import java.util.List;
+
+/**
+ * @author: zzg
+ * @date: 10/18/22
+ * @Description: zzg
+ */
+public interface OrderItemDao extends BaseMapper<OrderItemPO> {
+
+    List<OrderItemPO> selectByOrderId(Long id);
+    List<OrderItemPO> selectByOrderIdList(List<Long> orderIds);
+}
