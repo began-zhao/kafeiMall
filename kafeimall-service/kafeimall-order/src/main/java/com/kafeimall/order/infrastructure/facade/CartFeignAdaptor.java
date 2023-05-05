@@ -1,6 +1,6 @@
 package com.kafeimall.order.infrastructure.facade;
 
-import com.kafeimall.order.domain.entity.CurrentUserCartItems;
+import com.kafeimall.order.domain.model.entity.CurrentUserCartItems;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 

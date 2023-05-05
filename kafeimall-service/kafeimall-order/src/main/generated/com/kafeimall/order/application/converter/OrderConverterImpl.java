@@ -3,9 +3,9 @@ package com.kafeimall.order.application.converter;
 import com.kafeimall.order.application.dto.OrderDto;
 import com.kafeimall.order.application.dto.OrderSubmitRequestDto;
 import com.kafeimall.order.application.dto.SubmitOrderResponseDto;
-import com.kafeimall.order.domain.aggregate.OrderAggregate;
-import com.kafeimall.order.domain.aggregate.OrderSubmitRequestAggregate;
-import com.kafeimall.order.domain.aggregate.SubmitOrderResponseAggregate;
+import com.kafeimall.order.domain.model.aggregate.OrderAggregate;
+import com.kafeimall.order.domain.model.aggregate.OrderSubmitRequestAggregate;
+import com.kafeimall.order.domain.model.aggregate.SubmitOrderResponseAggregate;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
 package com.kafeimall.order.infrastructure.facade;
 
 import com.kafeimall.common.result.Result;
-import com.kafeimall.order.domain.valobj.WareSkuLock;
+import com.kafeimall.order.domain.model.valobj.WareSkuLock;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

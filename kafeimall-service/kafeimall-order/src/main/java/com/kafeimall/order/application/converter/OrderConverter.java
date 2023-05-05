@@ -1,10 +1,10 @@
 package com.kafeimall.order.application.converter;
 
 import com.kafeimall.order.application.dto.*;
-import com.kafeimall.order.domain.aggregate.OrderAggregate;
-import com.kafeimall.order.domain.aggregate.OrderConfirmAggregate;
-import com.kafeimall.order.domain.aggregate.OrderSubmitRequestAggregate;
-import com.kafeimall.order.domain.aggregate.SubmitOrderResponseAggregate;
+import com.kafeimall.order.domain.model.aggregate.OrderAggregate;
+import com.kafeimall.order.domain.model.aggregate.OrderConfirmAggregate;
+import com.kafeimall.order.domain.model.aggregate.OrderSubmitRequestAggregate;
+import com.kafeimall.order.domain.model.aggregate.SubmitOrderResponseAggregate;
 import org.mapstruct.Mapper;
 
 import java.util.List;
