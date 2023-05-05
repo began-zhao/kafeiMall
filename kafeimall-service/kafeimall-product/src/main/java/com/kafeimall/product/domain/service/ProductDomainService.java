@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author: zzg
  * @date: 8/23/22
- * @Description: 订单领域服务
+ * @Description: 商品领域服务
  */
 public interface ProductDomainService {
     List<BrandDO> getBrand();

@@ -1,6 +1,6 @@
 package com.kafeimall.order.infrastructure.facade;
 
-import com.kafeimall.order.domain.entity.MemberAddress;
+import com.kafeimall.order.domain.model.entity.MemberAddress;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
