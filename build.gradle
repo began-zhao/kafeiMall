@@ -89,6 +89,8 @@ project(":kafeimall-common") {
         api 'org.springframework.cloud:spring-cloud-starter-openfeign'
         api 'org.mapstruct:mapstruct'
         api 'mysql:mysql-connector-java'
+
+        implementation 'org.springframework.kafka:spring-kafka:2.8.0'
     }
 }
 
@@ -130,6 +132,8 @@ project(":kafeimall-service") {
             annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
 
             annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+            implementation 'org.springframework.kafka:spring-kafka:2.8.0'
 
             api project(':kafeimall-common')
         }

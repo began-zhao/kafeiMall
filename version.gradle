@@ -16,7 +16,7 @@ ext {
             "nacosConfig"         : "2021.1",
             "redis"               : "2.5.3",
             "redisson"            : "3.16.1",
-            "validation"          : "2.5.3"
+            "validation"          : "2.5.3",
 
     ]
     dependencies = [
