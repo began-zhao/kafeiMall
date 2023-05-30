@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/began-zhao/kafeiMal" target="_blank"><img src="./docs/readmebanner.png"></a>
+  <a href="https://github.com/began-zhao/kafeiMal" target="_blank"><img src="https://mmbiz.qpic.cn/mmbiz_png/SC4afG0WMuXc68hWaEeHZBaPWFHhwucI8hdhzciafRFCGjXKricVtkahIxV21VOfzYsAypefMbiaZPBxfdJB16hLw/640?wx_fmt=png"></a>
 </p>
 <p align="center">
     <a href="https://github.com/began-zhao/studydraw#%E7%9B%AE%E5%BD%95"><img src="https://img.shields.io/badge/WeChat-%E7%A8%8B%E5%BA%8F%E7%8C%B4%E5%92%96%E9%A3%9E-blue"></a>
@@ -53,7 +53,7 @@ kaifeiMall 基于DDD的架构分为四个基础层
 
 同样；分层架构也可以如下图所示：被称为 **整洁架构** ， 又或者称为 **洋葱架构**
 
-![DDD.png](./docs/DDD.png)
+![DDD.png](https://mmbiz.qpic.cn/mmbiz_png/SC4afG0WMuXc68hWaEeHZBaPWFHhwucI8SaMIydS1Viafmlbz1Bmn5Dp6EqI7Jxwdnd89BFicdmwNFrD4S4J66kQ/640?wx_fmt=png)
 
 ## 工程模块结构
 
@@ -111,15 +111,18 @@ product
 
 ## 当前架构
 
-![jiegou.png](./docs/jiegou.png)
+![jiegou.png](https://mmbiz.qpic.cn/mmbiz_png/SC4afG0WMuXc68hWaEeHZBaPWFHhwucI6UZdA9UibLibSyq1P6tHzavMwQ9WlE5T46oatLgQu5ibX1tvB4HlhcIQg/640?wx_fmt=png)
 
 ## 里程路线
 
 - [x]  创建全新空白微服务解决方案
 - [x]  更改为 Gradle 构建工具
-- [ ]  将商品部分逻辑实现到服务中
+- [x]  将商品部分逻辑实现到服务中
+- [x]  整合 Spring Data ElasticSearch
+- [x]  整合 Kafka 作为事件总线
+- [ ]  补充订单部分逻辑  
 
 ## 公众号
 
 关注公众号，交流并学习更多项目经验<br/>
-<img src="./docs/gongzhonghao.png" width="30%">
+<img src="https://mmbiz.qpic.cn/mmbiz_png/SC4afG0WMuXc68hWaEeHZBaPWFHhwucIVe3sgv7MAOxNIFAfQsxvEBp7w3fgJedxRKzibvoVvjGEztfILJzkf8A/640?wx_fmt=png" width="30%">
