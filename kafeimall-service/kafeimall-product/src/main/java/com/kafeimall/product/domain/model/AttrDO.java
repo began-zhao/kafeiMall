@@ -13,7 +13,7 @@ import java.util.Set;
  */
 @Table(name = "pms_attr")
 public class AttrDO implements Serializable {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -8229237765079093427L;
 
     /**
      * 属性id

@@ -7,13 +7,10 @@ import com.kafeimall.order.application.dto.OrderConfirmDto;
 import com.kafeimall.order.application.dto.OrderDto;
 import com.kafeimall.order.application.dto.OrderSubmitRequestDto;
 import com.kafeimall.order.application.dto.SubmitOrderResponseDto;
-import com.kafeimall.order.infrastructure.common.enums.OrderStatusEnum;
-import com.kafeimall.order.domain.model.aggregate.OrderAggregate;
-import com.kafeimall.order.domain.model.aggregate.OrderConfirmAggregate;
-import com.kafeimall.order.domain.model.aggregate.OrderSubmitRequestAggregate;
-import com.kafeimall.order.domain.model.aggregate.SubmitOrderResponseAggregate;
+import com.kafeimall.order.domain.model.OrderDO;
 import com.kafeimall.order.domain.repository.OrderRepository;
 import com.kafeimall.order.domain.service.OrderDomainService;
+import com.kafeimall.order.infrastructure.common.enums.OrderStatusEnum;
 import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
@@ -51,9 +48,10 @@ public class OrderApplicationImpl implements OrderApplication {
      */
     @Override
     public OrderConfirmDto generateConfirmOrder(List<Long> cartIds) throws ExecutionException, InterruptedException {
-        OrderConfirmAggregate orderConfirmAggregate = orderDomainService.generateConfirmOrder(cartIds);
-        OrderConfirmDto orderConfirmDto = orderConverter.toOrderConfirmDto(orderConfirmAggregate);
-        return orderConfirmDto;
+//        OrderConfirmAggregate orderConfirmAggregate = orderDomainService.generateConfirmOrder(cartIds);
+//        OrderConfirmDto orderConfirmDto = orderConverter.toOrderConfirmDto(orderConfirmAggregate);
+//        return orderConfirmDto;
+        return null;
     }
 
     /**
@@ -63,9 +61,10 @@ public class OrderApplicationImpl implements OrderApplication {
      */
     @Override
     public SubmitOrderResponseDto submitOrder(OrderSubmitRequestDto requestDto) {
-        OrderSubmitRequestAggregate orderSubmitRequestAggregate = orderConverter.toOrderSubmitRequestAggregate(requestDto);
-        SubmitOrderResponseAggregate submitOrderResponseAggregate = orderDomainService.submitOrder(orderSubmitRequestAggregate);
-        return orderConverter.toSubmitOrderResponseDto(submitOrderResponseAggregate);
+//        OrderSubmitRequestAggregate orderSubmitRequestAggregate = orderConverter.toOrderSubmitRequestAggregate(requestDto);
+//        SubmitOrderResponseAggregate submitOrderResponseAggregate = orderDomainService.submitOrder(orderSubmitRequestAggregate);
+//        return orderConverter.toSubmitOrderResponseDto(submitOrderResponseAggregate);
+        return null;
     }
     /**
      * 根据订单号获取订单
@@ -74,8 +73,9 @@ public class OrderApplicationImpl implements OrderApplication {
      */
     @Override
     public OrderDto getOrderBuOrderSn(String OrderSn){
-        OrderAggregate orderBuOrderSn = orderDomainService.getOrderBuOrderSn(OrderSn);
-        return orderConverter.toOrderDto(orderBuOrderSn);
+//        OrderDO orderBuOrderSn = orderDomainService.getOrderBuOrderSn(OrderSn);
+//        return orderConverter.toOrderDto(orderBuOrderSn);
+        return null;
     }
 
     /**
@@ -85,10 +85,10 @@ public class OrderApplicationImpl implements OrderApplication {
     @Override
     public void closeOrder(Long OrderId){
         //查询当前这个订单的最新状态
-        OrderAggregate orderEntity = orderRepository.getOrderById(OrderId);
+        OrderDO orderEntity = orderRepository.getOrderById(OrderId);
         //关单
         if (orderEntity.getStatus() == OrderStatusEnum.CRETAE_NEW.getCode()) {
-            OrderAggregate entity1 = new OrderAggregate();
+            OrderDO entity1 = new OrderDO();
             entity1.setStatus(OrderStatusEnum.CANCLED.getCode());
             entity1.setId(OrderId);
             orderRepository.updateOrder(entity1);

@@ -1,7 +1,5 @@
 package com.kafeimall.order.infrastructure.facade;
 
-import com.kafeimall.common.result.Result;
-import com.kafeimall.order.domain.model.valobj.WareSkuLock;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +23,6 @@ public interface WmsFeignAdaptor {
     @GetMapping("/ware/wareinfo/fare")
     void getFare(@RequestParam("addrId")Long addrId);
 
-    @PostMapping("/ware/waresku/lock/order")
-    Result<Void> orderLockStock(@RequestBody WareSkuLock vo);
+//    @PostMapping("/ware/waresku/lock/order")
+//    Result<Void> orderLockStock(@RequestBody WareSkuLock vo);
 }

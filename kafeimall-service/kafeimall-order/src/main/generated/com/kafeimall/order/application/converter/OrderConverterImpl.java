@@ -3,9 +3,9 @@ package com.kafeimall.order.application.converter;
 import com.kafeimall.order.application.dto.OrderDto;
 import com.kafeimall.order.application.dto.OrderSubmitRequestDto;
 import com.kafeimall.order.application.dto.SubmitOrderResponseDto;
-import com.kafeimall.order.domain.model.aggregate.OrderAggregate;
-import com.kafeimall.order.domain.model.aggregate.OrderSubmitRequestAggregate;
-import com.kafeimall.order.domain.model.aggregate.SubmitOrderResponseAggregate;
+import com.kafeimall.order.domain.model.OrderDO;
+import com.kafeimall.order.domain.model.OrderSubmitRequestAggregate;
+
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
@@ -40,19 +40,19 @@ public class OrderConverterImpl implements OrderConverter {
     }
 
     @Override
-    public OrderAggregate toOrderAggregate(OrderDto orderDto) {
+    public OrderDO toOrderAggregate(OrderDto orderDto) {
         if ( orderDto == null ) {
             return null;
         }
 
-        OrderAggregate orderAggregate = new OrderAggregate();
+        OrderDO orderDO = new OrderDO();
 
-        return orderAggregate;
+        return orderDO;
     }
 
     @Override
-    public OrderDto toOrderDto(OrderAggregate orderAggregate) {
-        if ( orderAggregate == null ) {
+    public OrderDto toOrderDto(OrderDO orderDO) {
+        if ( orderDO == null ) {
             return null;
         }
 

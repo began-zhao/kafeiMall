@@ -1,11 +1,6 @@
 package com.kafeimall.order.infrastructure.facade;
 
-import com.kafeimall.order.domain.model.entity.MemberAddress;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.List;
 
 /**
  * @author: zzg
@@ -15,6 +10,6 @@ import java.util.List;
 @FeignClient(value = "kafeimall-member")
 public interface MemberAdaptor {
 
-    @GetMapping("/sku/seckill/{userId}")
-    List<MemberAddress> getAddress(@PathVariable("userId") Long userId);
+//    @GetMapping("/sku/seckill/{userId}")
+//    List<MemberAddress> getAddress(@PathVariable("userId") Long userId);
 }

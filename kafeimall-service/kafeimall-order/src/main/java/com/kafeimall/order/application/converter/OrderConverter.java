@@ -1,10 +1,8 @@
 package com.kafeimall.order.application.converter;
 
 import com.kafeimall.order.application.dto.*;
-import com.kafeimall.order.domain.model.aggregate.OrderAggregate;
-import com.kafeimall.order.domain.model.aggregate.OrderConfirmAggregate;
-import com.kafeimall.order.domain.model.aggregate.OrderSubmitRequestAggregate;
-import com.kafeimall.order.domain.model.aggregate.SubmitOrderResponseAggregate;
+import com.kafeimall.order.domain.model.OrderDO;
+import com.kafeimall.order.domain.model.OrderSubmitRequestAggregate;
 import org.mapstruct.Mapper;
 
 import java.util.List;
@@ -69,6 +67,6 @@ public interface OrderConverter {
     /**
      * 订单信息 DTO-DO
      */
-    OrderAggregate toOrderAggregate(OrderDto orderDto);
-    OrderDto toOrderDto(OrderAggregate orderAggregate);
+    OrderDO toOrderAggregate(OrderDto orderDto);
+    OrderDto toOrderDto(OrderDO orderDO);
 }

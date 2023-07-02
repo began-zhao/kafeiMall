@@ -1,10 +1,6 @@
 package com.kafeimall.order.infrastructure.facade;
 
-import com.kafeimall.order.domain.model.entity.CurrentUserCartItems;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.List;
 
 /**
  * @author: zzg
@@ -13,6 +9,6 @@ import java.util.List;
  */
 @FeignClient("kafeimall-cart")
 public interface CartFeignAdaptor {
-    @GetMapping("/currentUserCartItems")
-    List<CurrentUserCartItems> getCurrentUserCartItems();
+//    @GetMapping("/currentUserCartItems")
+//    List<CurrentUserCartItems> getCurrentUserCartItems();
 }
