@@ -1,5 +1,7 @@
 package com.kafeimall.order.domain.service;
 
+import com.kafeimall.order.domain.model.OrderDO;
+
 /**
  * @author: zzg
  * @date: 9/16/22
@@ -23,22 +25,22 @@ public interface OrderDomainService {
 //    @Transactional
 //    SubmitOrderResponseAggregate submitOrder(OrderSubmitRequestAggregate orderSubmitRequestAggregate);
 //
-//    /**
-//     * 新增订单
-//     * @param orderAggregate 订单聚合
-//     */
-//    void createOrder(OrderAggregate orderAggregate);
-//
-//    /**
-//     * 修改订单
-//     * @param orderAggregate 订单聚合
-//     */
-//    void  updateOrder(OrderAggregate orderAggregate);
-//
-//    /**
-//     * 根据订单号获取订单信息
-//     * @param orderSn
-//     * @return
-//     */
-//    OrderAggregate getOrderBuOrderSn(String orderSn);
+    /**
+     * 新增订单
+     * @param orderDO 订单聚合
+     */
+    void createOrder(OrderDO orderDO);
+
+    /**
+     * 修改订单
+     * @param orderDO 订单聚合
+     */
+    void  updateOrder(OrderDO orderDO);
+
+    /**
+     * 根据订单号获取订单信息
+     * @param orderSn
+     * @return
+     */
+    OrderDO getOrderBuOrderSn(String orderSn);
 }

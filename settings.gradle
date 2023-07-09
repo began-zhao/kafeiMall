@@ -63,4 +63,8 @@ include 'kafeimall-service-api:kafeimall-order-api'
 findProject(':kafeimall-service-api:kafeimall-order-api')?.name = 'kafeimall-order-api'
 include 'kafeimall-service-api:kafeimall-order-api'
 findProject(':kafeimall-service-api:kafeimall-order-api')?.name = 'kafeimall-order-api'
+include 'kafeimall-service-api:kafeimall-member-api'
+findProject(':kafeimall-service-api:kafeimall-member-api')?.name = 'kafeimall-member-api'
+include 'kafeimall-service-api:kaifeimall-search-api'
+findProject(':kafeimall-service-api:kaifeimall-search-api')?.name = 'kaifeimall-search-api'
 

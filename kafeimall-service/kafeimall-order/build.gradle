@@ -6,6 +6,8 @@ dependencies {
     implementation 'com.alipay.sdk:alipay-sdk-java:4.16.21.ALL'
     implementation 'org.springframework.boot:spring-boot-starter-cache:2.5.3'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    api project(':kafeimall-service-api:kafeimall-member-api')
 }
 
 description = 'kafeimall-order'

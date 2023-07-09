@@ -1,7 +1,11 @@
 package com.kafeimall.order.domain.service.impl;
 
+import com.kafeimall.order.domain.model.OrderDO;
+import com.kafeimall.order.domain.repository.OrderRepository;
 import com.kafeimall.order.domain.service.OrderDomainService;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author: zzg
@@ -11,11 +15,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderDomainServiceImpl implements OrderDomainService {
 
-//    private ThreadLocal<OrderSubmitRequestAggregate> confirmThreadLocal = new ThreadLocal<>();
+    //    private ThreadLocal<OrderSubmitRequestAggregate> confirmThreadLocal = new ThreadLocal<>();
 //
-//    @Resource
-//    OrderRepository orderRepository;
-//
+    @Resource
+    OrderRepository orderRepository;
+
+    //
 //    @Resource
 //    MemberAdaptor memberAdaptor;
 //
@@ -164,18 +169,20 @@ public class OrderDomainServiceImpl implements OrderDomainService {
 //        }
 //    }
 //
-//    @Override
-//    public void createOrder(OrderAggregate orderAggregate) {
-//        orderRepository.insertOrder(orderAggregate);
-//    }
-//
-//    @Override
-//    public void updateOrder(OrderAggregate orderAggregate) {
-//        orderRepository.updateOrder(orderAggregate);
-//    }
-//
-//    @Override
-//    public  OrderAggregate getOrderBuOrderSn(String orderSn){
-//        return orderRepository.getByOrderNo(orderSn);
-//    };
+    @Override
+    public void createOrder(OrderDO orderAggregate) {
+        orderRepository.saveAndFlush(orderAggregate);
+    }
+
+    @Override
+    public void updateOrder(OrderDO orderAggregate) {
+        orderRepository.saveAndFlush(orderAggregate);
+    }
+
+    @Override
+    public OrderDO getOrderBuOrderSn(String orderSn) {
+        return orderRepository.getOrderDOByOrderSn(orderSn);
+    }
+
+    ;
 }

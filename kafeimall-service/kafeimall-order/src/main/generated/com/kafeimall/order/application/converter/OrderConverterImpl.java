@@ -18,28 +18,6 @@ import org.springframework.stereotype.Component;
 public class OrderConverterImpl implements OrderConverter {
 
     @Override
-    public OrderSubmitRequestAggregate toOrderSubmitRequestAggregate(OrderSubmitRequestDto orderSubmitRequestDto) {
-        if ( orderSubmitRequestDto == null ) {
-            return null;
-        }
-
-        OrderSubmitRequestAggregate orderSubmitRequestAggregate = new OrderSubmitRequestAggregate();
-
-        return orderSubmitRequestAggregate;
-    }
-
-    @Override
-    public SubmitOrderResponseDto toSubmitOrderResponseDto(SubmitOrderResponseAggregate submitOrderResponseAggregate) {
-        if ( submitOrderResponseAggregate == null ) {
-            return null;
-        }
-
-        SubmitOrderResponseDto submitOrderResponseDto = new SubmitOrderResponseDto();
-
-        return submitOrderResponseDto;
-    }
-
-    @Override
     public OrderDO toOrderAggregate(OrderDto orderDto) {
         if ( orderDto == null ) {
             return null;
