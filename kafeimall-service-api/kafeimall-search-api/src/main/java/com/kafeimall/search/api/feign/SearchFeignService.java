@@ -1,4 +1,4 @@
-package com.kaifeimall.search.api.feign;
+package com.kafeimall.search.api.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 

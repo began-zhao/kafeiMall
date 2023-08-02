@@ -1,6 +1,6 @@
-package com.kaifeimall.search.api.feign.fallback;
+package com.kafeimall.search.api.feign.fallback;
 
-import com.kaifeimall.search.api.feign.SearchFeignService;
+import com.kafeimall.search.api.feign.SearchFeignService;
 
 /**
  * @author: zzg
