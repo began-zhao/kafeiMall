@@ -121,6 +121,7 @@ product
 - [x]  整合 Spring Data ElasticSearch
 - [x]  整合 Kafka 作为事件总线
 - [ ]  补充订单部分逻辑  
+- [ ]  完善营销部分逻辑
 - [ ]  使用flink实时展示报表数据
 
 ## 公众号
